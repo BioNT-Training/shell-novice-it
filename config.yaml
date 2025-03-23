@@ -58,7 +58,7 @@ contact: 'team@carpentries.org'
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
+episodes:
 - 01-intro.md
 - 02-filedir.md
 - 03-create.md
@@ -68,13 +68,13 @@ episodes:
 - 07-find.md
 
 # Information for Learners
-learners: 
+learners:
 
 # Information for Instructors
-instructors: 
+instructors:
 
 # Learner Profiles
-profiles: 
+profiles:
 
 # Customisation ---------------------------------------------
 #
@@ -84,4 +84,4 @@ profiles:
 
 url: 'https://swcarpentry.github.io/shell-novice'
 analytics: carpentries
-lang: en
+lang: it
