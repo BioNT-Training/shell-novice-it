@@ -1,74 +1,34 @@
 ---
-title: Discussion
+title: Discussione
 ---
 
-## Alphabet Soup
 
-If the command to find out who we are is `whoami`, the command to find
-out where we are ought to be called `whereami`, so why is it `pwd`
-instead? The usual answer is that in the early 1970s, when Unix was
-first being developed, every keystroke counted: the devices of the day
-were slow, and backspacing on a teletype was so painful that cutting the
-number of keystrokes in order to cut the number of typing mistakes was
-actually a win for usability. The reality is that commands were added to
-Unix one by one, without any master plan, by people who were immersed in
-its jargon. The result is as inconsistent as the roolz uv Inglish
-speling, but we're stuck with it now.
+## Zuppa alfabetica
 
-## Job Control Codes
+Se il comando per scoprire chi siamo è `whoami`, il comando per scoprire dove siamo dovrebbe chiamarsi `whereami`, perché invece è `pwd`? La risposta abituale è che all'inizio degli anni '70, quando Unix è stato sviluppato, ogni battuta contava: i dispositivi dell'epoca erano lenti e il backspacing su una telescrivente era così doloroso che ridurre il numero di battute per ridurre il numero di errori di battitura era in realtà un vantaggio per l'usabilità. La realtà è che i comandi sono stati aggiunti a Unix uno alla volta, senza un piano generale, da persone immerse nel suo gergo. Il risultato è incoerente come lo spelling di roolz uv Inglish, ma ormai ci siamo abituati.
 
-The shell accepts a few special commands that allow users to interact
-with running processes or programs. You can enter each of these
-"control codes" by holding down the `Ctrl` key and then pressing one
-of the control characters. In other tutorials, you may see the term
-`Control` or the `^` used to represent the `Ctrl` key (e.g. the
-following are all equivalent `Ctrl-C`, `Ctrl+C`, `Control-C`, `Control+C`, `^C`).
+## Codici di controllo del lavoro
 
-- `Ctrl-C`:
-  interrupts and cancels a running program.
-  This is useful if you want to cancel a command that is taking too long to execute.
+La shell accetta alcuni comandi speciali che consentono agli utenti di interagire con i processi o i programmi in esecuzione. È possibile inserire ciascuno di questi "codici di controllo" tenendo premuto il tasto `Ctrl` e poi premendo uno dei caratteri di controllo. In altri tutorial, si può vedere il termine `Control` o `^` usato per rappresentare il tasto `Ctrl` (ad esempio, i seguenti sono tutti equivalenti `Ctrl-C`, `Ctrl+C`, `Control-C`, `Control+C`, `^C`).
 
-- `Ctrl-D`:
-  indicates the end of a file or stream of characters that you are entering on the command line.
-  For example, we saw earlier that the `wc` command counts lines, words, and characters in a file.
-  If we just type `wc` and hit the Enter key without providing a file name,
-  then `wc` will assume we want it to analyze all the stuff we type next.
-  After typing our magnum opus directly into the shell prompt,
-  we can then type Ctrl-D to tell `wc` that we're done
-  and we'd like to see the results of the word count.
+- `Ctrl-C`: interrompe e annulla un programma in esecuzione. È utile se si vuole annullare un comando che richiede troppo tempo per essere eseguito.
 
-- `Ctrl-Z`:
-  Suspends a process but does not terminate it.
-  You can then use the command `fg` to restart the job in the foreground.
+- `Ctrl-D`: indica la fine di un file o di un flusso di caratteri che si sta inserendo sulla riga di comando. Ad esempio, abbiamo visto in precedenza che il comando `wc` conta le righe, le parole e i caratteri di un file. Se si digita semplicemente `wc` e si preme il tasto Invio senza fornire un nome di file, allora `wc` penserà che vogliamo analizzare tutto ciò che digitiamo successivamente. Dopo aver digitato la nostra opera magna direttamente nel prompt della shell, possiamo digitare Ctrl-D per dire a `wc` che abbiamo finito e che vogliamo vedere i risultati del conteggio delle parole.
 
-For new shell users, these control codes can all appear to have
-the same effect: they make things "go away." But it is helpful to
-understand the differences. In general, if something went wrong and
-you just want to get your shell prompt back, it is better to use
-`Ctrl-C`.
+- `Ctrl-Z`: Sospende un processo ma non lo termina. Si può quindi usare il comando `fg` per riavviare il lavoro in primo piano.
 
-## Other Shells
+Per i nuovi utenti della shell, questi codici di controllo possono sembrare avere tutti lo stesso effetto: fanno "sparire" le cose Ma è utile capire le differenze. In generale, se qualcosa è andato storto e si vuole solo riavere il prompt della shell, è meglio usare `Ctrl-C`.
 
-Before Bash became popular in the end of nineties, scientists widely
-used (and some still use) another shell, C-shell, or Csh. Bash and Csh
-have similar feature sets, but their syntax rules are different and
-this makes them incompatible with each other. A few other shells have
-appeared since, including ksh, zsh, and a number of others; they are
-mostly compatible with Bash, and Bash is the default shell on most
-modern implementations of Unix (including most packages that provide
-Unix-like tools for Windows) but if you get strange errors in shell
-scripts written by colleagues, check to see which shell they were
-written for.
+## Altre shell
 
-## Bash Configurations
+Prima che Bash diventasse popolare alla fine degli anni Novanta, gli scienziati usavano ampiamente (e alcuni usano ancora) un'altra shell, C-shell o Csh. Bash e Csh hanno caratteristiche simili, ma le loro regole di sintassi sono diverse e questo le rende incompatibili tra loro. Da allora sono apparse altre shell, tra cui ksh, zsh e altre; sono per lo più compatibili con Bash e Bash è la shell predefinita nella maggior parte delle moderne implementazioni di Unix (compresi la maggior parte dei pacchetti che forniscono strumenti simili a Unix per Windows), ma se si riscontrano strani errori negli script di shell scritti da colleghi, è bene verificare per quale shell sono stati scritti.
 
-Want to customize paths, environment variables, aliases,
-and other behaviors of your shell?
-This excellent blog post "[Bash Configurations Demystified][bash-demystified]"
-from Dalton Hubble
-covers tips, tricks, and how to avoid dangers.
+## Configurazioni di Bash
+
+Volete personalizzare percorsi, variabili d'ambiente, alias e altri comportamenti della vostra shell? Questo eccellente post del blog "[Bash Configurations Demystified][bash-demystified]" di Dalton Hubble contiene suggerimenti, trucchi e indicazioni su come evitare i pericoli.
 
 [bash-demystified]: https://blog.dghubble.io/posts/.bashprofile-.profile-and-.bashrc-conventions/
+
 
 
 

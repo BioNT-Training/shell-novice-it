@@ -1,44 +1,29 @@
 ---
-title: Finding Things
+title: Trovare le cose
 teaching: 25
 exercises: 20
 ---
 
+
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Use `grep` to select lines from text files that match simple patterns.
-- Use `find` to find files and directories whose names match simple patterns.
-- Use the output of one command as the command-line argument(s) to another command.
-- Explain what is meant by 'text' and 'binary' files, and why many common tools don't handle the latter well.
+- Usare `grep` per selezionare righe da file di testo che corrispondono a modelli semplici.
+- Usare `find` per trovare file e directory i cui nomi corrispondono a schemi semplici.
+- Utilizzare l'output di un comando come argomento della riga di comando di un altro comando.
+- Spiegare cosa si intende per file "di testo" e "binari" e perché molti strumenti comuni non gestiscono bene questi ultimi.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I find files?
-- How can I find things in files?
+- Come posso trovare i file?
+- Come posso trovare le cose nei file?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-In the same way that many of us now use 'Google' as a
-verb meaning 'to find', Unix programmers often use the
-word 'grep'.
-'grep' is a contraction of 'global/regular expression/print',
-a common sequence of operations in early Unix text editors.
-It is also the name of a very useful command-line program.
+Allo stesso modo in cui molti di noi usano 'Google' come verbo che significa 'trovare', i programmatori Unix usano spesso la parola 'grep'. 'grep' è una contrazione di 'global/regular expression/print', una sequenza comune di operazioni nei primi editor di testo Unix. È anche il nome di un programma a riga di comando molto utile.
 
-`grep` finds and prints lines in files that match a pattern.
-For our examples,
-we will use a file that contains three haiku taken from a
-[1998 competition](https://web.archive.org/web/19991201042211/http://salon.com/21st/chal/1998/01/26chal.html)
-in *Salon* magazine (Credit to authors Bill Torcaso, Howard Korder, and
-Margaret Segall, respectively. See
-Haiku Error Messsages archived
-[Page 1](https://web.archive.org/web/20000310061355/http://www.salon.com/21st/chal/1998/02/10chal2.html)
-and
-[Page 2](https://web.archive.org/web/20000229135138/http://www.salon.com/21st/chal/1998/02/10chal3.html)
-.). For this set of examples,
-we're going to be working in the writing subdirectory:
+`grep` trova e stampa le righe dei file che corrispondono a uno schema. Per i nostri esempi, useremo un file che contiene tre haiku tratti da un [concorso 1998](https://web.archive.org/web/19991201042211/http://salon.com/21st/chal/1998/01/26chal.html) della rivista *Salon* (merito degli autori Bill Torcaso, Howard Korder e Margaret Segall, rispettivamente. Si vedano i messaggi di errore Haiku archiviati [Pagina 1](https://web.archive.org/web/20000310061355/http://www.salon.com/21st/chal/1998/02/10chal2.html) e [Pagina 2](https://web.archive.org/web/20000229135138/http://www.salon.com/21st/chal/1998/02/10chal3.html)). Per questa serie di esempi, lavoreremo nella sottodirectory della scrittura:
 
 ```bash
 $ cd
@@ -60,7 +45,7 @@ Today it is not working
 Software is like that.
 ```
 
-Let's find lines that contain the word 'not':
+Troviamo le righe che contengono la parola "non":
 
 ```bash
 $ grep not haiku.txt
@@ -72,18 +57,13 @@ Is not the true Tao, until
 Today it is not working
 ```
 
-Here, `not` is the pattern we're searching for.
-The grep command searches through the file, looking for matches to the pattern specified.
-To use it type `grep`, then the pattern we're searching for and finally
-the name of the file (or files) we're searching in.
+Qui, `not` è lo schema che stiamo cercando. Il comando grep cerca nel file le corrispondenze con lo schema specificato. Per utilizzarlo, digitare `grep`, quindi lo schema che si vuole cercare e infine il nome del file (o dei file) in cui si vuole effettuare la ricerca.
 
-The output is the three lines in the file that contain the letters 'not'.
+L'output è costituito dalle tre righe del file che contengono le lettere "non".
 
-By default, grep searches for a pattern in a case-sensitive way.
-In addition, the search pattern we have selected does not have to form a complete word,
-as we will see in the next example.
+Per impostazione predefinita, grep cerca un modello in modo sensibile alle maiuscole e alle minuscole. Inoltre, il modello di ricerca selezionato non deve necessariamente formare una parola completa, come vedremo nel prossimo esempio.
 
-Let's search for the pattern: 'The'.
+Cerchiamo il modello: 'Il'.
 
 ```bash
 $ grep The haiku.txt
@@ -94,15 +74,11 @@ The Tao that is seen
 "My Thesis" not found.
 ```
 
-This time, two lines that include the letters 'The' are outputted,
-one of which contained our search pattern within a larger word, 'Thesis'.
+Questa volta vengono prodotte due righe che includono le lettere "The", una delle quali conteneva il nostro modello di ricerca all'interno di una parola più grande, "Thesis".
 
-To restrict matches to lines containing the word 'The' on its own,
-we can give `grep` the `-w` option.
-This will limit matches to word boundaries.
+Per limitare le corrispondenze alle righe contenenti la parola 'The' da sola, si può dare a `grep` l'opzione `-w`. Questo limiterà le corrispondenze ai confini della parola.
 
-Later in this lesson, we will also see how we can change the search behavior of grep
-with respect to its case sensitivity.
+Più avanti in questa lezione vedremo anche come modificare il comportamento di ricerca di grep rispetto alla sensibilità alle maiuscole.
 
 ```bash
 $ grep -w The haiku.txt
@@ -112,11 +88,7 @@ $ grep -w The haiku.txt
 The Tao that is seen
 ```
 
-Note that a 'word boundary' includes the start and end of a line, so not
-just letters surrounded by spaces.
-Sometimes we don't
-want to search for a single word, but a phrase. We can also do this with
-`grep` by putting the phrase in quotes.
+Si noti che un "confine di parola" include l'inizio e la fine di una riga, quindi non solo le lettere circondate da spazi. A volte non si vuole cercare una singola parola, ma una frase. È possibile farlo anche con `grep`, mettendo la frase tra virgolette.
 
 ```bash
 $ grep -w "is not" haiku.txt
@@ -126,13 +98,9 @@ $ grep -w "is not" haiku.txt
 Today it is not working
 ```
 
-We've now seen that you don't have to have quotes around single words,
-but it is useful to use quotes when searching for multiple words.
-It also helps to make it easier to distinguish between the search term or phrase
-and the file being searched.
-We will use quotes in the remaining examples.
+Abbiamo visto che non è necessario mettere le virgolette intorno alle singole parole, ma è utile usare le virgolette quando si cercano più parole. Inoltre, aiuta a distinguere più facilmente tra il termine o la frase di ricerca e il file ricercato. Negli altri esempi utilizzeremo le virgolette.
 
-Another useful option is `-n`, which numbers the lines that match:
+Un'altra opzione utile è `-n`, che numera le righe corrispondenti:
 
 ```bash
 $ grep -n "it" haiku.txt
@@ -144,12 +112,9 @@ $ grep -n "it" haiku.txt
 10:Today it is not working
 ```
 
-Here, we can see that lines 5, 9, and 10 contain the letters 'it'.
+Qui possiamo vedere che le righe 5, 9 e 10 contengono le lettere "it".
 
-We can combine options (i.e. flags) as we do with other Unix commands.
-For example, let's find the lines that contain the word 'the'.
-We can combine the option `-w` to find the lines that contain the word 'the'
-and `-n` to number the lines that match:
+Possiamo combinare le opzioni (cioè i flag) come facciamo con altri comandi Unix. Per esempio, cerchiamo di trovare le righe che contengono la parola "il". Possiamo combinare l'opzione `-w` per trovare le righe che contengono la parola 'the' e `-n` per numerare le righe che corrispondono:
 
 ```bash
 $ grep -n -w "the" haiku.txt
@@ -160,7 +125,7 @@ $ grep -n -w "the" haiku.txt
 6:and the presence of absence:
 ```
 
-Now we want to use the option `-i` to make our search case-insensitive:
+Ora vogliamo usare l'opzione `-i` per rendere la nostra ricerca insensibile alle maiuscole e alle minuscole:
 
 ```bash
 $ grep -n -w -i "the" haiku.txt
@@ -172,8 +137,7 @@ $ grep -n -w -i "the" haiku.txt
 6:and the presence of absence:
 ```
 
-Now, we want to use the option `-v` to invert our search, i.e., we want to output
-the lines that do not contain the word 'the'.
+Ora vogliamo usare l'opzione `-v` per invertire la nostra ricerca, cioè vogliamo produrre le righe che non contengono la parola 'the'.
 
 ```bash
 $ grep -n -w -v "the" haiku.txt
@@ -191,10 +155,9 @@ $ grep -n -w -v "the" haiku.txt
 11:Software is like that.
 ```
 
-If we use the `-r` (recursive) option,
-`grep` can search for a pattern recursively through a set of files in subdirectories.
+Se si usa l'opzione `-r` (ricorsiva), `grep` può cercare un modello in modo ricorsivo in un insieme di file in sottodirectory.
 
-Let's search recursively for `Yesterday` in the `shell-lesson-data/exercise-data/writing` directory:
+Cerchiamo ricorsivamente `Yesterday` nella directory `shell-lesson-data/exercise-data/writing`:
 
 ```bash
 $ grep -r Yesterday .
@@ -207,7 +170,7 @@ $ grep -r Yesterday .
 ./haiku.txt:Yesterday it worked
 ```
 
-`grep` has lots of other options. To find out what they are, we can type:
+`grep` ha molte altre opzioni. Per scoprire quali sono, si può digitare:
 
 ```bash
 $ grep --help
@@ -235,11 +198,11 @@ Miscellaneous:
 ...        ...        ...
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Using `grep`
+## Uso di `grep`
 
-Which command would result in the following output:
+Quale comando produrrebbe il seguente output:
 
 ```output
 and the presence of absence:
@@ -250,12 +213,11 @@ and the presence of absence:
 3. `grep -w "of" haiku.txt`
 4. `grep -i "of" haiku.txt`
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Soluzione
 
-The correct answer is 3, because the `-w` option looks only for whole-word matches.
-The other options will also match 'of' when part of another word.
+La risposta corretta è 3, perché l'opzione `-w` cerca solo le corrispondenze con le parole intere. Le altre opzioni corrispondono anche a "di" quando è parte di un'altra parola.
 
 
 
@@ -263,17 +225,11 @@ The other options will also match 'of' when part of another word.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
-## Wildcards
+## Caratteri jolly
 
-`grep`'s real power doesn't come from its options, though; it comes from
-the fact that patterns can include wildcards. (The technical name for
-these is **regular expressions**, which
-is what the 're' in 'grep' stands for.) Regular expressions are both complex
-and powerful; if you want to do complex searches, please look at the lesson
-on [our website](https://librarycarpentry.org/lc-data-intro/01-regular-expressions.html). As a taster, we can
-find lines that have an 'o' in the second position like this:
+la vera potenza di `grep` non deriva dalle sue opzioni, ma dal fatto che i pattern possono includere caratteri jolly. (Il nome tecnico di queste espressioni è **espressioni regolari**, che è il significato di "re" in "grep") Le espressioni regolari sono complesse e potenti; se volete fare ricerche complesse, consultate la lezione su [il nostro sito web](https://librarycarpentry.org/lc-data-intro/01-regular-expressions.html). Come assaggio, possiamo trovare le righe che hanno una 'o' in seconda posizione come questa:
 
 ```bash
 $ grep -E "^.o" haiku.txt
@@ -285,22 +241,16 @@ Today it is not working
 Software is like that.
 ```
 
-We use the `-E` option and put the pattern in quotes to prevent the shell
-from trying to interpret it. (If the pattern contained a `*`, for
-example, the shell would try to expand it before running `grep`.) The
-`^` in the pattern anchors the match to the start of the line. The `.`
-matches a single character (just like `?` in the shell), while the `o`
-matches an actual 'o'.
+Usiamo l'opzione `-E` e mettiamo il pattern tra virgolette per evitare che la shell cerchi di interpretarlo. (Se il pattern contenesse un `*`, per esempio, la shell cercherebbe di espanderlo prima di eseguire `grep`) Il `^` nel pattern fissa la corrispondenza all'inizio della riga. La `.` corrisponde a un singolo carattere (proprio come la `?` nella shell), mentre la `o` corrisponde a una "o" vera e propria.
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Tracking a Species
+## Tracciare una specie
 
-Leah has several hundred
-data files saved in one directory, each of which is formatted like this:
+Leah ha diverse centinaia di file di dati salvati in una directory, ognuno dei quali è formattato come segue:
 
 ```source
 2012-11-05,deer,5
@@ -313,10 +263,7 @@ data files saved in one directory, each of which is formatted like this:
 2012-11-07,bear,1
 ```
 
-She wants to write a shell script that takes a species as the first command-line argument
-and a directory as the second argument. The script should return one file called `<species>.txt`
-containing a list of dates and the number of that species seen on each date.
-For example using the data shown above, `rabbit.txt` would contain:
+Vuole scrivere uno script di shell che prenda una specie come primo argomento della riga di comando e una directory come secondo argomento. Lo script dovrebbe restituire un file chiamato `<species>.txt` contenente un elenco di date e il numero di specie osservate in ciascuna data. Ad esempio, utilizzando i dati mostrati sopra, `rabbit.txt` conterrebbe:
 
 ```source
 2012-11-05,22
@@ -324,8 +271,7 @@ For example using the data shown above, `rabbit.txt` would contain:
 2012-11-07,16
 ```
 
-Below, each line contains an individual command, or pipe.  Arrange their
-sequence in one command in order to achieve Leah's goal:
+Di seguito, ogni riga contiene un singolo comando, o pipe. Organizzare la loro sequenza in un comando per raggiungere l'obiettivo di Leah:
 
 ```bash
 cut -d : -f 2
@@ -337,25 +283,21 @@ $1.txt
 cut -d , -f 1,3
 ```
 
-Hint: use `man grep` to look for how to grep text recursively in a directory
-and `man cut` to select more than one field in a line.
+Suggerimento: usare `man grep` per cercare come grepare il testo in modo ricorsivo in una directory e `man cut` per selezionare più di un campo in una riga.
 
-An example of such a file is provided in
-`shell-lesson-data/exercise-data/animal-counts/animals.csv`
+Un esempio di tale file è fornito in `shell-lesson-data/exercise-data/animal-counts/animals.csv`
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Soluzione
 
 ```source
 grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3 > $1.txt
 ```
 
-Actually, you can swap the order of the two cut commands and it still works. At the
-command line, try changing the order of the cut commands, and have a look at the output
-from each step to see why this is the case.
+In realtà, è possibile scambiare l'ordine dei due comandi di taglio e funziona ancora. Alla riga di comando, provate a cambiare l'ordine dei comandi di taglio e date un'occhiata all'output di ogni passaggio per capire perché è così.
 
-You would call the script above like this:
+Lo script precedente viene chiamato in questo modo:
 
 ```bash
 $ bash count-species.sh bear .
@@ -365,29 +307,17 @@ $ bash count-species.sh bear .
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Little Women
+## Piccole donne
 
-You and your friend, having just finished reading *Little Women* by
-Louisa May Alcott, are in an argument.  Of the four sisters in the
-book, Jo, Meg, Beth, and Amy, your friend thinks that Jo was the
-most mentioned.  You, however, are certain it was Amy.  Luckily, you
-have a file `LittleWomen.txt` containing the full text of the novel
-(`shell-lesson-data/exercise-data/writing/LittleWomen.txt`).
-Using a `for` loop, how would you tabulate the number of times each
-of the four sisters is mentioned?
+Tu e la tua amica, dopo aver appena finito di leggere *Piccole donne* di Louisa May Alcott, state discutendo. Delle quattro sorelle del libro, Jo, Meg, Beth e Amy, la vostra amica pensa che Jo sia la più citata. Voi, invece, siete certi che si tratti di Amy. Fortunatamente si dispone di un file `LittleWomen.txt` contenente il testo completo del romanzo (`shell-lesson-data/exercise-data/writing/LittleWomen.txt`). Utilizzando un ciclo `for`, come si potrebbe tabulare il numero di volte in cui ciascuna delle quattro sorelle viene menzionata?
 
-Hint: one solution might employ
-the commands `grep` and `wc` and a `|`, while another might utilize
-`grep` options.
-There is often more than one way to solve a programming task, so a
-particular solution is usually chosen based on a combination of
-yielding the correct result, elegance, readability, and speed.
+Suggerimento: una soluzione potrebbe utilizzare i comandi `grep` e `wc` e un `|`, mentre un'altra potrebbe utilizzare le opzioni `grep`. Spesso esiste più di un modo per risolvere un compito di programmazione, quindi una particolare soluzione viene solitamente scelta in base a una combinazione di risultati corretti, eleganza, leggibilità e velocità.
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solutions
+## Soluzioni
 
 ```source
 for sis in Jo Meg Beth Amy
@@ -397,7 +327,7 @@ do
 done
 ```
 
-Alternative, slightly inferior solution:
+Soluzione alternativa, leggermente inferiore:
 
 ```source
 for sis in Jo Meg Beth Amy
@@ -407,15 +337,9 @@ do
 done
 ```
 
-This solution is inferior because `grep -c` only reports the number of lines matched.
-The total number of matches reported by this method will be lower if there is more
-than one match per line.
+Questa soluzione è inferiore perché `grep -c` riporta solo il numero di righe corrispondenti. Il numero totale di corrispondenze riportato da questo metodo sarà inferiore se c'è più di una corrispondenza per riga.
 
-Perceptive observers may have noticed that character names sometimes appear in all-uppercase
-in chapter titles (e.g. 'MEG GOES TO VANITY FAIR').
-If you wanted to count these as well, you could add the `-i` option for case-insensitivity
-(though in this case, it doesn't affect the answer to which sister is mentioned
-most frequently).
+Gli osservatori più attenti avranno notato che i nomi dei personaggi a volte appaiono in tutte le maiuscole nei titoli dei capitoli (per esempio, "MEG VA ALLA FIERA DELLA VANITÀ"). Se si volesse contare anche questi, si potrebbe aggiungere l'opzione `-i` per l'insensibilità alle maiuscole e minuscole (anche se in questo caso non influisce sulla risposta a quale sorella è menzionata più frequentemente).
 
 
 
@@ -423,12 +347,7 @@ most frequently).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-While `grep` finds lines in files,
-the `find` command finds files themselves.
-Again,
-it has a lot of options;
-to show how the simplest ones work, we'll use the `shell-lesson-data/exercise-data`
-directory tree shown below.
+Mentre `grep` trova le righe nei file, il comando `find` trova i file stessi. Anche in questo caso, ha molte opzioni; per mostrare come funzionano le più semplici, useremo l'albero di directory `shell-lesson-data/exercise-data` mostrato di seguito.
 
 ```output
 .
@@ -451,11 +370,9 @@ directory tree shown below.
     └── LittleWomen.txt
 ```
 
-The `exercise-data` directory contains one file, `numbers.txt` and four directories:
-`animal-counts`, `creatures`, `alkanes` and `writing` containing various files.
+La directory `exercise-data` contiene un file, `numbers.txt` e quattro directory: `animal-counts`, `creatures`, `alkanes` e `writing` contenenti vari file.
 
-For our first command,
-let's run `find .` (remember to run this command from the `shell-lesson-data/exercise-data` folder).
+Per il nostro primo comando, eseguiamo `find .` (ricordate di eseguire questo comando dalla cartella `shell-lesson-data/exercise-data`).
 
 ```bash
 $ find .
@@ -482,17 +399,9 @@ $ find .
 ./alkanes/cubane.pdb
 ```
 
-As always, the `.` on its own means the current working directory,
-which is where we want our search to start.
-`find`'s output is the names of every file **and** directory
-under the current working directory.
-This can seem useless at first but `find` has many options
-to filter the output and in this lesson we will discover some
-of them.
+Come sempre, `.` da solo significa la directory di lavoro corrente, che è il punto da cui vogliamo iniziare la nostra ricerca. l'output di `find` è il nome di ogni file **e** directory sotto la directory di lavoro corrente. All'inizio può sembrare inutile, ma `find` ha molte opzioni per filtrare l'output e in questa lezione ne scopriremo alcune.
 
-The first option in our list is
-`-type d` that means 'things that are directories'.
-Sure enough, `find`'s output is the names of the five directories (including `.`):
+La prima opzione del nostro elenco è `-type d` che significa "cose che sono directory". Certamente, l'output di `find` è il nome delle cinque directory (inclusa `.`):
 
 ```bash
 $ find . -type d
@@ -506,9 +415,7 @@ $ find . -type d
 ./alkanes
 ```
 
-Notice that the objects `find` finds are not listed in any particular order.
-If we change `-type d` to `-type f`,
-we get a listing of all the files instead:
+Si noti che gli oggetti trovati da `find` non sono elencati in un ordine particolare. Se si cambia `-type d` con `-type f`, si ottiene invece un elenco di tutti i file:
 
 ```bash
 $ find . -type f
@@ -530,7 +437,7 @@ $ find . -type f
 ./alkanes/cubane.pdb
 ```
 
-Now let's try matching by name:
+Ora proviamo a fare una corrispondenza per nome:
 
 ```bash
 $ find . -name *.txt
@@ -540,23 +447,15 @@ $ find . -name *.txt
 ./numbers.txt
 ```
 
-We expected it to find all the text files,
-but it only prints out `./numbers.txt`.
-The problem is that the shell expands wildcard characters like `*` *before* commands run.
-Since `*.txt` in the current directory expands to `./numbers.txt`,
-the command we actually ran was:
+Ci si aspettava che trovasse tutti i file di testo, ma stampa solo `./numbers.txt`. Il problema è che la shell espande i caratteri jolly come `*` *prima* dell'esecuzione dei comandi. Poiché `*.txt` nella directory corrente si espande a `./numbers.txt`, il comando effettivamente eseguito è stato:
 
 ```bash
 $ find . -name numbers.txt
 ```
 
-`find` did what we asked; we just asked for the wrong thing.
+`find` ha fatto quello che abbiamo chiesto; abbiamo solo chiesto la cosa sbagliata.
 
-To get what we want,
-let's do what we did with `grep`:
-put `*.txt` in quotes to prevent the shell from expanding the `*` wildcard.
-This way,
-`find` actually gets the pattern `*.txt`, not the expanded filename `numbers.txt`:
+Per ottenere ciò che vogliamo, facciamo come con `grep`: mettiamo `*.txt` tra virgolette per evitare che la shell espanda il carattere jolly `*`. In questo modo, `find` ottiene effettivamente il pattern `*.txt`, non il nome del file espanso `numbers.txt`:
 
 ```bash
 $ find . -name "*.txt"
@@ -568,27 +467,18 @@ $ find . -name "*.txt"
 ./numbers.txt
 ```
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
-## Listing vs. Finding
+## Elenco vs. ricerca
 
-`ls` and `find` can be made to do similar things given the right options,
-but under normal circumstances,
-`ls` lists everything it can,
-while `find` searches for things with certain properties and shows them.
+`ls` e `find` possono fare cose simili con le giuste opzioni, ma in circostanze normali, `ls` elenca tutto ciò che può, mentre `find` cerca cose con certe proprietà e le mostra.
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-As we said earlier,
-the command line's power lies in combining tools.
-We've seen how to do that with pipes;
-let's look at another technique.
-As we just saw,
-`find . -name "*.txt"` gives us a list of all text files in or below the current directory.
-How can we combine that with `wc -l` to count the lines in all those files?
+Come abbiamo detto prima, la potenza della riga di comando sta nel combinare gli strumenti. Abbiamo visto come farlo con le pipe; vediamo un'altra tecnica. Come abbiamo appena visto, `find . -name "*.txt"` ci fornisce un elenco di tutti i file di testo presenti nella directory corrente o al di sotto di essa. Come possiamo combinarlo con `wc -l` per contare le righe in tutti questi file?
 
-The simplest way is to put the `find` command inside `$()`:
+Il modo più semplice è quello di inserire il comando `find` all'interno di `$()`:
 
 ```bash
 $ wc -l $(find . -name "*.txt")
@@ -601,25 +491,15 @@ $ wc -l $(find . -name "*.txt")
   21038 total
 ```
 
-When the shell executes this command,
-the first thing it does is run whatever is inside the `$()`.
-It then replaces the `$()` expression with that command's output.
-Since the output of `find` is the three filenames `./writing/LittleWomen.txt`,
-`./writing/haiku.txt`, and `./numbers.txt`, the shell constructs the command:
+Quando la shell esegue questo comando, la prima cosa che fa è eseguire qualsiasi cosa si trovi all'interno della `$()`. Quindi sostituisce l'espressione `$()` con l'output di quel comando. Poiché l'output di `find` è costituito dai tre nomi di file `./writing/LittleWomen.txt`, `./writing/haiku.txt` e `./numbers.txt`, la shell costruisce il comando:
 
 ```bash
 $ wc -l ./writing/LittleWomen.txt ./writing/haiku.txt ./numbers.txt
 ```
 
-which is what we wanted.
-This expansion is exactly what the shell does when it expands wildcards like `*` and `?`,
-but lets us use any command we want as our own 'wildcard'.
+che è quello che volevamo. Questa espansione è esattamente ciò che fa la shell quando espande i caratteri jolly come `*` e `?`, ma ci permette di usare qualsiasi comando come nostro 'carattere jolly'.
 
-It's very common to use `find` and `grep` together.
-The first finds files that match a pattern;
-the second looks for lines inside those files that match another pattern.
-Here, for example, we can find txt files that contain the word "searching"
-by looking for the string 'searching' in all the `.txt` files in the current directory:
+È molto comune usare `find` e `grep` insieme. Il primo trova i file che corrispondono a uno schema; il secondo cerca le righe all'interno di quei file che corrispondono a un altro schema. Qui, per esempio, possiamo trovare i file txt che contengono la parola "searching" cercando la stringa 'searching' in tutti i file `.txt` nella directory corrente:
 
 ```bash
 $ grep "searching" $(find . -name "*.txt")
@@ -630,37 +510,26 @@ $ grep "searching" $(find . -name "*.txt")
 ./writing/haiku.txt:With searching comes loss
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## Matching and Subtracting
+## Corrispondenza e sottrazione
 
-The `-v` option to `grep` inverts pattern matching, so that only lines
-which do *not* match the pattern are printed. Given that, which of
-the following commands will find all .dat files in `creatures`
-except `unicorn.dat`?
-Once you have thought about your answer, you can test the commands in the
-`shell-lesson-data/exercise-data` directory.
+L'opzione `-v` di `grep` inverte la corrispondenza dei pattern, in modo che vengano stampate solo le righe che *non* corrispondono al pattern. In base a ciò, quale dei seguenti comandi troverà tutti i file .dat in `creatures` tranne che in `unicorn.dat`? Dopo aver pensato alla risposta, si possono testare i comandi nella directory `shell-lesson-data/exercise-data`.
 
 1. `find creatures -name "*.dat" | grep -v unicorn`
 2. `find creatures -name *.dat | grep -v unicorn`
 3. `grep -v "unicorn" $(find creatures -name "*.dat")`
-4. None of the above.
+4. Nessuno dei precedenti.
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Soluzione
 
-Option 1 is correct. Putting the match expression in quotes prevents the shell
-expanding it, so it gets passed to the `find` command.
+L'opzione 1 è corretta. Mettere l'espressione di corrispondenza tra virgolette impedisce alla shell di espanderla, quindi viene passata al comando `find`.
 
-Option 2 also works in this instance because the shell tries to expand `*.dat`
-but there are no `*.dat` files in the current directory,
-so the wildcard expression gets passed to `find`.
-We first encountered this in
-[episode 3](03-create.md).
+L'opzione 2 funziona anche in questo caso, perché la shell tenta di espandere `*.dat` ma non ci sono file `*.dat` nella directory corrente, quindi l'espressione jolly viene passata a `find`. L'abbiamo incontrato per la prima volta in [episodio 3] (03-create.md).
 
-Option 3 is incorrect because it searches the contents of the files for lines which
-do not match 'unicorn', rather than searching the file names.
+L'opzione 3 non è corretta perché cerca nel contenuto dei file le righe che non corrispondono a "unicorno", anziché cercare nei nomi dei file.
 
 
 
@@ -668,61 +537,38 @@ do not match 'unicorn', rather than searching the file names.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::::  callout
+::::::::::::::::::::::::::::::::::::::::: callout
 
-## Binary Files
+## File binari
 
-We have focused exclusively on finding patterns in text files. What if
-your data is stored as images, in databases, or in some other format?
+Ci siamo concentrati esclusivamente sulla ricerca di modelli nei file di testo. Cosa succede se i dati sono archiviati come immagini, in database o in altri formati?
 
-A handful of tools extend `grep` to handle a few non text formats. But a
-more generalizable approach is to convert the data to text, or
-extract the text-like elements from the data. On the one hand, it makes simple
-things easy to do. On the other hand, complex things are usually impossible. For
-example, it's easy enough to write a program that will extract X and Y
-dimensions from image files for `grep` to play with, but how would you
-write something to find values in a spreadsheet whose cells contained
-formulas?
+Una manciata di strumenti estende `grep` per gestire alcuni formati diversi dal testo. Ma un approccio più generalizzabile è quello di convertire i dati in testo o di estrarre gli elementi simili al testo dai dati. Da un lato, questo rende le cose semplici facili da fare. D'altra parte, le cose complesse sono di solito impossibili. Per esempio, è abbastanza facile scrivere un programma che estragga le dimensioni X e Y da file di immagini per giocare con `grep`, ma come si potrebbe scrivere qualcosa per trovare valori in un foglio di calcolo le cui celle contengono formule?
 
-A last option is to recognize that the shell and text processing have
-their limits, and to use another programming language.
-When the time comes to do this, don't be too hard on the shell. Many
-modern programming languages have borrowed a lot of
-ideas from it, and imitation is also the sincerest form of praise.
+Un'ultima opzione è riconoscere che la shell e l'elaborazione del testo hanno i loro limiti e utilizzare un altro linguaggio di programmazione. Quando arriva il momento di farlo, non siate troppo duri con la shell. Molti linguaggi di programmazione moderni hanno preso in prestito molte idee da essa, e l'imitazione è anche la forma più sincera di lode.
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-The Unix shell is older than most of the people who use it. It has
-survived so long because it is one of the most productive programming
-environments ever created --- maybe even *the* most productive. Its syntax
-may be cryptic, but people who have mastered it can experiment with
-different commands interactively, then use what they have learned to
-automate their work. Graphical user interfaces may be easier to use at
-first, but once learned, the productivity in the shell is unbeatable.
-And as Alfred North Whitehead wrote in 1911, 'Civilization advances by
-extending the number of important operations which we can perform
-without thinking about them.'
+La shell Unix è più vecchia della maggior parte delle persone che la usano. È sopravvissuta così a lungo perché è uno degli ambienti di programmazione più produttivi mai creati, forse addirittura il più produttivo. La sua sintassi può essere criptica, ma chi la padroneggia può sperimentare diversi comandi in modo interattivo e poi usare ciò che ha imparato per automatizzare il proprio lavoro. Le interfacce utente grafiche possono essere più facili da usare all'inizio, ma una volta imparate, la produttività della shell è imbattibile. E come scrisse Alfred North Whitehead nel 1911, "la civiltà progredisce ampliando il numero di operazioni importanti che possiamo eseguire senza pensarci"
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
-## `find` Pipeline Reading Comprehension
+## `find` Comprensione della lettura del gasdotto
 
-Write a short explanatory comment for the following shell script:
+Scrivere un breve commento esplicativo per il seguente script di shell:
 
 ```bash
 wc -l $(find . -name "*.dat") | sort -n
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
-## Solution
+## Soluzione
 
-1. Find all files with a `.dat` extension recursively from the current directory
-2. Count the number of lines each of these files contains
-3. Sort the output from step 2. numerically
-  
-  
+1. Trova tutti i file con estensione `.dat` ricorsivamente dalla directory corrente
+2. Conta il numero di righe contenute in ciascuno di questi file
+3. Ordina numericamente l'output del passo 2
 
 :::::::::::::::::::::::::
 
@@ -732,12 +578,13 @@ wc -l $(find . -name "*.dat") | sort -n
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `find` finds files with specific properties that match patterns.
-- `grep` selects lines in files that match patterns.
-- `--help` is an option supported by many bash commands, and programs that can be run from within Bash, to display more information on how to use these commands or programs.
-- `man [command]` displays the manual page for a given command.
-- `$([command])` inserts a command's output in place.
+- `find` trova file con proprietà specifiche che corrispondono ai modelli.
+- `grep` seleziona le righe dei file che corrispondono ai modelli.
+- `--help` è un'opzione supportata da molti comandi bash e programmi che possono essere eseguiti da Bash, per visualizzare ulteriori informazioni sull'uso di tali comandi o programmi.
+- `man [command]` visualizza la pagina del manuale per un determinato comando.
+- `$([command])` inserisce l'output di un comando al suo posto.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
