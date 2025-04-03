@@ -113,8 +113,8 @@
             More <i data-feather="chevron-down"></i>
           </button>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-<li><a class="dropdown-item" href="discuss.html">Discussion</a></li>
-<li><a class="dropdown-item" href="reference.html">Summary of Basic Commands</a></li>
+<li><a class="dropdown-item" href="discuss.html">Discussione</a></li>
+<li><a class="dropdown-item" href="reference.html">Riassunto dei comandi di base</a></li>
           </ul>
 </li>
       </ul>
@@ -235,7 +235,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="01-intro.html">1. Introducing the Shell</a>
+        <a href="01-intro.html">1. Introduzione alla shell</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -247,7 +247,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="02-filedir.html">2. Navigating Files and Directories</a>
+        <a href="02-filedir.html">2. Navigazione tra file e directory</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -259,7 +259,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="03-create.html">3. Working With Files and Directories</a>
+        <a href="03-create.html">3. Lavorare con i file e le directory</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -271,7 +271,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="04-pipefilter.html">4. Pipes and Filters</a>
+        <a href="04-pipefilter.html">4. Tubi e filtri</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -283,7 +283,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05-loop.html">5. Loops</a>
+        <a href="05-loop.html">5. Cicli</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -295,7 +295,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="06-script.html">6. Shell Scripts</a>
+        <a href="06-script.html">6. Script di shell</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -307,7 +307,7 @@
 <div class="accordion accordion-flush" id="accordionFlush8">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading8">
-        <a href="07-find.html">7. Finding Things</a>
+        <a href="07-find.html">7. Trovare le cose</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -340,8 +340,8 @@
                       <li>
                         <a href="profiles.html">Learner Profiles</a>
                       </li>
-                      <li><a href="discuss.html">Discussion</a></li>
-<li><a href="reference.html">Summary of Basic Commands</a></li>
+                      <li><a href="discuss.html">Discussione</a></li>
+<li><a href="reference.html">Riassunto dei comandi di base</a></li>
                     </ul>
 </div>
                 </div>
@@ -371,159 +371,165 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         
         
-<section id="01-intro"><h2 class="section-heading"><a href="01-intro.html">Introducing the Shell</a></h2>
+<section id="01-intro"><h2 class="section-heading"><a href="01-intro.html">Introduzione alla shell</a></h2>
 <hr class="half-width">
 <ul>
-<li>A shell is a program whose primary purpose is to read commands and
-run other programs.</li>
-<li>This lesson uses Bash, the default shell in many implementations of
-Unix.</li>
-<li>Programs can be run in Bash by entering commands at the command-line
-prompt.</li>
-<li>The shell’s main advantages are its high action-to-keystroke ratio,
-its support for automating repetitive tasks, and its capacity to access
-networked machines.</li>
-<li>A significant challenge when using the shell can be knowing what
-commands need to be run and how to run them.</li>
-</ul></section><section id="02-filedir"><h2 class="section-heading"><a href="02-filedir.html">Navigating Files and Directories</a></h2>
+<li>Una shell è un programma il cui scopo principale è leggere i comandi
+ed eseguire altri programmi.</li>
+<li>Questa lezione utilizza Bash, la shell predefinita in molte
+implementazioni di Unix.</li>
+<li>I programmi possono essere eseguiti in Bash inserendo i comandi nel
+prompt della riga di comando.</li>
+<li>I principali vantaggi della shell sono l’elevato rapporto tra azioni
+e battute, il supporto per l’automazione di attività ripetitive e la
+capacità di accedere a macchine in rete.</li>
+<li>Una sfida significativa nell’uso della shell può essere quella di
+sapere quali comandi devono essere eseguiti e come eseguirli.</li>
+</ul></section><section id="02-filedir"><h2 class="section-heading"><a href="02-filedir.html">Navigazione tra file e directory</a></h2>
 <hr class="half-width">
 <ul>
-<li>The file system is responsible for managing information on the
-disk.</li>
-<li>Information is stored in files, which are stored in directories
-(folders).</li>
-<li>Directories can also store other directories, which then form a
-directory tree.</li>
+<li>Il file system è responsabile della gestione delle informazioni sul
+disco.</li>
+<li>Le informazioni sono memorizzate in file, che sono memorizzati in
+directory (cartelle).</li>
+<li>le directory possono anche memorizzare altre directory, che formano
+un albero di directory.</li>
 <li>
-<code>pwd</code> prints the user’s current working directory.</li>
+<code>pwd</code> stampa la directory di lavoro corrente
+dell’utente.</li>
 <li>
-<code>ls [path]</code> prints a listing of a specific file or
-directory; <code>ls</code> on its own lists the current working
+<code>ls [path]</code> stampa un elenco di uno specifico file o
+directory; <code>ls</code> da solo elenca la directory di lavoro
+corrente.</li>
+<li>
+<code>cd [path]</code> cambia la directory di lavoro corrente.</li>
+<li>La maggior parte dei comandi accetta opzioni che iniziano con un
+singolo <code>-</code>.</li>
+<li>i nomi delle directory in un percorso sono separati con
+<code>/</code> su Unix, ma <code>\</code> su Windows.</li>
+<li>
+<code>/</code> da sola è la directory principale dell’intero file
+system.</li>
+<li>Un percorso assoluto specifica una posizione dalla radice del file
+system.</li>
+<li>Un percorso relativo specifica una posizione a partire da quella
+corrente.</li>
+<li>
+<code>.</code> da solo significa “la directory corrente”;
+<code>..</code> significa “la directory sopra quella corrente”.</li>
+</ul></section><section id="03-create"><h2 class="section-heading"><a href="03-create.html">Lavorare con i file e le directory</a></h2>
+<hr class="half-width">
+<ul>
+<li>
+<code>cp [old] [new]</code> copia un file.</li>
+<li>
+<code>mkdir [path]</code> crea una nuova cartella.</li>
+<li>
+<code>mv [old] [new]</code> sposta (rinomina) un file o una
 directory.</li>
 <li>
-<code>cd [path]</code> changes the current working directory.</li>
-<li>Most commands take options that begin with a single
-<code>-</code>.</li>
-<li>Directory names in a path are separated with <code>/</code> on Unix,
-but <code>\</code> on Windows.</li>
+<code>rm [path]</code> rimuove (elimina) un file.</li>
 <li>
-<code>/</code> on its own is the root directory of the whole file
-system.</li>
-<li>An absolute path specifies a location from the root of the file
-system.</li>
-<li>A relative path specifies a location starting from the current
-location.</li>
+<code>*</code> corrisponde a zero o più caratteri in un nome di
+file, quindi <code>*.txt</code> corrisponde a tutti i file che terminano
+in <code>.txt</code>.</li>
 <li>
-<code>.</code> on its own means ‘the current directory’;
-<code>..</code> means ‘the directory above the current one’.</li>
-</ul></section><section id="03-create"><h2 class="section-heading"><a href="03-create.html">Working With Files and Directories</a></h2>
+<code>?</code> corrisponde a qualsiasi singolo carattere in un nome
+di file, quindi <code>?.txt</code> corrisponde a <code>a.txt</code> ma
+non a <code>any.txt</code>.</li>
+<li>L’uso del tasto Control può essere descritto in molti modi, tra cui
+<code>Ctrl-X</code>, <code>Control-X</code> e <code>^X</code>.</li>
+<li>La shell non ha un cestino: una volta che qualcosa è stato
+cancellato, è davvero sparito.</li>
+<li>La maggior parte dei nomi dei file è
+<code>something.extension</code>. L’estensione non è necessaria e non
+garantisce nulla, ma viene normalmente utilizzata per indicare il tipo
+di dati contenuti nel file.</li>
+<li>A seconda del tipo di lavoro svolto, potrebbe essere necessario un
+editor di testo più potente di Nano.</li>
+</ul></section><section id="04-pipefilter"><h2 class="section-heading"><a href="04-pipefilter.html">Tubi e filtri</a></h2>
 <hr class="half-width">
 <ul>
 <li>
-<code>cp [old] [new]</code> copies a file.</li>
+<code>wc</code> conta righe, parole e caratteri nei suoi input.</li>
 <li>
-<code>mkdir [path]</code> creates a new directory.</li>
+<code>cat</code> mostra il contenuto dei suoi input.</li>
 <li>
-<code>mv [old] [new]</code> moves (renames) a file or
-directory.</li>
+<code>sort</code> ordina i suoi input.</li>
 <li>
-<code>rm [path]</code> removes (deletes) a file.</li>
+<code>head</code> visualizza le prime 10 righe del suo input per
+impostazione predefinita, senza ulteriori argomenti.</li>
 <li>
-<code>*</code> matches zero or more characters in a filename, so
-<code>*.txt</code> matches all files ending in <code>.txt</code>.</li>
+<code>tail</code> visualizza le ultime 10 righe del suo input per
+impostazione predefinita, senza ulteriori argomenti.</li>
 <li>
-<code>?</code> matches any single character in a filename, so
-<code>?.txt</code> matches <code>a.txt</code> but not
-<code>any.txt</code>.</li>
-<li>Use of the Control key may be described in many ways, including
-<code>Ctrl-X</code>, <code>Control-X</code>, and <code>^X</code>.</li>
-<li>The shell does not have a trash bin: once something is deleted, it’s
-really gone.</li>
-<li>Most files’ names are <code>something.extension</code>. The
-extension isn’t required, and doesn’t guarantee anything, but is
-normally used to indicate the type of data in the file.</li>
-<li>Depending on the type of work you do, you may need a more powerful
-text editor than Nano.</li>
-</ul></section><section id="04-pipefilter"><h2 class="section-heading"><a href="04-pipefilter.html">Pipes and Filters</a></h2>
+<code>command &gt; [file]</code> reindirizza l’output di un comando
+a un file (sovrascrivendo qualsiasi contenuto esistente).</li>
+<li>
+<code>command &gt;&gt; [file]</code> aggiunge l’output di un comando
+a un file.</li>
+<li>
+<code>[first] | [second]</code> è una pipeline: l’output del primo
+comando viene usato come input del secondo.</li>
+<li>Il modo migliore per usare la shell è usare le pipe per combinare
+semplici programmi monouso (filtri).</li>
+</ul></section><section id="05-loop"><h2 class="section-heading"><a href="05-loop.html">Cicli</a></h2>
 <hr class="half-width">
 <ul>
+<li>Un ciclo <code>for</code> ripete i comandi una volta per ogni cosa
+in un elenco.</li>
+<li>Ogni ciclo <code>for</code> ha bisogno di una variabile per
+riferirsi alla cosa su cui sta operando.</li>
+<li>Usare <code>$name</code> per espandere una variabile (cioè per
+ottenere il suo valore). si può usare anche <code>${name}</code>.</li>
+<li>Non usare spazi, virgolette o caratteri jolly come ‘*’ o ‘?’ nei
+nomi dei file, perché complicano l’espansione delle variabili.</li>
+<li>Dare ai file nomi coerenti e facili da abbinare con i caratteri
+jolly, per facilitarne la selezione per il loop.</li>
+<li>Usare il tasto freccia su per scorrere i comandi precedenti e
+modificarli e ripeterli.</li>
+<li>Usare <kbd>Ctrl</kbd>+<kbd>R</kbd> per cercare tra i comandi
+precedentemente inseriti.</li>
+<li>Usare <code>history</code> per visualizzare i comandi recenti e
+<code>![number]</code> per ripetere un comando per numero.</li>
+</ul></section><section id="06-script"><h2 class="section-heading"><a href="06-script.html">Script di shell</a></h2>
+<hr class="half-width">
+<ul>
+<li>Salva i comandi in file (di solito chiamati script di shell) per
+riutilizzarli.</li>
 <li>
-<code>wc</code> counts lines, words, and characters in its
-inputs.</li>
-<li>
-<code>cat</code> displays the contents of its inputs.</li>
-<li>
-<code>sort</code> sorts its inputs.</li>
-<li>
-<code>head</code> displays the first 10 lines of its input by
-default without additional arguments.</li>
-<li>
-<code>tail</code> displays the last 10 lines of its input by default
-without additional arguments.</li>
-<li>
-<code>command &gt; [file]</code> redirects a command’s output to a
-file (overwriting any existing content).</li>
-<li>
-<code>command &gt;&gt; [file]</code> appends a command’s output to a
+<code>bash [filename]</code> esegue i comandi salvati in un
 file.</li>
 <li>
-<code>[first] | [second]</code> is a pipeline: the output of the
-first command is used as the input to the second.</li>
-<li>The best way to use the shell is to use pipes to combine simple
-single-purpose programs (filters).</li>
-</ul></section><section id="05-loop"><h2 class="section-heading"><a href="05-loop.html">Loops</a></h2>
-<hr class="half-width">
-<ul>
-<li>A <code>for</code> loop repeats commands once for every thing in a
-list.</li>
-<li>Every <code>for</code> loop needs a variable to refer to the thing
-it is currently operating on.</li>
-<li>Use <code>$name</code> to expand a variable (i.e., get its value).
-<code>${name}</code> can also be used.</li>
-<li>Do not use spaces, quotes, or wildcard characters such as ‘*’ or ‘?’
-in filenames, as it complicates variable expansion.</li>
-<li>Give files consistent names that are easy to match with wildcard
-patterns to make it easy to select them for looping.</li>
-<li>Use the up-arrow key to scroll up through previous commands to edit
-and repeat them.</li>
-<li>Use <kbd>Ctrl</kbd>+<kbd>R</kbd> to search through the previously
-entered commands.</li>
-<li>Use <code>history</code> to display recent commands, and
-<code>![number]</code> to repeat a command by number.</li>
-</ul></section><section id="06-script"><h2 class="section-heading"><a href="06-script.html">Shell Scripts</a></h2>
-<hr class="half-width">
-<ul>
-<li>Save commands in files (usually called shell scripts) for
-re-use.</li>
+<code>$@</code> si riferisce a tutti gli argomenti della riga di
+comando di uno script di shell.</li>
 <li>
-<code>bash [filename]</code> runs the commands saved in a file.</li>
-<li>
-<code>$@</code> refers to all of a shell script’s command-line
-arguments.</li>
-<li>
-<code>$1</code>, <code>$2</code>, etc., refer to the first
-command-line argument, the second command-line argument, etc.</li>
-<li>Place variables in quotes if the values might have spaces in
-them.</li>
-<li>Letting users decide what files to process is more flexible and more
-consistent with built-in Unix commands.</li>
-</ul></section><section id="07-find"><h2 class="section-heading"><a href="07-find.html">Finding Things</a></h2>
+<code>$1</code>, <code>$2</code>, ecc. si riferiscono al primo
+argomento della riga di comando, al secondo argomento della riga di
+comando, ecc.</li>
+<li>Mettere le variabili tra virgolette se i valori possono contenere
+spazi.</li>
+<li>Lasciare che siano gli utenti a decidere quali file elaborare è più
+flessibile e più coerente con i comandi Unix integrati.</li>
+</ul></section><section id="07-find"><h2 class="section-heading"><a href="07-find.html">Trovare le cose</a></h2>
 <hr class="half-width">
 <ul>
 <li>
-<code>find</code> finds files with specific properties that match
-patterns.</li>
+<code>find</code> trova file con proprietà specifiche che
+corrispondono ai modelli.</li>
 <li>
-<code>grep</code> selects lines in files that match patterns.</li>
+<code>grep</code> seleziona le righe dei file che corrispondono ai
+modelli.</li>
 <li>
-<code>--help</code> is an option supported by many bash commands,
-and programs that can be run from within Bash, to display more
-information on how to use these commands or programs.</li>
+<code>--help</code> è un’opzione supportata da molti comandi bash e
+programmi che possono essere eseguiti da Bash, per visualizzare
+ulteriori informazioni sull’uso di tali comandi o programmi.</li>
 <li>
-<code>man [command]</code> displays the manual page for a given
-command.</li>
+<code>man [command]</code> visualizza la pagina del manuale per un
+determinato comando.</li>
 <li>
-<code>$([command])</code> inserts a command’s output in place.</li>
+<code>$([command])</code> inserisce l’output di un comando al suo
+posto.</li>
 </ul></section>
 </div>
     </main>
@@ -572,8 +578,8 @@ command.</li>
   "url": "https://swcarpentry.github.io/shell-novice/key-points.html",
   "identifier": "https://swcarpentry.github.io/shell-novice/key-points.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-03-23",
-  "datePublished": "2025-03-23"
+  "dateModified": "2025-04-03",
+  "datePublished": "2025-04-03"
 }
 
   </script><script>

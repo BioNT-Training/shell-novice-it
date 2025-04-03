@@ -114,8 +114,8 @@
           </button>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 <hr>
-<li><a class="dropdown-item" href="discuss.html">Discussion</a></li>
-<li><a class="dropdown-item" href="reference.html">Summary of Basic Commands</a></li>
+<li><a class="dropdown-item" href="discuss.html">Discussione</a></li>
+<li><a class="dropdown-item" href="reference.html">Riassunto dei comandi di base</a></li>
           </ul>
 </li>
       </ul>
@@ -236,7 +236,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="01-intro.html">1. Introducing the Shell</a>
+        <a href="01-intro.html">1. Introduzione alla shell</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -248,7 +248,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="02-filedir.html">2. Navigating Files and Directories</a>
+        <a href="02-filedir.html">2. Navigazione tra file e directory</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -260,7 +260,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="03-create.html">3. Working With Files and Directories</a>
+        <a href="03-create.html">3. Lavorare con i file e le directory</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -272,7 +272,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="04-pipefilter.html">4. Pipes and Filters</a>
+        <a href="04-pipefilter.html">4. Tubi e filtri</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -284,7 +284,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05-loop.html">5. Loops</a>
+        <a href="05-loop.html">5. Cicli</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -296,7 +296,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="06-script.html">6. Shell Scripts</a>
+        <a href="06-script.html">6. Script di shell</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -308,7 +308,7 @@
 <div class="accordion accordion-flush" id="accordionFlush8">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading8">
-        <a href="07-find.html">7. Finding Things</a>
+        <a href="07-find.html">7. Trovare le cose</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -342,8 +342,8 @@
                         <a href="../instructor/images.html">Extract All Images</a>
                       </li>
                       <hr>
-<li><a class="dropdown-item" href="discuss.html">Discussion</a></li>
-<li><a class="dropdown-item" href="reference.html">Summary of Basic Commands</a></li>
+<li><a class="dropdown-item" href="discuss.html">Discussione</a></li>
+<li><a class="dropdown-item" href="reference.html">Riassunto dei comandi di base</a></li>
                     </ul>
 </div>
                 </div>
@@ -375,295 +375,323 @@
         
 
 <ul>
-<li>Why do we learn to use the shell?
+<li>Perché impariamo a usare la shell?
 <ul>
-<li>Allows users to automate repetitive tasks</li>
-<li>And capture small data manipulation steps that are normally not
-recorded to make research reproducible</li>
+<li>Permette agli utenti di automatizzare le attività ripetitive</li>
+<li>E catturare le piccole fasi di manipolazione dei dati che
+normalmente non vengono registrate per rendere la ricerca
+riproducibile</li>
 </ul>
 </li>
-<li>The Problem
+<li>Il problema
 <ul>
-<li>Running the same workflow on several samples can be unnecessarily
-labour intensive</li>
-<li>Manual manipulation of data files:
+<li>Eseguire lo stesso flusso di lavoro su più campioni può richiedere
+inutilmente molto lavoro</li>
+<li>Manipolazione manuale dei file di dati:
 <ul>
-<li>is often not captured in documentation</li>
-<li>is hard to reproduce</li>
-<li>is hard to troubleshoot, review, or improve</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>The Shell
-<ul>
-<li>Workflows can be automated through the use of shell scripts</li>
-<li>Built-in commands allow for easy data manipulation (e.g. sort, grep,
-etc.)</li>
-<li>Every step can be captured in the shell script and allow
-reproducibility and easy troubleshooting</li>
+<li>spesso non viene catturato dalla documentazione</li>
+<li>è difficile da riprodurre</li>
+<li>è difficile da risolvere, rivedere o migliorare</li>
 </ul>
 </li>
 </ul>
-<section><h2 class="section-heading" id="overall">Overall<a class="anchor" aria-label="anchor" href="#overall"></a>
+</li>
+<li>La shell
+<ul>
+<li>I flussi di lavoro possono essere automatizzati con l’uso di script
+di shell</li>
+<li>I comandi integrati consentono una facile manipolazione dei dati (ad
+es. ordinamento, grep, ecc.)</li>
+<li>Ogni passo può essere catturato nello script di shell e consentire
+la riproducibilità e la facile risoluzione dei problemi</li>
+</ul>
+</li>
+</ul>
+<section><h2 class="section-heading" id="complessivo">Complessivo<a class="anchor" aria-label="anchor" href="#complessivo"></a>
 </h2>
 <hr class="half-width">
-<p>Many people have questioned whether we should still teach the shell.
-After all, anyone who wants to rename several thousand data files can
-easily do so interactively in the Python interpreter, and anyone who’s
-doing serious data analysis is probably going to do most of their work
-inside the IPython Notebook or R Studio. So why teach the shell?</p>
-<p>The first answer is, “Because so much else depends on it.” Installing
-software, configuring your default editor, and controlling remote
-machines frequently assume a basic familiarity with the shell, and with
-related ideas like standard input and output. Many tools also use its
-terminology (for example, the <code>%ls</code> and <code>%cd</code>
-magic commands in IPython).</p>
-<p>The second answer is, “Because it’s an easy way to introduce some
-fundamental ideas about how to use computers.” As we teach people how to
-use the Unix shell, we teach them that they should get the computer to
-repeat things (via tab completion, <code>!</code> followed by a command
-number, and <code>for</code> loops) rather than repeating things
-themselves. We also teach them to take things they’ve discovered they do
-frequently and save them for later re-use (via shell scripts), to give
-things sensible names, and to write a little bit of documentation (like
-comment at the top of shell scripts) to make their future selves’ lives
-better.</p>
-<p>The third answer is, “Because it enables use of many domain-specific
-tools and compute resources researchers cannot access otherwise.”
-Familiarity with the shell is very useful for remote accessing machines,
-using high-performance computing infrastructure, and running new
-specialist tools in many disciplines. We do not teach HPC or
-domain-specific skills here but lay the groundwork for further
-development of these skills. In particular, understanding the syntax of
-commands, flags, and help systems is useful for domain specific tools
-and understanding the file system (and how to navigate it) is useful for
-remote access.</p>
-<p>Finally, and perhaps most importantly, teaching people the shell lets
-us teach them to think about programming in terms of function
-composition. In the case of the shell, this takes the form of pipelines
-rather than nested function calls, but the core idea of “small pieces,
-loosely joined” is the same.</p>
-<p>All of this material can be covered in three hours as long as
-learners using Windows do not run into roadblocks such as:</p>
+<p>Molte persone si sono chieste se dovremmo ancora insegnare la shell.
+Dopo tutto, chi vuole rinominare diverse migliaia di file di dati può
+farlo facilmente in modo interattivo nell’interprete Python, e chi fa
+un’analisi seria dei dati probabilmente farà la maggior parte del suo
+lavoro all’interno di IPython Notebook o R Studio. Quindi perché
+insegnare la shell?</p>
+<p>La prima risposta è: “Perché molto altro dipende da questo”
+L’installazione di software, la configurazione dell’editor predefinito e
+il controllo di macchine remote presuppongono spesso una familiarità di
+base con la shell e con concetti correlati come lo standard input e
+output. Molti strumenti utilizzano anche la sua terminologia (per
+esempio, i comandi magici <code>%ls</code> e <code>%cd</code> in
+IPython).</p>
+<p>La seconda risposta è: “Perché è un modo semplice per introdurre
+alcune idee fondamentali sull’uso del computer” Quando insegniamo alle
+persone a usare la shell Unix, insegniamo loro che devono far ripetere
+le cose al computer (tramite il completamento con tabulazione,
+<code>!</code> seguito da un numero di comando e loop di
+<code>for</code>) piuttosto che ripetere le cose da soli. Insegniamo
+loro anche a prendere le cose che hanno scoperto di fare frequentemente
+e a salvarle per riutilizzarle in seguito (tramite script di shell), a
+dare nomi sensati alle cose e a scrivere un po’ di documentazione (come
+i commenti in cima agli script di shell) per migliorare la vita dei loro
+futuri compagni.</p>
+<p>La terza risposta è: “Perché permette di utilizzare molti strumenti
+specifici del dominio e risorse di calcolo a cui i ricercatori non
+possono accedere altrimenti” La familiarità con la shell è molto utile
+per l’accesso remoto alle macchine, per l’utilizzo dell’infrastruttura
+di calcolo ad alte prestazioni e per l’esecuzione di nuovi strumenti
+specialistici in molte discipline. Non insegniamo competenze specifiche
+per l’HPC o per il dominio, ma poniamo le basi per un ulteriore sviluppo
+di queste competenze. In particolare, la comprensione della sintassi dei
+comandi, dei flag e dei sistemi di aiuto è utile per gli strumenti
+specifici del dominio e la comprensione del file system (e di come
+navigarlo) è utile per l’accesso remoto.</p>
+<p>Infine, e forse la cosa più importante, insegnare alle persone la
+shell ci permette di insegnare loro a pensare alla programmazione in
+termini di composizione di funzioni. Nel caso della shell, ciò assume la
+forma di pipeline piuttosto che di chiamate di funzione annidate, ma
+l’idea di base di “piccoli pezzi, uniti in modo lasco” è la stessa.</p>
+<p>Tutto questo materiale può essere trattato in tre ore, a patto che
+gli studenti che usano Windows non incontrino ostacoli quali:</p>
 <ul>
-<li>not being able to figure out where their home directory is
-(particularly if they’re using Cygwin);</li>
-<li>not being able to run a plain text editor; and</li>
-<li>the shell refusing to run scripts that include DOS line
-endings.</li>
-</ul></section><section><h2 class="section-heading" id="preparing-to-teach">Preparing to Teach<a class="anchor" aria-label="anchor" href="#preparing-to-teach"></a>
+<li>non riuscire a capire dove si trova la propria home directory
+(soprattutto se si usa Cygwin);</li>
+<li>non è possibile eseguire un editor di testo normale; e</li>
+<li>la shell che rifiuta di eseguire script che includono terminazioni
+di riga DOS.</li>
+</ul></section><section><h2 class="section-heading" id="preparazione-allinsegnamento">Preparazione all’insegnamento<a class="anchor" aria-label="anchor" href="#preparazione-allinsegnamento"></a>
 </h2>
 <hr class="half-width">
 <ul>
-<li><p>Use the <code>data</code> directory for in-workshop exercises and
-live coding examples. You can clone the shell-novice directory or use
-the <em>Download ZIP</em> button on the right to get the entire <a href="https://github.com/swcarpentry/shell-novice" class="external-link">Git repository</a>.
-We also now provide a zip file of the <code>data</code> directory at the
-<a href="index.html#setup">Setup page</a>.</p></li>
+<li><p>Usare la directory <code>data</code> per gli esercizi in
+laboratorio e gli esempi di codifica dal vivo. È possibile clonare la
+directory shell-novice o utilizzare il pulsante <em>Download ZIP</em>
+sulla destra per ottenere l’intero <a href="https://github.com/swcarpentry/shell-novice" class="external-link">repository Git</a>.
+Ora forniamo anche un file zip della directory <code>data</code> nella
+<a href="index.html#setup">pagina di installazione</a>.</p></li>
 <li>
-<p>Website: various practices have been used.</p>
+<p>Sito web: sono state utilizzate diverse pratiche.</p>
 <ul>
-<li>Option 1: Can give links to learners before the lesson so they can
-follow along, catch up, and see exercises (particularly if you’re
-following the lesson content without many changes).</li>
-<li>Option 2: Don’t show the website to the learners during the lesson,
-as it can be distracting: students may read instead of listen, and
-having another window open is an additional cognitive load.</li>
-<li>In any case, make sure to point to website as a post-workshop
-reference.</li>
+<li>Opzione 1: può dare dei link agli studenti prima della lezione in
+modo che possano seguire, recuperare e vedere gli esercizi (in
+particolare se si sta seguendo il contenuto della lezione senza molte
+modifiche).</li>
+<li>Opzione 2: non mostrare il sito web agli studenti durante la
+lezione, perché può essere fonte di distrazione: gli studenti potrebbero
+leggere invece di ascoltare, e avere un’altra finestra aperta è un
+ulteriore carico cognitivo.</li>
+<li>In ogni caso, assicuratevi di puntare al sito web come riferimento
+post-workshop.</li>
 </ul>
 </li>
-<li><p>Content: Unless you have a truly generous amount of time (4+
-hours), it is likely that you will not cover ALL the material in this
-lesson in a single half-day session. Plan ahead on what you might skip,
-what you really want to emphasize, etc.</p></li>
-<li><p>Exercises: Think in advance about how you might want to handle
-exercises during the lesson. How are you assigning them (website, slide,
-handout)? Do you want everyone to try it and then you show the solution?
-Have a learner show the solution? Have groups each do a different
-exercise and present their solutions?</p></li>
-<li><p>The <a href="reference.html">Reference page</a> can be printed
-out and given to students as a reference, your choice.</p></li>
-<li><p>Other preparation: Feel free to add your own examples or side
-comments, but know that it shouldn’t be necessary: the topics and
-commands can be taught as given on the lesson pages. If you think there
-is a place where the lesson is lacking, feel free to file an issue or
-submit a pull request.</p></li>
-</ul></section><section><h2 class="section-heading" id="teaching-notes">Teaching Notes<a class="anchor" aria-label="anchor" href="#teaching-notes"></a>
+<li><p>Contenuto: A meno che non abbiate una quantità di tempo veramente
+generosa (4+ ore), è probabile che non riuscirete a coprire TUTTO il
+materiale di questa lezione in una sola sessione di mezza giornata.
+Pianificate in anticipo ciò che potreste saltare, ciò che volete davvero
+enfatizzare, ecc.</p></li>
+<li><p>Esercizi: Pensate in anticipo a come gestire gli esercizi durante
+la lezione. Come li assegnate (sito web, slide, dispensa)? Volete che
+tutti provino e poi mostriate la soluzione? Chiedete a un discente di
+mostrare la soluzione? Fate in modo che i gruppi facciano ciascuno un
+esercizio diverso e presentino le loro soluzioni?</p></li>
+<li><p>La <a href="reference.html">pagina di riferimento</a> può essere
+stampata e data agli studenti come riferimento, a vostra
+scelta.</p></li>
+<li><p>Altra preparazione: Sentitevi liberi di aggiungere i vostri
+esempi o commenti collaterali, ma sappiate che non dovrebbe essere
+necessario: gli argomenti e i comandi possono essere insegnati come
+indicato nelle pagine delle lezioni. Se pensate che ci sia un punto in
+cui la lezione è carente, sentitevi liberi di segnalare un problema o di
+inviare una richiesta di pull.</p></li>
+</ul></section><section><h2 class="section-heading" id="note-didattiche">Note didattiche<a class="anchor" aria-label="anchor" href="#note-didattiche"></a>
 </h2>
 <hr class="half-width">
 <ul>
-<li><p>Super cool online resource! <a href="https://explainshell.com/" class="external-link">http://explainshell.com/</a> will
-dissect any shell command you type in and display help text for each
-piece. Additional nice manual tool could be <a href="https://tldr.sh/" class="external-link">http://tldr.sh/</a> with short very descriptive
-manuals for shell commands, useful especially on Windows while using Git
-BASH where <code>man</code> could not work.</p></li>
-<li><p>Another super cool online resource is <a href="https://www.shellcheck.net" class="external-link">http://www.shellcheck.net</a>, which
-will check shell scripts (both uploaded and typed in) for common
-errors.</p></li>
-<li><p>Resources for “splitting” your shell so that recent commands
-remain in view: <a href="https://github.com/rgaiacs/swc-shell-split-window" class="external-link">https://github.com/rgaiacs/swc-shell-split-window</a>.</p></li>
-<li><p>Tab completion sounds like a small thing: it isn’t. Re-running
-old commands using <code>!123</code> or <code>!wc</code> isn’t a small
-thing either, and neither are wildcard expansion and <code>for</code>
-loops. Each one is an opportunity to repeat one of the big ideas of
-Software Carpentry: if the computer <em>can</em> repeat it, some
-programmer somewhere will almost certainly have built some way for the
-computer <em>to</em> repeat it.</p></li>
-<li><p>Building up a pipeline with four or five stages, then putting it
-in a shell script for re-use and calling that script inside a
-<code>for</code> loop, is a great opportunity to show how “seven plus or
-minus two” connects to programming. Once we have figured out how to do
-something moderately complicated, we make it re-usable and give it a
-name so that it only takes up one slot in working memory rather than
-several. It is also a good opportunity to talk about exploratory
-programming: rather than designing a program up front, we can do a few
-useful things and then retroactively decide which are worth
-encapsulating for future re-use.</p></li>
-<li><p>If everything is going well, you can drive home the point that
-file extensions are essentially there to help computers (and human
-readers) understand file content and are not a requirement of files
-(covered briefly in <a href="02-filedir.html">Navigating Files and
-Directories</a>). This can be done in the <a href="04-pipefilter.html">Pipes and Filters</a> section by showing that
-you can redirect standard output to a file without the .txt extension
-(e.g., lengths), and that the resulting file is still a perfectly usable
-text file. Make the point that if double-clicked in the GUI, the
-computer will probably ask you what you want to do.</p></li>
-<li><p>We have to leave out many important things because of time
-constraints, including file permissions, job control, and SSH. If
-learners already understand the basic material, this can be covered
-instead using the online lessons as guidelines. These limitations also
-have follow-on consequences:</p></li>
-<li><p>It’s hard to discuss <code>#!</code> (shebang) without first
-discussing permissions, which we don’t do. <code>#!</code> is also <a href="https://www.in-ulm.de/~mascheck/various/shebang/" class="external-link">pretty
-complicated</a>, so even if we did discuss permissions, we probably
-still wouldn’t want to discuss <code>#!</code>.</p></li>
-<li><p>Installing Bash and a reasonable set of Unix commands on Windows
-always involves some fiddling and frustration. Please see the latest set
-of installation guidelines for advice, and try it out yourself
-<em>before</em> teaching a class.</p></li>
+<li><p>Una risorsa online davvero interessante! <a href="https://explainshell.com/" class="external-link">http://explainshell.com/</a> analizza
+qualsiasi comando di shell digitato e mostra il testo di aiuto per ogni
+parte. Un ulteriore strumento manuale potrebbe essere <a href="https://tldr.sh/" class="external-link">http://tldr.sh/</a> con brevi manuali molto
+descrittivi per i comandi di shell, utili soprattutto su Windows mentre
+si usa Git BASH dove <code>man</code> non può funzionare.</p></li>
+<li><p>Un’altra risorsa online molto interessante è <a href="https://www.shellcheck.net" class="external-link">http://www.shellcheck.net</a>, che
+controlla gli script di shell (sia caricati che digitati) per gli errori
+più comuni.</p></li>
+<li><p>Risorse per “dividere” la shell in modo che i comandi recenti
+rimangano in vista: <a href="https://github.com/rgaiacs/swc-shell-split-window" class="external-link">https://github.com/rgaiacs/swc-shell-split-window</a>.</p></li>
+<li><p>Il completamento della tabulazione sembra una cosa da poco: non
+lo è. Anche la ripetizione di vecchi comandi usando <code>!123</code> o
+<code>!wc</code> non è una cosa da poco, e nemmeno l’espansione dei
+caratteri jolly e i loop di <code>for</code>. Ognuno di essi è
+un’opportunità per ripetere una delle grandi idee della carpenteria
+software: se il computer <em>può</em> ripeterlo, qualche programmatore
+da qualche parte avrà quasi certamente costruito un modo per farlo
+<em>ripetere</em>.</p></li>
+<li><p>Costruire una pipeline con quattro o cinque stadi, poi inserirla
+in uno script di shell da riutilizzare e richiamare tale script
+all’interno di un ciclo <code>for</code>, è una grande opportunità per
+mostrare come il “sette più o meno due” si colleghi alla programmazione.
+Una volta che abbiamo capito come fare qualcosa di moderatamente
+complicato, lo rendiamo riutilizzabile e gli diamo un nome in modo che
+occupi solo uno slot nella memoria di lavoro invece di molti. È anche
+una buona occasione per parlare di programmazione esplorativa: piuttosto
+che progettare un programma a priori, possiamo fare alcune cose utili e
+poi decidere retroattivamente quali valgono la pena di essere
+incapsulate per un riutilizzo futuro.</p></li>
+<li><p>Se tutto va bene, si può far capire che le estensioni dei file
+servono essenzialmente ad aiutare i computer (e i lettori umani) a
+capire il contenuto dei file e non sono un requisito dei file (trattato
+brevemente in <a href="../episodi/02-filedir.html">Navigare tra file e
+directory</a>). Questo può essere fatto nella sezione <a href="04-pipefilter.html">Pipes e filtri</a> mostrando che è possibile
+reindirizzare l’output standard a un file senza estensione .txt (ad
+esempio, lengths) e che il file risultante è ancora un file di testo
+perfettamente utilizzabile. Fate notare che se si fa doppio clic nella
+GUI, il computer probabilmente vi chiederà cosa volete fare.</p></li>
+<li><p>Per motivi di tempo dobbiamo tralasciare molte cose importanti,
+tra cui i permessi dei file, il controllo dei lavori e SSH. Se gli
+studenti hanno già compreso il materiale di base, questo può essere
+trattato utilizzando le lezioni online come linee guida. Queste
+limitazioni hanno anche conseguenze successive:</p></li>
+<li><p>È difficile discutere di <code>#!</code> (shebang) senza prima
+discutere dei permessi, cosa che non facciamo. anche <code>#!</code> è
+<a href="https://www.in-ulm.de/~mascheck/various/shebang/" class="external-link">piuttosto
+complicato</a>, quindi anche se discutessimo di permessi, probabilmente
+non vorremmo discutere di <code>#!</code>.</p></li>
+<li><p>L’installazione di Bash e di un insieme ragionevole di comandi
+Unix su Windows comporta sempre un po’ di confusione e frustrazione. Si
+consiglia di consultare l’ultima serie di linee guida per
+l’installazione e di provarle personalmente <em>prima</em> di tenere una
+lezione.</p></li>
 <li>
-<p>By default, you may have a long string of information attached to
-your command prompt in Git Bash. To reduce the “noise” and proceed with
-a tidier prompt, enter the command:</p>
+<p>Per impostazione predefinita, è possibile che al prompt dei
+comandi di Git Bash sia allegata una lunga serie di informazioni. Per
+ridurre il “rumore” e procedere con un prompt più ordinato, immettere il
+comando:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="va">PS1</span><span class="op">=</span><span class="st">'$ '</span></span></code></pre>
 </div>
 </li>
-<li><p>On Windows machines if <code>nano</code> hasn’t been properly
-installed with the <a href="https://github.com/swcarpentry/windows-installer" class="external-link">Software
-Carpentry Windows Installer</a> it is possible to use
-<code>notepad</code> as an alternative. There will be a GUI interface
-and line endings are treated differently, but otherwise, for the
-purposes of this lesson, <code>notepad</code> and <code>nano</code> can
-be used almost interchangeably.</p></li>
+<li><p>Sui computer Windows se <code>nano</code> non è stato installato
+correttamente con il <a href="https://github.com/swcarpentry/windows-installer" class="external-link">Software
+Carpentry Windows Installer</a> è possibile utilizzare
+<code>notepad</code> come alternativa. Ci sarà un’interfaccia GUI e le
+terminazioni di riga saranno trattate in modo diverso, ma per il resto,
+ai fini di questa lezione, <code>notepad</code> e <code>nano</code>
+possono essere usati in modo quasi intercambiabile.</p></li>
 <li>
-<p>On Windows, it appears that:</p>
+<p>Su Windows, risulta che:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> cd</span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">$</span> cd Desktop</span></code></pre>
 </div>
-<p>will always put someone on their desktop (unless their machine is
-backed up using enterprise OneDrive, see next point). Have them create
-the example directory for the shell exercises there so that they can
-find it easily and watch it evolve.</p>
+<p>metterà sempre qualcuno sul suo desktop (a meno che il suo computer
+non sia sottoposto a backup tramite OneDrive aziendale, vedi punto
+successivo). Chiedete loro di creare la directory di esempio per gli
+esercizi di shell, in modo che possano trovarla facilmente e osservarne
+l’evoluzione.</p>
 </li>
 <li>
-<p>If a Windows machine is backed up with enterprise OneDrive, their
-GUI desktop may be rendered from a folder within OneDrive, which will
-not match the contents of <code>~/Desktop</code>. The OneDrive desktop
-should be accessible using one of the following commands (if the name of
-the enterprise isn’t clear, look through the output of <code>ls</code>
-to find the right folder):</p>
+<p>Se il backup di un computer Windows viene eseguito con OneDrive
+aziendale, il desktop dell’interfaccia grafica potrebbe essere
+rappresentato da una cartella all’interno di OneDrive, che non
+corrisponde al contenuto di <code>~/Desktop</code>. Il desktop di
+OneDrive dovrebbe essere accessibile utilizzando uno dei seguenti
+comandi (se il nome dell’azienda non è chiaro, cercate nell’output di
+<code>ls</code> per trovare la cartella giusta):</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> cd <span class="st">"~/OneDrive - Name Of Enterprise/Desktop"</span></span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="ex">$</span> cd <span class="st">"C:/Users/Username/OneDrive - Name Of Enterprise/Desktop"</span></span></code></pre>
 </div>
-<p>One way to spot if the computer is using this kind of configuration
-is to look at files, folders or links on the desktop. Usually the icon
-contains a shortcut/arrow symbol if it is a link, or just the plain icon
-if the file is just saved in the <code>Desktop</code> folder. Files
-synced with OneDrive contain an additional symbol indicating the sync
-status (typically blue arrows for ‘sync pending’ or a green tick for
-‘synced’).</p>
+<p>Un modo per capire se il computer utilizza questo tipo di
+configurazione è quello di guardare i file, le cartelle o i collegamenti
+sul desktop. Di solito l’icona contiene un simbolo di
+collegamento/freccia se si tratta di un link, o solo l’icona semplice se
+il file è semplicemente salvato nella cartella <code>Desktop</code>. I
+file sincronizzati con OneDrive contengono un simbolo aggiuntivo che
+indica lo stato di sincronizzazione (in genere frecce blu per
+“sincronizzazione in corso” o un segno di spunta verde per
+“sincronizzato”).</p>
 </li>
-<li><p>Stay within POSIX-compliant commands, as all the teaching
-materials do. Your particular shell may have extensions beyond POSIX
-that are not available on other machines, especially the default macOS
-bash and Windows bash emulators. For example, POSIX <code>ls</code> does
-not have an <code>--ignore=</code> or <code>-I</code> option, and POSIX
-<code>head</code> takes <code>-n 10</code> or <code>-10</code>, but not
-the long form of <code>--lines=10</code>.</p></li>
+<li><p>Rimanete all’interno dei comandi conformi a POSIX, come fa tutto
+il materiale didattico. La vostra particolare shell potrebbe avere
+estensioni che vanno oltre POSIX e che non sono disponibili su altre
+macchine, in particolare sugli emulatori bash di macOS e bash di
+Windows. Per esempio, POSIX <code>ls</code> non ha un’opzione
+<code>--ignore=</code> o <code>-I</code>, e POSIX <code>head</code>
+accetta <code>-n 10</code> o <code>-10</code>, ma non la forma lunga di
+<code>--lines=10</code>.</p></li>
 </ul></section><section><h2 class="section-heading" id="windows">Windows<a class="anchor" aria-label="anchor" href="#windows"></a>
 </h2>
 <hr class="half-width">
-<p>Installing Bash and a reasonable set of Unix commands on Windows
-always involves some fiddling and frustration. Please see the latest set
-of installation guidelines for advice, and try it out yourself
-<em>before</em> teaching a class. Options we have explored include:</p>
+<p>L’installazione di Bash e di un insieme ragionevole di comandi Unix
+su Windows comporta sempre un po’ di confusione e frustrazione.
+Consultate l’ultima serie di linee guida per l’installazione e provate
+voi stessi <em>prima</em> di tenere una lezione. Le opzioni che abbiamo
+esplorato includono:</p>
 <ol style="list-style-type: decimal">
 <li>
-<a href="https://msysgit.github.io/" class="external-link">msysGit</a> (also called “Git
-Bash”),</li>
+<a href="https://msysgit.github.io/" class="external-link">msysGit</a> (chiamato anche
+“Git Bash”),</li>
 <li>
 <a href="https://www.cygwin.com/" class="external-link">Cygwin</a>,</li>
-<li>using a desktop virtual machine, and</li>
-<li>having learners connect to a remote Unix machine (typically a VM in
-the cloud).</li>
+<li>utilizzando una macchina virtuale desktop e</li>
+<li>far collegare gli studenti a una macchina Unix remota (in genere una
+macchina virtuale nel cloud).</li>
 </ol>
-<p>Cygwin was the preferred option until mid-2013, but once we started
-teaching Git, msysGit proved to work better. Desktop virtual machines
-and cloud-based VMs work well for technically sophisticated learners,
-and can reduce installation and configuration at the start of the
-workshop, but:</p>
+<p>Cygwin era l’opzione preferita fino alla metà del 2013, ma quando
+abbiamo iniziato a insegnare Git, msysGit ha dimostrato di funzionare
+meglio. Le macchine virtuali desktop e le macchine virtuali basate su
+cloud funzionano bene per gli studenti tecnicamente sofisticati e
+possono ridurre l’installazione e la configurazione all’inizio del
+workshop, ma:</p>
 <ol style="list-style-type: decimal">
-<li>they don’t work well on underpowered machines,</li>
-<li>they’re confusing for novices (because simple things like copy and
-paste work differently),</li>
-<li>learners leave the workshop without a working environment on their
-operating system of choice, and</li>
-<li>learners may show up without having downloaded the VM or the
-wireless will go down (or become congested) during the lesson.</li>
+<li>non funzionano bene su macchine poco potenti,</li>
+<li>confondono i principianti (perché cose semplici come il copia e
+incolla funzionano in modo diverso),</li>
+<li>gli studenti lasciano il workshop senza un ambiente di lavoro sul
+sistema operativo di loro scelta, e</li>
+<li>gli studenti potrebbero presentarsi senza aver scaricato la VM o la
+rete wireless potrebbe andare fuori uso (o diventare congestionata)
+durante la lezione.</li>
 </ol>
-<p>Whatever you use, please <em>test it yourself</em> on a Windows
-machine <em>before</em> your workshop: things may always have changed
-behind your back since your last workshop. And please also make use of
-our <a href="https://github.com/swcarpentry/windows-installer" class="external-link">Software
+<p>Qualunque cosa usiate, vi preghiamo di <em>provarla</em> su una
+macchina Windows <em>prima</em> del vostro workshop: le cose potrebbero
+sempre essere cambiate a vostra insaputa dall’ultimo workshop. E fate
+anche uso del nostro <a href="https://github.com/swcarpentry/windows-installer" class="external-link">Software
 Carpentry Windows Installer</a>.</p>
-</section><section id="aggregate-instructor-notes"><section id="01-intro"><h2 class="section-heading"><a href="01-intro.html">Introducing the Shell</a></h2>
-<hr class="half-width"></section><section id="02-filedir"><h2 class="section-heading"><a href="02-filedir.html">Navigating Files and Directories</a></h2>
+</section><section id="aggregate-instructor-notes"><section id="01-intro"><h2 class="section-heading"><a href="01-intro.html">Introduzione alla shell</a></h2>
+<hr class="half-width"></section><section id="02-filedir"><h2 class="section-heading"><a href="02-filedir.html">Navigazione tra file e directory</a></h2>
 <hr class="half-width">
 <h3 id="02-filedir-headingInstructor1">
 <a href="02-filedir.html#headingInstructor1">Instructor Note</a><a class="anchor" aria-label="anchor" href="#02-filedir-headingInstructor1"></a>
 </h3>
-<p>Introducing and navigating the filesystem in the shell (covered in <a href="02-filedir.html">Navigating Files and Directories</a> section) can
-be confusing. You may have both terminal and GUI file explorer open side
-by side so learners can see the content and file structure while they’re
-using terminal to navigate the system.</p>
+<p>L’introduzione e la navigazione del filesystem nella shell (trattata
+nella sezione <a href="02-filedir.html">Navigare tra file e
+directory</a>) può creare confusione. Si possono tenere aperti fianco a
+fianco sia il terminale che il file explorer della GUI, in modo che gli
+studenti possano vedere il contenuto e la struttura dei file mentre
+usano il terminale per navigare nel sistema.</p>
 <hr>
-<br></section><section id="03-create"><h2 class="section-heading"><a href="03-create.html">Working With Files and Directories</a></h2>
+<br></section><section id="03-create"><h2 class="section-heading"><a href="03-create.html">Lavorare con i file e le directory</a></h2>
 <hr class="half-width">
 <h3 id="03-create-headingInstructor1">
 <a href="03-create.html#headingInstructor1">Instructor Note</a><a class="anchor" aria-label="anchor" href="#03-create-headingInstructor1"></a>
 </h3>
-<p>Learners can sometimes get trapped within command-line text editors
-such as Vim, Emacs, or Nano. Closing the terminal emulator and opening a
-new one can be frustrating as learners will have to navigate to the
-correct folder again. Our recommendation to mitigate this problem is
-that instructors should use the same text editor as the learners during
-workshops (in most cases Nano).</p>
+<p>Gli studenti possono talvolta rimanere intrappolati in editor di
+testo a riga di comando come Vim, Emacs o Nano. Chiudere l’emulatore di
+terminale e aprirne uno nuovo può essere frustrante, perché gli studenti
+devono navigare di nuovo nella cartella corretta. La nostra
+raccomandazione per attenuare questo problema è che gli istruttori usino
+lo stesso editor di testo degli studenti durante i workshop (nella
+maggior parte dei casi Nano).</p>
 <hr>
-<br></section><section id="04-pipefilter"><h2 class="section-heading"><a href="04-pipefilter.html">Pipes and Filters</a></h2>
-<hr class="half-width"></section><section id="05-loop"><h2 class="section-heading"><a href="05-loop.html">Loops</a></h2>
-<hr class="half-width"></section><section id="06-script"><h2 class="section-heading"><a href="06-script.html">Shell Scripts</a></h2>
-<hr class="half-width"></section><section id="07-find"><h2 class="section-heading"><a href="07-find.html">Finding Things</a></h2>
+<br></section><section id="04-pipefilter"><h2 class="section-heading"><a href="04-pipefilter.html">Tubi e filtri</a></h2>
+<hr class="half-width"></section><section id="05-loop"><h2 class="section-heading"><a href="05-loop.html">Cicli</a></h2>
+<hr class="half-width"></section><section id="06-script"><h2 class="section-heading"><a href="06-script.html">Script di shell</a></h2>
+<hr class="half-width"></section><section id="07-find"><h2 class="section-heading"><a href="07-find.html">Trovare le cose</a></h2>
 <hr class="half-width"></section></section>
 </div>
     </main>
@@ -712,8 +740,8 @@ workshops (in most cases Nano).</p>
   "url": "https://swcarpentry.github.io/shell-novice/instructor/instructor-notes.html",
   "identifier": "https://swcarpentry.github.io/shell-novice/instructor/instructor-notes.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-03-23",
-  "datePublished": "2025-03-23"
+  "dateModified": "2025-04-03",
+  "datePublished": "2025-04-03"
 }
 
   </script><script>
