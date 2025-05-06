@@ -2,4 +2,4 @@
 title: FIXME
 ---
 
-This is a placeholder file. Please add content here. 
+Questo è un file segnaposto. Si prega di aggiungere il contenuto qui.
