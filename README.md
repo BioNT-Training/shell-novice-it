@@ -34,4 +34,3 @@ of content, suggestions, clarifications, and more.
 [benson_muite]: https://carpentries.org/instructors/#benson_muite
 
 
-
