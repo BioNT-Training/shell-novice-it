@@ -8,7 +8,7 @@ exercises: 10
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Scrivere un ciclo che applichi uno o più comandi separatamente a ciascun file di un insieme di file.
-- Traccia dei valori assunti da una variabile del ciclo durante la sua esecuzione.
+- Tracciare dei valori assunti da una variabile del ciclo durante la sua esecuzione.
 - Spiegare la differenza tra il nome di una variabile e il suo valore.
 - Spiegare perché gli spazi e alcuni caratteri di punteggiatura non dovrebbero essere usati nei nomi dei file.
 - Dimostrare come vedere quali comandi sono stati eseguiti di recente.
@@ -35,13 +35,13 @@ $ head -n 5 basilisk.dat minotaur.dat unicorn.dat
 Vorremmo stampare la classificazione di ogni specie, che è riportata nella seconda riga di ogni file. Per ogni file, dobbiamo eseguire il comando `head -n 2` e inviarlo a `tail -n 1`. Per risolvere questo problema utilizzeremo un ciclo, ma prima vediamo la forma generale di un ciclo, utilizzando lo pseudo-codice seguente:
 
 ```bash
-# The word "for" indicates the start of a "For-loop" command
+# "for" indica l'inizio di un "For-loop" 
 for thing in list_of_things 
-#The word "do" indicates the start of job execution list
+# "do" indica l'inizio dell'esecuzione
 do 
-    # Indentation within the loop is not required, but aids legibility
+    # L'intentazione  non è richiesta ma rende il codice più leggibile
     operation_using/command $thing 
-# The word "done" indicates the end of a loop
+# "done" indica la fine del for loop
 done  
 ```
 
@@ -154,7 +154,7 @@ $ for loop_variable in 0 1 2 3 4 5 6 7 8 9
 
 ## Variabili nei loop
 
-Questo esercizio si riferisce alla directory `shell-lesson-data/exercise-data/alkanes`. la directory `ls *.pdb` fornisce il seguente output:
+Questo esercizio si riferisce alla cartella `shell-lesson-data/exercise-data/alkanes`. la cartella `ls *.pdb` fornisce il seguente output:
 
 ```output
 cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
@@ -275,7 +275,7 @@ $ for filename in *c*
 
 ## Salvataggio su un file in un ciclo - Prima parte
 
-Nella directory `shell-lesson-data/exercise-data/alkanes`, qual è l'effetto di questo ciclo?
+Nella cartella `shell-lesson-data/exercise-data/alkanes`, qual è l'effetto di questo ciclo?
 
 ```bash
 for alkanes in *.pdb
@@ -304,7 +304,7 @@ done
 
 ## Salvataggio su un file in un ciclo - Parte seconda
 
-Sempre nella directory `shell-lesson-data/exercise-data/alkanes`, quale sarebbe l'output del seguente ciclo?
+Sempre nella cartella `shell-lesson-data/exercise-data/alkanes`, quale sarebbe l'output del seguente ciclo?
 
 ```bash
 for datafile in *.pdb
@@ -330,7 +330,7 @@ done
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Continuiamo con il nostro esempio nella directory `shell-lesson-data/exercise-data/creatures`. Ecco un ciclo leggermente più complicato:
+Continuiamo con il nostro esempio nella cartella `shell-lesson-data/exercise-data/creatures`. Ecco un ciclo leggermente più complicato:
 
 ```bash
 $ for filename in *.dat
@@ -425,7 +425,7 @@ Questo non avrebbe eseguito il backup dei nostri file, invece si ottiene un erro
 cp: target `original-*.dat' is not a directory
 ```
 
-Questo problema si presenta quando `cp` riceve più di due input. Quando ciò accade, si aspetta che l'ultimo ingresso sia una directory in cui copiare tutti i file che gli sono stati passati. Poiché non esiste una directory denominata `original-*.dat` nella directory `creatures`, si ottiene un errore.
+Questo problema si presenta quando `cp` riceve più di due input. Quando ciò accade, si aspetta che l'ultimo ingresso sia una cartella in cui copiare tutti i file che gli sono stati passati. Poiché non esiste una cartella denominata `original-*.dat` nella cartella `creatures`, si ottiene un errore.
 
 Invece, possiamo usare un ciclo:
 
@@ -458,7 +458,7 @@ Poiché il comando `cp` normalmente non produce alcun output, è difficile verif
 
 Il diagramma seguente mostra cosa succede quando viene eseguito il ciclo modificato e dimostra come l'uso giudizioso di `echo` sia una buona tecnica di debug.
 
-![](fig/shell_script_for_loop_flow_chart.svg){alt='Il ciclo for "for filename in .dat; do echo cp $filename original-$filename;done" assegnerà successivamente i nomi di tutti i file ".dat" nella directory corrente alla variabile "$filename" e quindi eseguirà il comando. Con i file "basilisk.dat", "minotaur.dat" e "unicorn.dat" nella directory corrente, il ciclo richiamerà successivamente il comando echo tre volte e stamperà tre righe: "cp basislisk.dat original-basilisk.dat", poi "cp minotaur.datoriginal-minotaur.dat" e infine "cp unicorn.datoriginal-unicorn.dat"'}
+![](fig/shell_script_for_loop_flow_chart.svg){alt='Il ciclo for "for filename in .dat; do echo cp $filename original-$filename;done" assegnerà successivamente i nomi di tutti i file ".dat" nella cartella corrente alla variabile "$filename" e quindi eseguirà il comando. Con i file "basilisk.dat", "minotaur.dat" e "unicorn.dat" nella cartella corrente, il ciclo richiamerà successivamente il comando echo tre volte e stamperà tre righe: "cp basislisk.dat original-basilisk.dat", poi "cp minotaur.datoriginal-minotaur.dat" e infine "cp unicorn.datoriginal-unicorn.dat"'}
 
 ## Pipeline di Nelle: Elaborazione dei file
 
@@ -467,7 +467,7 @@ Nelle è ora pronta a elaborare i suoi file di dati usando `goostats.sh` --- uno
 1. un file di ingresso (contenente i dati grezzi)
 2. un file di uscita (per memorizzare le statistiche calcolate)
 
-Poiché sta ancora imparando a usare la shell, decide di costruire i comandi necessari per gradi. Il primo passo consiste nell'assicurarsi di poter selezionare i giusti file di input --- ricordate, questi sono quelli i cui nomi terminano in 'A' o 'B', piuttosto che in 'Z'. Spostandosi nella directory `north-pacific-gyre`, Nelle digita:
+Poiché sta ancora imparando a usare la shell, decide di costruire i comandi necessari per gradi. Il primo passo consiste nell'assicurarsi di poter selezionare i giusti file di input --- ricordate, questi sono quelli i cui nomi terminano in 'A' o 'B', piuttosto che in 'Z'. Spostandosi nella cartella `north-pacific-gyre`, Nelle digita:
 
 ```bash
 $ cd
@@ -620,7 +620,7 @@ $ for datafile in *.pdb
 
 ## Soluzione
 
-la seconda versione è quella che vogliamo eseguire. Questa stampa sullo schermo tutto ciò che è racchiuso tra le virgolette, espandendo il nome della variabile del ciclo perché lo abbiamo preceduto da un segno di dollaro. Inoltre, non modifica e non crea il file `all.pdb`, poiché `>>` viene trattato letteralmente come parte di una stringa e non come un'istruzione di reindirizzamento.
+La seconda versione è quella che vogliamo eseguire. Questa stampa sullo schermo tutto ciò che è racchiuso tra le virgolette, espandendo il nome della variabile del ciclo perché lo abbiamo preceduto da un segno di dollaro. Inoltre, non modifica e non crea il file `all.pdb`, poiché `>>` viene trattato letteralmente come parte di una stringa e non come un'istruzione di reindirizzamento.
 
 La prima versione aggiunge l'output del comando `echo cat $datafile` al file `all.pdb`. Questo file conterrà solo l'elenco: `cat cubane.pdb`, `cat ethane.pdb`, `cat methane.pdb` ecc.
 
@@ -652,9 +652,9 @@ $ for species in cubane ethane methane
 
 ## Soluzione
 
-Abbiamo un ciclo annidato, cioè contenuto all'interno di un altro ciclo, quindi per ogni specie nel ciclo esterno, il ciclo interno (il ciclo annidato) itera sull'elenco delle temperature e crea una nuova directory per ogni combinazione.
+Abbiamo un ciclo annidato, cioè contenuto all'interno di un altro ciclo, quindi per ogni specie nel ciclo esterno, il ciclo interno (il ciclo annidato) itera sull'elenco delle temperature e crea una nuova cartella per ogni combinazione.
 
-provate voi stessi a eseguire il codice per vedere quali directory vengono create!
+provate voi stessi a eseguire il codice per vedere quali cartelle vengono create!
 
 
 
