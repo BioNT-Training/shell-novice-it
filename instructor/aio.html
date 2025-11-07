@@ -375,7 +375,7 @@
         
 <section id="aio-01-intro"><p>Content from <a href="01-intro.html">Introduzione alla shell</a></p>
 <hr>
-<p>Ultimo aggiornamento il 2025-04-03 |
+<p>Ultimo aggiornamento il 2025-11-07 |
 
         <a href="https://github.com/swcarpentry/shell-novice/edit/main/episodes/01-intro.md" class="external-link">Modifica questa pagina <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Tempo stimato: <i aria-hidden="true" data-feather="clock"></i> 5 minuti</p>
@@ -416,19 +416,19 @@ comando invece delle interfacce grafiche.</li>
 <p>L’uomo e il computer interagiscono comunemente in molti modi diversi,
 ad esempio tramite tastiera e mouse, interfacce touch screen o sistemi
 di riconoscimento vocale. Il modo più diffuso di interagire con i
-personal computer è chiamato <strong>interfaccia utente grafica</strong>
-(GUI). Con una GUI, le istruzioni vengono impartite facendo clic con il
-mouse e utilizzando interazioni guidate da menu.</p>
+computer è chiamato <strong>interfaccia grafica</strong> (graphical user
+interface GUI). Con una GUI, le istruzioni vengono impartite facendo
+clicK con il mouse e utilizzando interazioni guidate da menu.</p>
 <p>Sebbene l’aiuto visivo di un’interfaccia grafica ne renda intuitivo
-l’apprendimento, questo modo di fornire istruzioni a un computer è molto
-poco scalabile. Immaginate il seguente compito: per una ricerca
+l’apprendimento, questo modo di fornire istruzioni a un computer è poco
+scalabile. Immaginate il seguente compito: per una ricerca
 bibliografica, dovete copiare la terza riga di mille file di testo in
 mille directory diverse e incollarla in un unico file. Utilizzando
 un’interfaccia grafica, non solo dovreste cliccare alla vostra scrivania
 per diverse ore, ma potreste anche commettere un errore nel completare
-questo compito ripetitivo. È qui che ci avvantaggiamo della shell Unix.
-La shell Unix è sia un’interfaccia a riga di comando (CLI) che un
-linguaggio di scripting, che consente di svolgere tali compiti
+questo compito ripetitivo. È qui che possiamo tratte vantaggio della
+shell Unix. La shell Unix è sia un’interfaccia a riga di comando (CLI)
+che un linguaggio di scripting, che consente di svolgere tali compiti
 ripetitivi in modo automatico e veloce. Con i comandi appropriati, la
 shell può ripetere le operazioni con o senza modifiche tutte le volte
 che si vuole. Utilizzando la shell, l’operazione descritta nell’esempio
@@ -443,7 +443,7 @@ software di modellazione climatica o semplici comandi che creano una
 directory vuota con una sola riga di codice. La shell Unix più diffusa è
 Bash (Bourne Again SHell — così chiamata perché deriva da una shell
 scritta da Stephen Bourne). Bash è la shell predefinita nella maggior
-parte delle moderne implementazioni di Unix e nella maggior parte dei
+parte delle moderne implementazioni Unix e nella maggior parte dei
 pacchetti che forniscono strumenti simili a Unix per Windows. Si noti
 che “Git Bash” è un software che consente agli utenti di Windows di
 utilizzare un’interfaccia simile a Bash quando interagiscono con
@@ -479,14 +479,14 @@ input.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span></span></code></pre>
 </div>
-<p>La shell usa tipicamente <code>$</code> come prompt, ma può usare un
-simbolo diverso. Negli esempi di questa lezione, mostreremo il prompt
-come <code>$</code>. La cosa più importante è <em>non digitare il
-prompt</em> quando si digitano i comandi. Digitate solo il comando che
-segue il prompt. Questa regola si applica sia in queste lezioni che in
-quelle di altre fonti. Si noti inoltre che dopo aver digitato un
-comando, è necessario premere il tasto <kbd>Invio</kbd> per
-eseguirlo.</p>
+<p>La shell usa tipicamente <code>$</code> il segno del dollaro come
+prompt, ma può usare un simbolo diverso. Negli esempi di questa lezione,
+mostreremo il prompt come <code>$</code>. La cosa più importante è
+<em>non digitare il prompt</em> quando si digitano i comandi. Digitate
+solo il comando che segue il prompt. Questa regola si applica sia in
+queste lezioni che in quelle di altre fonti. Si noti inoltre che dopo
+aver digitato un comando, è necessario premere il tasto <kbd>Invio</kbd>
+per eseguirlo.</p>
 <p>Il prompt è seguito da un <strong>cursore di testo</strong>, un
 carattere che indica la posizione in cui verrà visualizzata la
 digitazione. Il cursore è solitamente un blocco lampeggiante o fisso, ma
@@ -524,6 +524,7 @@ Documents   Library     Music       Public</code></pre>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="comando-non-trovato" class="callout-inner">
 <h3 class="callout-title">Comando non trovato</h3>
 <div class="callout-content">
@@ -551,19 +552,19 @@ se il programma corrispondente a quel comando non è installato.</p>
 <p>Nelle Nemo, una biologa marina, è appena tornata da un’indagine di
 sei mesi nel <a href="https://en.wikipedia.org/wiki/North_Pacific_Gyre" class="external-link">North Pacific
 Gyre</a>, dove ha campionato la vita marina gelatinosa nel <a href="https://en.wikipedia.org/wiki/Great_Pacific_Garbage_Patch" class="external-link">Great
-Pacific Garbage Patch</a>. Ha 1520 campioni che ha fatto passare
-attraverso una macchina di analisi per misurare l’abbondanza relativa di
-300 proteine. Deve far passare questi 1520 file attraverso un programma
-immaginario chiamato <code>goostats.sh</code>. Oltre a questo enorme
-compito, deve scrivere i risultati entro la fine del mese, in modo che
-il suo articolo possa apparire in un numero speciale di <em>Aquatic Goo
-Letters</em>.</p>
-<p>Se Nelle sceglie di eseguire <code>goostats.sh</code> a mano
-utilizzando un’interfaccia grafica, dovrà selezionare e aprire un file
-1520 volte. Se <code>goostats.sh</code> impiega 30 secondi per eseguire
-ogni file, l’intero processo richiederà più di 12 ore dell’attenzione di
-Nelle. Con la shell, Nelle può invece assegnare al computer questo
-compito banale mentre si concentra sulla stesura del suo articolo.</p>
+Pacific Garbage Patch</a>. Ha 1520 campioni che ha analizzato per
+misurare l’abbondanza relativa di 300 proteine. Deve far passare questi
+1520 file attraverso un programma immaginario chiamato
+<code>goostats.sh</code>. Oltre a questo enorme compito, deve scrivere i
+risultati entro la fine del mese, in modo che il suo articolo possa
+apparire in un numero speciale di <em>Aquatic Goo Letters</em>.</p>
+<p>Se Nelle dovesse scegliere di eseguire <code>goostats.sh</code> a
+mano utilizzando un’interfaccia grafica, dovrà selezionare e aprire un
+file 1520 volte. Se <code>goostats.sh</code> impiega 30 secondi per
+eseguire ogni file, l’intero processo richiederà più di 12 ore
+dell’attenzione di Nelle. Con la shell, Nelle può invece assegnare al
+computer questo compito banale mentre si concentra sulla stesura del suo
+articolo.</p>
 <p>Le prossime lezioni esploreranno i modi in cui Nelle può raggiungere
 questo obiettivo. In particolare, le lezioni spiegano come Nelle possa
 utilizzare una shell di comando per eseguire il programma
@@ -574,8 +575,8 @@ computer possa lavorare mentre lei scrive il suo articolo.</p>
 di riutilizzarla ogni volta che raccoglierà altri dati.</p>
 <p>Per svolgere il suo compito, Nelle deve sapere come fare:</p>
 <ul>
-<li>navigare in un file/directory</li>
-<li>creare un file/directory</li>
+<li>navigare in un file o in una cartella</li>
+<li>creare un file o una cartella</li>
 <li>verifica la lunghezza di un file</li>
 <li>concatenare i comandi tra loro</li>
 <li>recuperare un insieme di file</li>
@@ -586,8 +587,8 @@ di riutilizzarla ogni volta che raccoglierà altri dati.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
+<span class="callout-header">Punti Chiave</span>
 <div class="callout-inner">
-<h3 class="callout-title">Punti Chiave</h3>
 <div class="callout-content">
 <ul>
 <li>Una shell è un programma il cui scopo principale è leggere i comandi
@@ -699,6 +700,7 @@ importante sapere dove ci si trova prima di eseguire un comando.
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="variazione-della-directory-principale" class="callout-inner">
 <h3 class="callout-title">Variazione della directory principale</h3>
 <div class="callout-content">
@@ -746,6 +748,7 @@ nella directory principale <code>/</code> perché il suo nome inizia con
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="slash" class="callout-inner">
 <h3 class="callout-title">Slash</h3>
 <div class="callout-content">
@@ -818,6 +821,7 @@ di lavoro corrente.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="cancellazione-del-terminale" class="callout-inner">
 <h3 class="callout-title">Cancellazione del terminale</h3>
 <div class="callout-content">
@@ -858,6 +862,7 @@ Linux e macOS):</li>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="guida-per-i-comandi-incorporati" class="callout-inner">
 <h3 class="callout-title">Guida per i comandi incorporati</h3>
 <div class="callout-content">
@@ -917,6 +922,7 @@ Mandatory arguments to long options are mandatory for short options, too.
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="quando-usare-le-opzioni-brevi-o-lunghe" class="callout-inner">
 <h3 class="callout-title">Quando usare le opzioni brevi o lunghe</h3>
 <div class="callout-content">
@@ -935,8 +941,10 @@ molte volte e digitato una sola volta.</li>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="opzioni-della-riga-di-comando-non-supportate" class="callout-inner">
-<h3 class="callout-title">Opzioni della riga di comando non supportate</h3>
+<h3 class="callout-title">Opzioni della riga di comando non
+supportate</h3>
 <div class="callout-content">
 <p>Se si cerca di usare un’opzione non supportata, <code>ls</code> e
 altri comandi di solito stampano un messaggio di errore simile a:</p>
@@ -981,6 +989,7 @@ andare indietro).</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="pagine-di-manuale-sul-web" class="callout-inner">
 <h3 class="callout-title">Pagine di manuale sul web</h3>
 <div class="callout-content">
@@ -999,6 +1008,7 @@ lezione.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="esplorazione-di-altre-opzioni-ls" class="callout-inner">
 <h3 class="callout-title">Esplorazione di altre opzioni
 <code>ls</code>
@@ -1036,6 +1046,7 @@ del file “leggibile dall’uomo”, cioè si visualizza qualcosa come
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="elenco-in-ordine-cronologico-inverso" class="callout-inner">
 <h3 class="callout-title">Elenco in ordine cronologico inverso</h3>
 <div class="callout-content">
@@ -1243,6 +1254,7 @@ senza spazi tra le opzioni; <code>ls -F -a</code> è equivalente a
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="altri-file-nascosti" class="callout-inner">
 <h3 class="callout-title">Altri file nascosti</h3>
 <div class="callout-content">
@@ -1335,6 +1347,7 @@ essere nella directory prevista.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="altre-due-scorciatoie" class="callout-inner">
 <h3 class="callout-title">Altre due scorciatoie</h3>
 <div class="callout-content">
@@ -1386,6 +1399,7 @@ primo porta <em>su</em>, mentre il secondo porta <em>indietro</em>.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="percorsi-assoluti-e-relativi" class="callout-inner">
 <h3 class="callout-title">Percorsi assoluti e relativi</h3>
 <div class="callout-content">
@@ -1436,6 +1450,7 @@ dell’utente.</li>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="risoluzione-del-percorso-relativo" class="callout-inner">
 <h3 class="callout-title">Risoluzione del percorso relativo</h3>
 <div class="callout-content">
@@ -1476,6 +1491,7 @@ dell’utente.</li>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="ls-comprensione-della-lettura" class="callout-inner">
 <h3 class="callout-title">
 <code>ls</code> Comprensione della
@@ -1656,8 +1672,8 @@ vedremo in molti altri strumenti man mano che andremo avanti.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
+<span class="callout-header">Punti Chiave</span>
 <div class="callout-inner">
-<h3 class="callout-title">Punti Chiave</h3>
 <div class="callout-content">
 <ul>
 <li>Il file system è responsabile della gestione delle informazioni sul
@@ -1834,6 +1850,7 @@ data/  results/
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="due-modi-di-fare-la-stessa-cosa" class="callout-inner">
 <h3 class="callout-title">Due modi di fare la stessa cosa</h3>
 <div class="callout-content">
@@ -1850,6 +1867,7 @@ stessi.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="buoni-nomi-per-i-file-e-le-directory" class="callout-inner">
 <h3 class="callout-title">Buoni nomi per i file e le directory</h3>
 <div class="callout-content">
@@ -1893,7 +1911,7 @@ nome con [virgolette] singole (<a href="https://www.gnu.org/software/bash/manual
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Nota per l'Istruttore </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>Gli studenti possono talvolta rimanere intrappolati in editor di
 testo a riga di comando come Vim, Emacs o Nano. Chiudere l’emulatore di
@@ -1923,6 +1941,7 @@ creare un file chiamato <code>draft.txt</code>:</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="quale-editor" class="callout-inner">
 <h3 class="callout-title">Quale editor?</h3>
 <div class="callout-content">
@@ -1963,6 +1982,7 @@ shell.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="tasto-control-ctrl-o" class="callout-inner">
 <h3 class="callout-title">Tasto Control, Ctrl o ^</h3>
 <div class="callout-content">
@@ -2002,6 +2022,7 @@ chiamato <code>draft.txt</code>:</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="creare-file-in-modo-diverso" class="callout-inner">
 <h3 class="callout-title">Creare file in modo diverso</h3>
 <div class="callout-content">
@@ -2028,7 +2049,7 @@ grande <code>my_file.txt</code>?</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Soluzione </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Il comando <code>touch</code> genera un nuovo file chiamato
@@ -2054,6 +2075,7 @@ di testo vuoto da utilizzare per tali programmi.</p></li>
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
+<span class="callout-header">Discussione</span>
 <div id="creare-file-in-modo-diverso" class="callout-inner">
 <h3 class="callout-title">Creare file in modo diverso<em>
 (continued)</em>
@@ -2075,6 +2097,7 @@ lezione. A tale scopo, utilizzare il seguente comando:</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="cosa-cè-in-un-nome" class="callout-inner">
 <h3 class="callout-title">Cosa c’è in un nome?</h3>
 <div class="callout-content">
@@ -2207,8 +2230,10 @@ corrente:</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="spostamento-dei-file-in-una-nuova-cartella" class="callout-inner">
-<h3 class="callout-title">Spostamento dei file in una nuova cartella</h3>
+<h3 class="callout-title">Spostamento dei file in una nuova
+cartella</h3>
 <div class="callout-content">
 <p>Dopo aver eseguito i seguenti comandi, Jamie si rende conto di aver
 inserito i file <code>sucrose.dat</code> e <code>maltose.dat</code>
@@ -2238,7 +2263,7 @@ cartella <code>raw</code>.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Soluzione </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2309,6 +2334,7 @@ messaggio che indica che la directory è stata omessa perché
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="rinominare-i-file" class="callout-inner">
 <h3 class="callout-title">Rinominare i file</h3>
 <div class="callout-content">
@@ -2333,7 +2359,7 @@ comandi si può utilizzare?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Soluzione </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>No. Sebbene questa operazione crei un file con il nome corretto, il
@@ -2353,6 +2379,7 @@ nuovo nome di file; non è possibile creare nomi di file identici.</li>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="spostare-e-copiare" class="callout-inner">
 <h3 class="callout-title">Spostare e copiare</h3>
 <div class="callout-content">
@@ -2400,7 +2427,7 @@ sequenza mostrata sotto?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Soluzione </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Partiamo dalla directory <code>/Users/jamie/data</code> e creiamo una
 nuova cartella chiamata <code>recombined</code>. La seconda riga sposta
@@ -2458,6 +2485,7 @@ di ‘remove’):</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="leliminazione-è-per-sempre" class="callout-inner">
 <h3 class="callout-title">L’eliminazione è per sempre</h3>
 <div class="callout-content">
@@ -2476,6 +2504,7 @@ disco del file.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="usare-rm-in-modo-sicuro" class="callout-inner">
 <h3 class="callout-title">Usare <code>rm</code> in modo sicuro</h3>
 <div class="callout-content">
@@ -2490,7 +2519,7 @@ protezione quando si usa <code>rm</code>?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Soluzione </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2546,6 +2575,7 @@ la navigazione nel file system Unix.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="copia-con-più-nomi-di-file" class="callout-inner">
 <h3 class="callout-title">Copia con più nomi di file</h3>
 <div class="callout-content">
@@ -2585,7 +2615,7 @@ dati tre o più nomi di file?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Soluzione </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>Se viene dato più di un nome di file seguito da un nome di directory
 (cioè la directory di destinazione deve essere l’ultimo argomento),
@@ -2610,6 +2640,7 @@ contemporaneamente<a class="anchor" aria-label="anchor" href="#uso-dei-caratteri
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="caratteri-jolly" class="callout-inner">
 <h3 class="callout-title">Caratteri jolly</h3>
 <div class="callout-content">
@@ -2648,8 +2679,10 @@ altri programmi, a espandere i caratteri jolly.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="elenca-i-nomi-dei-file-che-corrispondono-a-uno-schema" class="callout-inner">
-<h3 class="callout-title">Elenca i nomi dei file che corrispondono a uno schema</h3>
+<h3 class="callout-title">Elenca i nomi dei file che corrispondono a uno
+schema</h3>
 <div class="callout-content">
 <p>Quando vengono eseguiti nella directory <code>alkanes</code>, quali
 comandi <code>ls</code> produrranno questo output?</p>
@@ -2668,7 +2701,7 @@ comandi <code>ls</code> produrranno questo output?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Soluzione </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <p>La soluzione è <code>3.</code></p>
 <p><code>1.</code> mostra tutti i file il cui nome contiene zero o più
@@ -2695,6 +2728,7 @@ corrispondere due caratteri (<code>??</code>) tra <code>t</code> e
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="altro-sui-caratteri-jolly" class="callout-inner">
 <h3 class="callout-title">Altro sui caratteri jolly</h3>
 <div class="callout-content">
@@ -2789,7 +2823,7 @@ i seguenti comandi:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8"> Soluzione </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb57">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2806,6 +2840,7 @@ i seguenti comandi:</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="organizzazione-di-directory-e-file" class="callout-inner">
 <h3 class="callout-title">Organizzazione di directory e file</h3>
 <div class="callout-content">
@@ -2853,7 +2888,7 @@ l’output mostrato?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution9" aria-expanded="false" aria-controls="collapseSolution9">
   <h4 class="accordion-header" id="headingSolution9"> Soluzione </h4>
 </button>
-<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
+<div id="collapseSolution9" class="accordion-collapse collapse" data-bs-parent="#accordionSolution9" aria-labelledby="headingSolution9">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb64">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2873,6 +2908,7 @@ l’elenco dei file .dat nella directory ‘analyzed’.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="riprodurre-la-struttura-della-cartella" class="callout-inner">
 <h3 class="callout-title">Riprodurre la struttura della cartella</h3>
 <div class="callout-content">
@@ -2942,7 +2978,7 @@ farebbero gli altri comandi?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution10" aria-expanded="false" aria-controls="collapseSolution10">
   <h4 class="accordion-header" id="headingSolution10"> Soluzione </h4>
 </button>
-<div id="collapseSolution10" class="accordion-collapse collapse" aria-labelledby="headingSolution10" data-bs-parent="#accordionSolution10">
+<div id="collapseSolution10" class="accordion-collapse collapse" data-bs-parent="#accordionSolution10" aria-labelledby="headingSolution10">
 <div class="accordion-body">
 <p>Le prime due serie di comandi raggiungono questo obiettivo. La prima
 serie utilizza percorsi relativi per creare la directory di primo
@@ -2965,8 +3001,8 @@ allo stesso livello della directory ‘data’.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
+<span class="callout-header">Punti Chiave</span>
 <div class="callout-inner">
-<h3 class="callout-title">Punti Chiave</h3>
 <div class="callout-content">
 <ul>
 <li>
@@ -3121,6 +3157,7 @@ il numero di caratteri o il numero di parole.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="perché-non-fa-nulla" class="callout-inner">
 <h3 class="callout-title">Perché non fa nulla?</h3>
 <div class="callout-content">
@@ -3200,6 +3237,7 @@ quindi <code>cat</code> ci mostra solo ciò che contiene:</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="output-pagina-per-pagina" class="callout-inner">
 <h3 class="callout-title">Output Pagina per Pagina</h3>
 <div class="callout-content">
@@ -3223,6 +3261,7 @@ faremo un esercizio per imparare qualcosa sul comando sort:</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="cosa-fa-sort--n" class="callout-inner">
 <h3 class="callout-title">Cosa fa <code>sort -n</code>?</h3>
 <div class="callout-content">
@@ -3319,6 +3358,7 @@ dei file ordinate dalla minore alla maggiore, l’output di
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="reindirizzamento-allo-stesso-file" class="callout-inner">
 <h3 class="callout-title">Reindirizzamento allo stesso file</h3>
 <div class="callout-content">
@@ -3338,6 +3378,7 @@ cancellare il contenuto di <code>lengths.txt</code>.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="cosa-significa" class="callout-inner">
 <h3 class="callout-title">Cosa significa <code>&gt;&gt;</code>?</h3>
 <div class="callout-content">
@@ -3398,6 +3439,7 @@ esiste già (cioè quando lo eseguiamo per la seconda volta).</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="applicazione-dei-dati" class="callout-inner">
 <h3 class="callout-title">Applicazione dei dati</h3>
 <div class="callout-content">
@@ -3527,6 +3569,7 @@ shell’}</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="comandi-piping-insieme" class="callout-inner">
 <h3 class="callout-title">Comandi piping insieme</h3>
 <div class="callout-content">
@@ -3585,6 +3628,7 @@ pipe per moltiplicarne la potenza.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="comprensione-della-lettura-di-pipe" class="callout-inner">
 <h3 class="callout-title">Comprensione della lettura di pipe</h3>
 <div class="callout-content">
@@ -3640,6 +3684,7 @@ righe:</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="costruzione-di-un-tubo" class="callout-inner">
 <h3 class="callout-title">Costruzione di un tubo</h3>
 <div class="callout-content">
@@ -3699,6 +3744,7 @@ contiene il file (senza duplicati nei loro nomi)?</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="quale-tubo" class="callout-inner">
 <h3 class="callout-title">Quale tubo?</h3>
 <div class="callout-content">
@@ -3833,6 +3879,7 @@ i file usando le espressioni jolly
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="rimozione-dei-file-non-necessari" class="callout-inner">
 <h3 class="callout-title">Rimozione dei file non necessari</h3>
 <div class="callout-content">
@@ -3881,8 +3928,8 @@ di file contenenti almeno un <code>.</code>, compresi i file elaborati
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
+<span class="callout-header">Punti Chiave</span>
 <div class="callout-inner">
-<h3 class="callout-title">Punti Chiave</h3>
 <div class="callout-content">
 <ul>
 <li>
@@ -4020,6 +4067,7 @@ CLASSIFICATION: equus monoceros</code></pre>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="seguire-il-prompt" class="callout-inner">
 <h3 class="callout-title">Seguire il prompt</h3>
 <div class="callout-content">
@@ -4068,6 +4116,7 @@ esce dal ciclo <code>for</code>.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="stessi-simboli-significati-diversi" class="callout-inner">
 <h3 class="callout-title">Stessi simboli, significati diversi</h3>
 <div class="callout-content">
@@ -4126,6 +4175,7 @@ nomi di file, come un elenco di numeri o un sottoinsieme di dati.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="scrivete-il-vostro-ciclo-personale" class="callout-inner">
 <h3 class="callout-title">Scrivete il vostro ciclo personale</h3>
 <div class="callout-content">
@@ -4173,6 +4223,7 @@ nomi di file, come un elenco di numeri o un sottoinsieme di dati.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="variabili-nei-loop" class="callout-inner">
 <h3 class="callout-title">Variabili nei loop</h3>
 <div class="callout-content">
@@ -4261,6 +4312,7 @@ valutato con <code>$datafile</code> e poi elencato con
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="limitare-gli-insiemi-di-file" class="callout-inner">
 <h3 class="callout-title">Limitare gli insiemi di file</h3>
 <div class="callout-content">
@@ -4304,6 +4356,7 @@ seguita da zero o più altri caratteri, verrà trovato.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="limitare-gli-insiemi-di-file" class="callout-inner">
 <h3 class="callout-title">Limitare gli insiemi di file<em>
 (continued)</em>
@@ -4350,8 +4403,10 @@ lettera c e zero o più caratteri dopo la lettera c sarà corrisposto.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="salvataggio-su-un-file-in-un-ciclo---prima-parte" class="callout-inner">
-<h3 class="callout-title">Salvataggio su un file in un ciclo - Prima parte</h3>
+<h3 class="callout-title">Salvataggio su un file in un ciclo - Prima
+parte</h3>
 <div class="callout-content">
 <p>Nella directory <code>shell-lesson-data/exercise-data/alkanes</code>,
 qual è l’effetto di questo ciclo?</p>
@@ -4406,8 +4461,10 @@ iterazione del ciclo, quindi il contenuto finale di
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="salvataggio-su-un-file-in-un-ciclo---parte-seconda" class="callout-inner">
-<h3 class="callout-title">Salvataggio su un file in un ciclo - Parte seconda</h3>
+<h3 class="callout-title">Salvataggio su un file in un ciclo - Parte
+seconda</h3>
 <div class="callout-content">
 <p>Sempre nella directory
 <code>shell-lesson-data/exercise-data/alkanes</code>, quale sarebbe
@@ -4506,6 +4563,7 @@ almeno 100 righe).</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="spazi-nei-nomi" class="callout-inner">
 <h3 class="callout-title">Spazi nei nomi</h3>
 <div class="callout-content">
@@ -4719,6 +4777,7 @@ lo modifica in modo da leggere:</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="inizio-e-fine" class="callout-inner">
 <h3 class="callout-title">Inizio e fine</h3>
 <div class="callout-content">
@@ -4749,8 +4808,10 @@ mettersi in pari con la lettura.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="chi-conosce-la-storia-può-scegliere-di-ripeterla" class="callout-inner">
-<h3 class="callout-title">Chi conosce la storia può scegliere di ripeterla</h3>
+<h3 class="callout-title">Chi conosce la storia può scegliere di
+ripeterla</h3>
 <div class="callout-content">
 <p>Un altro modo per ripetere il lavoro precedente è quello di usare il
 comando <code>history</code> per ottenere un elenco delle ultime
@@ -4781,6 +4842,7 @@ semplicemente digitando <code>!459</code>.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="altri-comandi-della-cronologia" class="callout-inner">
 <h3 class="callout-title">Altri comandi della cronologia</h3>
 <div class="callout-content">
@@ -4813,6 +4875,7 @@ può digitare <code>less !$</code> per guardare il file
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="esecuzione-a-secco" class="callout-inner">
 <h3 class="callout-title">Esecuzione a secco</h3>
 <div class="callout-content">
@@ -4884,6 +4947,7 @@ contenuto.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="cicli-annidati" class="callout-inner">
 <h3 class="callout-title">Cicli annidati</h3>
 <div class="callout-content">
@@ -4928,8 +4992,8 @@ vengono create!</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
+<span class="callout-header">Punti Chiave</span>
 <div class="callout-inner">
-<h3 class="callout-title">Punti Chiave</h3>
 <div class="callout-content">
 <ul>
 <li>Un ciclo <code>for</code> ripete i comandi una volta per ogni cosa
@@ -5052,6 +5116,7 @@ otterremmo se eseguissimo direttamente la pipeline.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="testo-vs.-qualsiasi-cosa" class="callout-inner">
 <h3 class="callout-title">Testo vs. Qualsiasi cosa</h3>
 <div class="callout-content">
@@ -5120,6 +5185,7 @@ ATOM     13  H           1      -1.183   0.500  -1.412  1.00  0.00</code></pre>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="doppie-virgolette-intorno-agli-argomenti" class="callout-inner">
 <h3 class="callout-title">Doppie virgolette intorno agli argomenti</h3>
 <div class="callout-content">
@@ -5251,6 +5317,7 @@ wc -l "$@" | sort -n</code></pre>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="elenco-delle-specie-uniche" class="callout-inner">
 <h3 class="callout-title">Elenco delle specie uniche</h3>
 <div class="callout-content">
@@ -5331,8 +5398,10 @@ accurata di come abbiamo creato la figura.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="perché-registrare-i-comandi-nella-cronologia-prima-di-eseguirli" class="callout-inner">
-<h3 class="callout-title">Perché registrare i comandi nella cronologia prima di eseguirli?</h3>
+<h3 class="callout-title">Perché registrare i comandi nella cronologia
+prima di eseguirli?</h3>
 <div class="callout-content">
 <p>Se si esegue il comando:</p>
 <div class="codewrapper sourceCode" id="cb28">
@@ -5443,6 +5512,7 @@ complessità.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="variabili-negli-script-di-shell" class="callout-inner">
 <h3 class="callout-title">Variabili negli script di shell</h3>
 <div class="callout-content">
@@ -5510,8 +5580,10 @@ virgolette. Pertanto, il primo argomento dello script è
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="trova-il-file-più-lungo-con-una-data-estensione" class="callout-inner">
-<h3 class="callout-title">Trova il file più lungo con una data estensione</h3>
+<h3 class="callout-title">Trova il file più lungo con una data
+estensione</h3>
 <div class="callout-content">
 <p>Scrivere uno script di shell chiamato <code>longest.sh</code> che
 prenda come argomenti il nome di una directory e l’estensione di un nome
@@ -5572,6 +5644,7 @@ essere sicuri di capire l’output.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="comprensione-della-lettura-degli-script" class="callout-inner">
 <h3 class="callout-title">Comprensione della lettura degli script</h3>
 <div class="callout-content">
@@ -5642,6 +5715,7 @@ shell.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="script-di-debug" class="callout-inner">
 <h3 class="callout-title">Script di Debug</h3>
 <div class="callout-content">
@@ -5700,8 +5774,8 @@ restituisce una stringa vuota.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
+<span class="callout-header">Punti Chiave</span>
 <div class="callout-inner">
-<h3 class="callout-title">Punti Chiave</h3>
 <div class="callout-content">
 <ul>
 <li>Salva i comandi in file (di solito chiamati script di shell) per
@@ -5995,6 +6069,7 @@ Miscellaneous:
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="uso-di-grep" class="callout-inner">
 <h3 class="callout-title">Uso di <code>grep</code>
 </h3>
@@ -6034,6 +6109,7 @@ anche a “di” quando è parte di un’altra parola.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="caratteri-jolly" class="callout-inner">
 <h3 class="callout-title">Caratteri jolly</h3>
 <div class="callout-content">
@@ -6072,6 +6148,7 @@ propria.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="tracciare-una-specie" class="callout-inner">
 <h3 class="callout-title">Tracciare una specie</h3>
 <div class="callout-content">
@@ -6144,6 +6221,7 @@ capire perché è così.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="piccole-donne" class="callout-inner">
 <h3 class="callout-title">Piccole donne</h3>
 <div class="callout-content">
@@ -6357,6 +6435,7 @@ non il nome del file espanso <code>numbers.txt</code>:</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="elenco-vs.-ricerca" class="callout-inner">
 <h3 class="callout-title">Elenco vs. ricerca</h3>
 <div class="callout-content">
@@ -6426,6 +6505,7 @@ Qui, per esempio, possiamo trovare i file txt che contengono la parola
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="corrispondenza-e-sottrazione" class="callout-inner">
 <h3 class="callout-title">Corrispondenza e sottrazione</h3>
 <div class="callout-content">
@@ -6473,6 +6553,7 @@ file.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="file-binari" class="callout-inner">
 <h3 class="callout-title">File binari</h3>
 <div class="callout-content">
@@ -6512,6 +6593,7 @@ pensarci”</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
+<span class="callout-header">Sfida</span>
 <div id="find-comprensione-della-lettura-del-gasdotto" class="callout-inner">
 <h3 class="callout-title">
 <code>find</code> Comprensione della lettura
@@ -6550,8 +6632,8 @@ dalla directory corrente</li>
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
+<span class="callout-header">Punti Chiave</span>
 <div class="callout-inner">
-<h3 class="callout-title">Punti Chiave</h3>
 <div class="callout-content">
 <ul>
 <li>
@@ -6598,7 +6680,7 @@ posto.</li>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template concesso in licenza sotto <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> da <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Realizzato con <a href="https://github.com/carpentries/sandpaper/tree/0.16.12" class="external-link">sandpaper (0.16.12)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a> e <a href="https://github.com/carpentries/varnish/tree/1.0.6" class="external-link">varnish (1.0.6)</a></p>
+        <p>Realizzato con <a href="https://github.com/carpentries/sandpaper/tree/0.17.1" class="external-link">sandpaper (0.17.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a> e <a href="https://github.com/carpentries/varnish/tree/1.0.7" class="external-link">varnish (1.0.7)</a></p>
 			</div>
 		</footer>
 </div> <!-- / div.container -->
@@ -6621,8 +6703,8 @@ posto.</li>
   "url": "https://swcarpentry.github.io/shell-novice/instructor/aio.html",
   "identifier": "https://swcarpentry.github.io/shell-novice/instructor/aio.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-08-04",
-  "datePublished": "2025-08-04"
+  "dateModified": "2025-11-07",
+  "datePublished": "2025-11-07"
 }
 
   </script><script>

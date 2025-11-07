@@ -325,7 +325,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduzione alla shell</h1>
-        <p>Ultimo aggiornamento il 2025-04-03 |
+        <p>Ultimo aggiornamento il 2025-11-07 |
 
         <a href="https://github.com/swcarpentry/shell-novice/edit/main/episodes/01-intro.md" class="external-link">Modifica questa pagina <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -368,19 +368,19 @@ comando invece delle interfacce grafiche.</li>
 <p>L’uomo e il computer interagiscono comunemente in molti modi diversi,
 ad esempio tramite tastiera e mouse, interfacce touch screen o sistemi
 di riconoscimento vocale. Il modo più diffuso di interagire con i
-personal computer è chiamato <strong>interfaccia utente grafica</strong>
-(GUI). Con una GUI, le istruzioni vengono impartite facendo clic con il
-mouse e utilizzando interazioni guidate da menu.</p>
+computer è chiamato <strong>interfaccia grafica</strong> (graphical user
+interface GUI). Con una GUI, le istruzioni vengono impartite facendo
+clicK con il mouse e utilizzando interazioni guidate da menu.</p>
 <p>Sebbene l’aiuto visivo di un’interfaccia grafica ne renda intuitivo
-l’apprendimento, questo modo di fornire istruzioni a un computer è molto
-poco scalabile. Immaginate il seguente compito: per una ricerca
+l’apprendimento, questo modo di fornire istruzioni a un computer è poco
+scalabile. Immaginate il seguente compito: per una ricerca
 bibliografica, dovete copiare la terza riga di mille file di testo in
 mille directory diverse e incollarla in un unico file. Utilizzando
 un’interfaccia grafica, non solo dovreste cliccare alla vostra scrivania
 per diverse ore, ma potreste anche commettere un errore nel completare
-questo compito ripetitivo. È qui che ci avvantaggiamo della shell Unix.
-La shell Unix è sia un’interfaccia a riga di comando (CLI) che un
-linguaggio di scripting, che consente di svolgere tali compiti
+questo compito ripetitivo. È qui che possiamo tratte vantaggio della
+shell Unix. La shell Unix è sia un’interfaccia a riga di comando (CLI)
+che un linguaggio di scripting, che consente di svolgere tali compiti
 ripetitivi in modo automatico e veloce. Con i comandi appropriati, la
 shell può ripetere le operazioni con o senza modifiche tutte le volte
 che si vuole. Utilizzando la shell, l’operazione descritta nell’esempio
@@ -394,7 +394,7 @@ software di modellazione climatica o semplici comandi che creano una
 directory vuota con una sola riga di codice. La shell Unix più diffusa è
 Bash (Bourne Again SHell — così chiamata perché deriva da una shell
 scritta da Stephen Bourne). Bash è la shell predefinita nella maggior
-parte delle moderne implementazioni di Unix e nella maggior parte dei
+parte delle moderne implementazioni Unix e nella maggior parte dei
 pacchetti che forniscono strumenti simili a Unix per Windows. Si noti
 che “Git Bash” è un software che consente agli utenti di Windows di
 utilizzare un’interfaccia simile a Bash quando interagiscono con
@@ -430,14 +430,14 @@ input.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span></span></code></pre>
 </div>
-<p>La shell usa tipicamente <code>$</code> come prompt, ma può usare un
-simbolo diverso. Negli esempi di questa lezione, mostreremo il prompt
-come <code>$</code>. La cosa più importante è <em>non digitare il
-prompt</em> quando si digitano i comandi. Digitate solo il comando che
-segue il prompt. Questa regola si applica sia in queste lezioni che in
-quelle di altre fonti. Si noti inoltre che dopo aver digitato un
-comando, è necessario premere il tasto <kbd>Invio</kbd> per
-eseguirlo.</p>
+<p>La shell usa tipicamente <code>$</code> il segno del dollaro come
+prompt, ma può usare un simbolo diverso. Negli esempi di questa lezione,
+mostreremo il prompt come <code>$</code>. La cosa più importante è
+<em>non digitare il prompt</em> quando si digitano i comandi. Digitate
+solo il comando che segue il prompt. Questa regola si applica sia in
+queste lezioni che in quelle di altre fonti. Si noti inoltre che dopo
+aver digitato un comando, è necessario premere il tasto <kbd>Invio</kbd>
+per eseguirlo.</p>
 <p>Il prompt è seguito da un <strong>cursore di testo</strong>, un
 carattere che indica la posizione in cui verrà visualizzata la
 digitazione. Il cursore è solitamente un blocco lampeggiante o fisso, ma
@@ -475,6 +475,7 @@ Documents   Library     Music       Public</code></pre>
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Richiamo</span>
 <div id="comando-non-trovato" class="callout-inner">
 <h3 class="callout-title">Comando non trovato</h3>
 <div class="callout-content">
@@ -500,19 +501,19 @@ se il programma corrispondente a quel comando non è installato.</p>
 <hr class="half-width"><p>Nelle Nemo, una biologa marina, è appena tornata da un’indagine di
 sei mesi nel <a href="https://en.wikipedia.org/wiki/North_Pacific_Gyre" class="external-link">North Pacific
 Gyre</a>, dove ha campionato la vita marina gelatinosa nel <a href="https://en.wikipedia.org/wiki/Great_Pacific_Garbage_Patch" class="external-link">Great
-Pacific Garbage Patch</a>. Ha 1520 campioni che ha fatto passare
-attraverso una macchina di analisi per misurare l’abbondanza relativa di
-300 proteine. Deve far passare questi 1520 file attraverso un programma
-immaginario chiamato <code>goostats.sh</code>. Oltre a questo enorme
-compito, deve scrivere i risultati entro la fine del mese, in modo che
-il suo articolo possa apparire in un numero speciale di <em>Aquatic Goo
-Letters</em>.</p>
-<p>Se Nelle sceglie di eseguire <code>goostats.sh</code> a mano
-utilizzando un’interfaccia grafica, dovrà selezionare e aprire un file
-1520 volte. Se <code>goostats.sh</code> impiega 30 secondi per eseguire
-ogni file, l’intero processo richiederà più di 12 ore dell’attenzione di
-Nelle. Con la shell, Nelle può invece assegnare al computer questo
-compito banale mentre si concentra sulla stesura del suo articolo.</p>
+Pacific Garbage Patch</a>. Ha 1520 campioni che ha analizzato per
+misurare l’abbondanza relativa di 300 proteine. Deve far passare questi
+1520 file attraverso un programma immaginario chiamato
+<code>goostats.sh</code>. Oltre a questo enorme compito, deve scrivere i
+risultati entro la fine del mese, in modo che il suo articolo possa
+apparire in un numero speciale di <em>Aquatic Goo Letters</em>.</p>
+<p>Se Nelle dovesse scegliere di eseguire <code>goostats.sh</code> a
+mano utilizzando un’interfaccia grafica, dovrà selezionare e aprire un
+file 1520 volte. Se <code>goostats.sh</code> impiega 30 secondi per
+eseguire ogni file, l’intero processo richiederà più di 12 ore
+dell’attenzione di Nelle. Con la shell, Nelle può invece assegnare al
+computer questo compito banale mentre si concentra sulla stesura del suo
+articolo.</p>
 <p>Le prossime lezioni esploreranno i modi in cui Nelle può raggiungere
 questo obiettivo. In particolare, le lezioni spiegano come Nelle possa
 utilizzare una shell di comando per eseguire il programma
@@ -522,8 +523,8 @@ computer possa lavorare mentre lei scrive il suo articolo.</p>
 <p>Una volta messa insieme una pipeline di elaborazione, sarà in grado
 di riutilizzarla ogni volta che raccoglierà altri dati.</p>
 <p>Per svolgere il suo compito, Nelle deve sapere come fare:</p>
-<ul><li>navigare in un file/directory</li>
-<li>creare un file/directory</li>
+<ul><li>navigare in un file o in una cartella</li>
+<li>creare un file o una cartella</li>
 <li>verifica la lunghezza di un file</li>
 <li>concatenare i comandi tra loro</li>
 <li>recuperare un insieme di file</li>
@@ -533,8 +534,8 @@ di riutilizzarla ogni volta che raccoglierà altri dati.</p>
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
+<span class="callout-header">Punti Chiave</span>
 <div class="callout-inner">
-<h3 class="callout-title">Punti Chiave</h3>
 <div class="callout-content">
 <ul><li>Una shell è un programma il cui scopo principale è leggere i comandi
 ed eseguire altri programmi.</li>
@@ -586,7 +587,7 @@ sapere quali comandi devono essere eseguiti e come eseguirli.</li>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template concesso in licenza sotto <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> da <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Realizzato con <a href="https://github.com/carpentries/sandpaper/tree/0.16.12" class="external-link">sandpaper (0.16.12)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a> e <a href="https://github.com/carpentries/varnish/tree/1.0.6" class="external-link">varnish (1.0.6)</a></p>
+        <p>Realizzato con <a href="https://github.com/carpentries/sandpaper/tree/0.17.1" class="external-link">sandpaper (0.17.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a> e <a href="https://github.com/carpentries/varnish/tree/1.0.7" class="external-link">varnish (1.0.7)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -608,8 +609,8 @@ sapere quali comandi devono essere eseguiti e come eseguirli.</li>
   "url": "https://swcarpentry.github.io/shell-novice/instructor/01-intro.html",
   "identifier": "https://swcarpentry.github.io/shell-novice/instructor/01-intro.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-04-03",
-  "datePublished": "2025-08-04"
+  "dateModified": "2025-11-07",
+  "datePublished": "2025-11-07"
 }
 
   </script><script>
