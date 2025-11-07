@@ -39,7 +39,7 @@ head -n 15 octane.pdb | tail -n 5
 
 Questa è una variante della pipe costruita in precedenza, che seleziona le righe 11-15 del file `octane.pdb`. Ricordate che non lo stiamo ancora eseguendo come comando; stiamo solo incorporando i comandi in un file.
 
-Poi si salva il file (`Ctrl-O` in nano) e si esce dall'editor di testo (`Ctrl-X` in nano). Verificare che la directory `alkanes` contenga ora un file chiamato `middle.sh`.
+Poi si salva il file (`Ctrl-O` in nano) e si esce dall'editor di testo (`Ctrl-X` in nano). Verificare che la cartella `alkanes` contenga ora un file chiamato `middle.sh`.
 
 Una volta salvato il file, possiamo chiedere alla shell di eseguire i comandi in esso contenuti. La nostra shell si chiama `bash`, quindi eseguiamo il seguente comando:
 
@@ -234,14 +234,14 @@ Scrivere uno script di shell chiamato `species.sh` che accetta un numero qualsia
 ## Soluzione
 
 ```bash
-# Script to find unique species in csv files where species is the second data field
-# This script accepts any number of file names as command line arguments
+# Script per trovare le specie uniche nei file CSV, dove la specie è il secondo campo di dati.
+# Questo script accetta un numero qualsiasi di nomi di file come argomenti da riga di comando.
 
 # Loop over all files
 for file in $@
 do
     echo "Unique species in $file:"
-    # Extract species names
+    # Estrae i nomi delle specie
     cut -d , -f 2 $file | sort | uniq
 done
 ```
@@ -292,7 +292,7 @@ Se un comando provoca un arresto anomalo o un blocco, potrebbe essere utile sape
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-In pratica, la maggior parte delle persone sviluppa script di shell eseguendo i comandi al prompt della shell un paio di volte per assicurarsi che stiano facendo la cosa giusta, poi li salva in un file per riutilizzarli. Questo stile di lavoro consente di riciclare ciò che si scopre sui propri dati e sul proprio flusso di lavoro con una sola chiamata a `history` e un po' di modifiche per ripulire l'output e salvarlo come script di shell.
+In pratica, la maggior parte delle persone sviluppa script eseguendo i comandi al prompt della shell un paio di volte per assicurarsi che stiano facendo la cosa giusta, poi li salva in un file per riutilizzarli. Questo stile di lavoro consente di riciclare ciò che si scopre sui propri dati e sul proprio flusso di lavoro con una sola chiamata a `history` e un po' di modifiche per ripulire l'output e salvarlo come script di shell.
 
 ## Pipeline di Nelle: Creazione di uno script
 
@@ -313,7 +313,7 @@ $ nano do-stats.sh
 ... che contiene quanto segue:
 
 ```bash
-# Calculate stats for data files.
+# Calcola le statistiche per i file di dati.
 for datafile in "$@"
 do
     echo $datafile
@@ -352,14 +352,14 @@ Il vantaggio è che in questo modo si selezionano sempre i file giusti, senza do
 
 ## Variabili negli script di shell
 
-Nella directory `alkanes`, immaginate di avere uno script di shell chiamato `script.sh` contenente i seguenti comandi:
+Nella cartella `alkanes`, immaginate di avere uno script di shell chiamato `script.sh` contenente i seguenti comandi:
 
 ```bash
 head -n $2 $1
 tail -n $3 $1
 ```
 
-Mentre ci si trova nella directory `alkanes`, si digita il seguente comando:
+Mentre ci si trova nella cartella `alkanes`, si digita il seguente comando:
 
 ```bash
 $ bash script.sh '*.pdb' 1 1
@@ -367,9 +367,9 @@ $ bash script.sh '*.pdb' 1 1
 
 Quale dei seguenti risultati vi aspettereste di vedere?
 
-1. Tutte le righe tra la prima e l'ultima di ogni file che termina con `.pdb` nella directory `alkanes`
-2. La prima e l'ultima riga di ogni file che termina con `.pdb` nella directory `alkanes`
-3. La prima e l'ultima riga di ogni file nella directory `alkanes`
+1. Tutte le righe tra la prima e l'ultima di ogni file che termina con `.pdb` nella cartella `alkanes`
+2. La prima e l'ultima riga di ogni file che termina con `.pdb` nella cartella `alkanes`
+3. La prima e l'ultima riga di ogni file nella cartella `alkanes`
 4. Errore a causa delle virgolette intorno a `*.pdb`
 
 ::::::::::::::: solution
@@ -397,7 +397,7 @@ La shell non espande `'*.pdb'` perché è racchiuso tra virgolette. Pertanto, il
 
 ## Trova il file più lungo con una data estensione
 
-Scrivere uno script di shell chiamato `longest.sh` che prenda come argomenti il nome di una directory e l'estensione di un nome di file e stampi il nome del file con il maggior numero di righe in quella directory con quell'estensione. Ad esempio:
+Scrivere uno script di shell chiamato `longest.sh` che prenda come argomenti il nome di una cartella e l'estensione di un nome di file e stampi il nome del file con il maggior numero di righe in quella cartella con quell'estensione. Ad esempio:
 
 ```bash
 $ bash longest.sh shell-lesson-data/exercise-data/alkanes pdb
@@ -437,7 +437,7 @@ Con `wc -l $1/*.$2 | sort -n | tail -n 1` vedremo la riga di riepilogo finale: p
 
 ## Comprensione della lettura degli script
 
-Per questa domanda, consideriamo ancora una volta la directory `shell-lesson-data/exercise-data/alkanes`. Questa contiene una serie di file `.pdb` oltre ad altri file eventualmente creati. Spiegare che cosa farebbe ciascuno dei tre script seguenti se eseguito rispettivamente come `bash script1.sh *.pdb`, `bash script2.sh *.pdb` e `bash script3.sh *.pdb`.
+Per questa domanda, consideriamo ancora una volta la cartella `shell-lesson-data/exercise-data/alkanes`. Questa contiene una serie di file `.pdb` oltre ad altri file eventualmente creati. Spiegare che cosa farebbe ciascuno dei tre script seguenti se eseguito rispettivamente come `bash script1.sh *.pdb`, `bash script2.sh *.pdb` e `bash script3.sh *.pdb`.
 
 ```bash
 # Script 1
@@ -481,7 +481,7 @@ cubane.pdb ethane.pdb methane.pdb octane.pdb pentane.pdb propane.pdb.pdb
 
 ## Script di Debug
 
-Si supponga di aver salvato il seguente script in un file chiamato `do-errors.sh` nella directory `north-pacific-gyre` di Nelle:
+Si supponga di aver salvato il seguente script in un file chiamato `do-errors.sh` nella cartella `north-pacific-gyre` di Nelle:
 
 ```bash
 # Calculate stats for data files.
@@ -492,7 +492,7 @@ do
 done
 ```
 
-Quando lo si esegue dalla directory `north-pacific-gyre`:
+Quando lo si esegue dalla cartella `north-pacific-gyre`:
 
 ```bash
 $ bash do-errors.sh NENE*A.txt NENE*B.txt
