@@ -8,7 +8,7 @@ exercises: 10
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Spiegare il vantaggio di collegare i comandi con pipe e filtri.
-- combinare sequenze di comandi per ottenere un nuovo output
+- Combinare sequenze di comandi per ottenere un nuovo output
 - Reindirizzare l'output di un comando a un file.
 - Spiegate cosa succede di solito se a un programma o a una pipeline non viene dato alcun input da elaborare.
 
@@ -21,7 +21,7 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Ora che conosciamo alcuni comandi di base, possiamo finalmente esaminare la caratteristica più potente della shell: la facilità con cui ci permette di combinare programmi esistenti in modi nuovi. Inizieremo con la directory `shell-lesson-data/exercise-data/alkanes` che contiene sei file che descrivono alcune semplici molecole organiche. L'estensione `.pdb` indica che questi file sono in formato Protein Data Bank, un semplice formato di testo che specifica il tipo e la posizione di ogni atomo nella molecola.
+Ora che conosciamo alcuni comandi di base, possiamo finalmente esaminare la caratteristica più potente della shell: la facilità con cui ci permette di combinare programmi esistenti in modi nuovi. Inizieremo con la cartella `shell-lesson-data/exercise-data/alkanes` che contiene sei file che descrivono alcune semplici molecole organiche. L'estensione `.pdb` indica che questi file sono in formato Protein Data Bank, un semplice formato di testo che specifica il tipo e la posizione di ogni atomo nella molecola.
 
 ```bash
 $ ls
@@ -44,7 +44,7 @@ $ wc cubane.pdb
 
 `wc` è il comando "contaparole": conta il numero di righe, parole e caratteri nei file (restituendo i valori in questo ordine, da sinistra a destra).
 
-Se si esegue il comando `wc *.pdb`, il `*` in `*.pdb` corrisponde a zero o più caratteri, quindi la shell trasforma `*.pdb` in un elenco di tutti i file `.pdb` nella directory corrente:
+Se si esegue il comando `wc *.pdb`, il `*` in `*.pdb` corrisponde a zero o più caratteri, quindi la shell trasforma `*.pdb` in un elenco di tutti i file `.pdb` nella cartella corrente:
 
 ```bash
 $ wc *.pdb
@@ -366,7 +366,7 @@ Il reindirizzamento e le pipe utilizzate negli ultimi comandi sono illustrati di
 
 ## Comandi piping insieme
 
-Nella nostra directory corrente, vogliamo trovare i 3 file che hanno il minor numero di righe. Quale comando elencato di seguito potrebbe funzionare?
+Nella nostra cartella corrente, vogliamo trovare i 3 file che hanno il minor numero di righe. Quale comando elencato di seguito potrebbe funzionare?
 
 1. `wc -l * > sort -n > head -n 3`
 2. `wc -l * | sort -n | head -n 1-3`
@@ -377,7 +377,7 @@ Nella nostra directory corrente, vogliamo trovare i 3 file che hanno il minor nu
 
 ## Soluzione
 
-L'opzione 4 è la soluzione. Il carattere pipe `|` viene usato per collegare l'uscita di un comando all'ingresso di un altro. il carattere `>` è usato per reindirizzare l'output standard a un file. Provatelo nella directory `shell-lesson-data/exercise-data/alkanes`!
+L'opzione 4 è la soluzione. Il carattere pipe `|` viene usato per collegare l'uscita di un comando all'ingresso di un altro. il carattere `>` è usato per reindirizzare l'output standard a un file. Provatelo nella cartella `shell-lesson-data/exercise-data/alkanes`!
 
 
 
@@ -495,7 +495,7 @@ Il comando `uniq` ha un'opzione `-c` che fornisce un conteggio del numero di vol
 
 ## Soluzione
 
-L'opzione 4. è la risposta corretta. Se avete difficoltà a capire perché, provate a eseguire i comandi o le sottosezioni delle pipeline (assicuratevi di essere nella directory `shell-lesson-data/exercise-data/animal-counts`).
+L'opzione 4. è la risposta corretta. Se avete difficoltà a capire perché, provate a eseguire i comandi o le sottosezioni delle pipeline (assicuratevi di essere nella cartella `shell-lesson-data/exercise-data/animal-counts`).
 
 
 
@@ -505,7 +505,7 @@ L'opzione 4. è la risposta corretta. Se avete difficoltà a capire perché, pro
 
 ## Pipeline di Nelle: Controllo dei file
 
-Nelle ha fatto passare i suoi campioni attraverso le macchine di analisi e ha creato 17 file nella directory `north-pacific-gyre` descritta in precedenza. Per un rapido controllo, partendo dalla directory `shell-lesson-data`, Nelle digita:
+Nelle ha fatto passare i suoi campioni attraverso le macchine di analisi e ha creato 17 file nella cartella `north-pacific-gyre` descritta in precedenza. Per un rapido controllo, partendo dalla cartella `shell-lesson-data`, Nelle digita:
 
 ```bash
 $ cd north-pacific-gyre
@@ -581,7 +581,7 @@ Supponiamo di voler cancellare i file dei dati elaborati e di voler conservare s
 
 1. Questo rimuove i file `.txt` con nomi di un solo carattere
 2. Questa è la risposta corretta
-3. La shell espanderebbe `*` per far corrispondere tutto ciò che si trova nella directory corrente, quindi il comando cercherebbe di rimuovere tutti i file corrispondenti e un file aggiuntivo chiamato `.txt`
+3. La shell espanderebbe `*` per far corrispondere tutto ciò che si trova nella cartella corrente, quindi il comando cercherebbe di rimuovere tutti i file corrispondenti e un file aggiuntivo chiamato `.txt`
 4. La shell espande `*.*` per far corrispondere tutti i nomi di file contenenti almeno un `.`, compresi i file elaborati (`.txt`) *e* i file grezzi (`.dat`)
 
 :::::::::::::::::::::::::
