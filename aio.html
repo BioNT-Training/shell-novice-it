@@ -1690,7 +1690,7 @@ corrente.</li>
 </div>
 </section></section><section id="aio-03-create"><p>Content from <a href="03-create.html">Lavorare con i file e le directory</a></p>
 <hr>
-<p>Ultimo aggiornamento il 2025-04-03 |
+<p>Ultimo aggiornamento il 2025-11-07 |
 
         <a href="https://github.com/swcarpentry/shell-novice/edit/main/episodes/03-create.md" class="external-link">Modifica questa pagina <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1704,7 +1704,7 @@ corrente.</li>
 <div class="inner">
 <h3 class="card-title">Domande</h3>
 <ul>
-<li>Come posso creare, copiare ed eliminare file e directory?</li>
+<li>Come posso creare, copiare ed eliminare file e cartelle?</li>
 <li>Come posso modificare i file?</li>
 </ul>
 </div>
@@ -1715,10 +1715,10 @@ corrente.</li>
 <div class="inner bordered">
 <h3 class="card-title">Obiettivi</h3>
 <ul>
-<li>Eliminare, copiare e spostare file e/o directory specificati.</li>
+<li>Eliminare, copiare e spostare file e/o cartelle.</li>
 <li>Creare i file in questa gerarchia usando un editor o copiando e
 rinominando i file esistenti.</li>
-<li>Creare una gerarchia di directory che corrisponda a un diagramma
+<li>Creare una gerarchia di cartelle che corrisponda a un diagramma
 dato.</li>
 </ul>
 </div>
@@ -1729,10 +1729,10 @@ dato.</li>
 <section><h2 class="section-heading" id="creazione-di-directory">Creazione di directory<a class="anchor" aria-label="anchor" href="#creazione-di-directory"></a>
 </h2>
 <hr class="half-width">
-<p>Ora sappiamo come esplorare i file e le directory, ma come
+<p>Ora sappiamo come esplorare i file e le cartelle, ma come
 crearli?</p>
 <p>In questo episodio impareremo a creare e spostare file e directory,
-utilizzando come esempio la directory
+utilizzando come esempio la cartella
 <code>exercise-data/writing</code>.</p>
 <div class="section level3">
 <h3 id="fase-uno-vedere-dove-siamo-e-cosa-abbiamo-già">Fase uno: vedere dove siamo e cosa abbiamo già<a class="anchor" aria-label="anchor" href="#fase-uno-vedere-dove-siamo-e-cosa-abbiamo-gi%C3%A0"></a>
@@ -1777,7 +1777,7 @@ comando <code>mkdir thesis</code> (che non ha output):</p>
 <p>Come si può intuire dal nome, <code>mkdir</code> significa “directory
 make”. Poiché <code>thesis</code> è un percorso relativo (cioè non ha
 una barra iniziale, come <code>/what/ever/thesis</code>), la nuova
-directory viene creata nella directory di lavoro corrente:</p>
+cartella viene creata nella cartella di lavoro corrente:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1796,18 +1796,18 @@ c’è ancora nulla al suo interno:</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-F</span> thesis</span></code></pre>
 </div>
 <p>Si noti che <code>mkdir</code> non si limita a creare singole
-directory una alla volta. L’opzione <code>-p</code> permette a
-<code>mkdir</code> di creare una directory con sottodirectory annidate
-in una singola operazione:</p>
+cartelle una alla volta. L’opzione <code>-p</code> permette a
+<code>mkdir</code> di creare una cartella con sottocartelle annidate in
+una singola operazione:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">$</span> mkdir <span class="at">-p</span> ../project/data ../project/results</span></code></pre>
 </div>
 <p>L’opzione <code>-R</code> del comando <code>ls</code> elenca tutte le
-sottodirectory annidate all’interno di una directory. Usiamo
+sottocartelle annidate all’interno di una cartella. Usiamo
 <code>ls -FR</code> per elencare ricorsivamente la nuova gerarchia di
-directory appena creata nella directory <code>project</code>:</p>
+cartelle appena creata nella cartella <code>project</code>:</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1831,11 +1831,11 @@ data/  results/
 <div id="due-modi-di-fare-la-stessa-cosa" class="callout-inner">
 <h3 class="callout-title">Due modi di fare la stessa cosa</h3>
 <div class="callout-content">
-<p>l’uso della shell per creare una directory non è diverso dall’uso di
-un file explorer. Se si apre la directory corrente utilizzando il file
-explorer grafico del sistema operativo, la directory <code>thesis</code>
+<p>l’uso della shell per creare una cartella non è diverso dall’uso di
+un file explorer. Se si apre la cartella corrente utilizzando il file
+explorer grafico del sistema operativo, la cartella <code>thesis</code>
 apparirà anche lì. Mentre la shell e il file explorer sono due modi
-diversi di interagire con i file, i file e le directory sono gli
+diversi di interagire con i file, i file e le cartelle sono gli
 stessi.</p>
 </div>
 </div>
@@ -1848,9 +1848,9 @@ stessi.</p>
 <div id="buoni-nomi-per-i-file-e-le-directory" class="callout-inner">
 <h3 class="callout-title">Buoni nomi per i file e le directory</h3>
 <div class="callout-content">
-<p>I nomi complicati di file e directory possono rendere la vita
+<p>I nomi complicati di file e cartelle possono rendere la vita
 difficile quando si lavora alla riga di comando. Qui forniamo alcuni
-suggerimenti utili per i nomi dei file e delle directory.</p>
+suggerimenti utili per i nomi dei file e delle cartelle.</p>
 <ol style="list-style-type: decimal">
 <li>Non usare spazi.</li>
 </ol>
@@ -1876,7 +1876,7 @@ basso).</li>
 comando. Ne conosceremo alcuni nel corso di questa lezione. Ci sono
 caratteri speciali che possono far sì che il vostro comando non funzioni
 come previsto e possono persino causare la perdita di dati.</p>
-<p>Se è necessario fare riferimento a nomi di file o directory che
+<p>Se è necessario fare riferimento a nomi di file o cartelle che
 contengono spazi o altri caratteri speciali, è necessario circondare il
 nome con [virgolette] singole (<a href="https://www.gnu.org/software/bash/manual/html_node/Quoting.html" class="external-link uri">https://www.gnu.org/software/bash/manual/html_node/Quoting.html</a>)
 (<code>''</code>).</p>
@@ -1888,7 +1888,7 @@ nome con [virgolette] singole (<a href="https://www.gnu.org/software/bash/manual
 <div class="section level3">
 <h3 id="creare-un-file-di-testo">Creare un file di testo<a class="anchor" aria-label="anchor" href="#creare-un-file-di-testo"></a>
 </h3>
-<p>Cambiamo la nostra directory di lavoro in <code>thesis</code> usando
+<p>Cambiamo la nostra cartella di lavoro in <code>thesis</code> usando
 <code>cd</code>, quindi eseguiamo un editor di testo chiamato Nano per
 creare un file chiamato <code>draft.txt</code>:</p>
 <div class="codewrapper sourceCode" id="cb12">
@@ -1920,10 +1920,10 @@ eseguito dalla riga di comando allo stesso modo di <code>nano</code> per
 gli scopi di questa lezione.</p>
 <p>Indipendentemente dall’editor utilizzato, è necessario sapere dove
 cerca e salva i file. Se lo si avvia dalla shell, (probabilmente) userà
-la directory di lavoro corrente come posizione predefinita. Se si
+la cartella di lavoro corrente come posizione predefinita. Se si
 utilizza il menu di avvio del computer, potrebbe voler salvare i file
-nella directory Desktop o Documenti. È possibile cambiare questa scelta
-navigando in un’altra directory la prima volta che si fa “Salva con
+nella cartella Desktop o Documenti. È possibile cambiare questa scelta
+navigando in un’altra cartella la prima volta che si fa “Salva con
 nome…”</p>
 </div>
 </div>
@@ -1995,7 +1995,7 @@ chiamato <code>draft.txt</code>:</p>
 </div>
 <ol style="list-style-type: decimal">
 <li><p>Cosa ha fatto il comando <code>touch</code>? Quando si guarda
-alla directory corrente usando l’esploratore di file della GUI, il file
+alla cartella corrente usando l’esploratore di file della GUI, il file
 appare?</p></li>
 <li><p>Utilizzare <code>ls -l</code> per ispezionare i file. Quanto è
 grande <code>my_file.txt</code>?</p></li>
@@ -2013,7 +2013,7 @@ grande <code>my_file.txt</code>?</p></li>
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Il comando <code>touch</code> genera un nuovo file chiamato
-<code>my_file.txt</code> nella directory corrente. È possibile osservare
+<code>my_file.txt</code> nella cartella corrente. È possibile osservare
 questo nuovo file generato digitando <code>ls</code> al prompt della
 riga di comando. il file <code>my_file.txt</code> può anche essere
 visualizzato nel file explorer della GUI.</p></li>
@@ -2098,7 +2098,7 @@ erroneamente) di aprire il file <code>whale.mp3</code>.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">$</span> cd ~/Desktop/shell-lesson-data/exercise-data/writing</span></code></pre>
 </div>
-<p>Nella nostra directory <code>thesis</code> abbiamo un file
+<p>Nella nostra cartella <code>thesis</code> abbiamo un file
 <code>draft.txt</code> che non è un nome particolarmente informativo,
 quindi cambiamo il nome del file usando <code>mv</code>, che è
 l’abbreviazione di ‘move’:</p>
@@ -2131,22 +2131,22 @@ dati. Per impostazione predefinita, <code>mv</code> non chiede conferma
 prima di sovrascrivere i file. Tuttavia, un’opzione aggiuntiva,
 <code>mv -i</code> (o <code>mv --interactive</code>), farà sì che
 <code>mv</code> richieda tale conferma.</p>
-<p>Si noti che <code>mv</code> funziona anche sulle directory.</p>
-<p>Spostiamo <code>quotes.txt</code> nella directory di lavoro corrente.
+<p>Si noti che <code>mv</code> funziona anche sulle cartelle.</p>
+<p>Spostiamo <code>quotes.txt</code> nella cartella di lavoro corrente.
 Usiamo ancora una volta <code>mv</code>, ma questa volta useremo solo il
-nome di una directory come secondo argomento per dire a <code>mv</code>
+nome di una cartella come secondo argomento per dire a <code>mv</code>
 che vogliamo mantenere il nome del file ma metterlo in un posto nuovo.
-(In questo caso, il nome della directory che utilizziamo è il nome
-speciale della directory <code>.</code> di cui abbiamo parlato in
+(In questo caso, il nome della cartella che utilizziamo è il nome
+speciale della cartella <code>.</code> di cui abbiamo parlato in
 precedenza.</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> mv thesis/quotes.txt .</span></code></pre>
 </div>
-<p>L’effetto è quello di spostare il file dalla directory in cui si
-trovava alla directory di lavoro corrente. <code>ls</code> ora mostra
-che <code>thesis</code> è vuoto:</p>
+<p>L’effetto è quello di spostare il file dalla cartella in cui si
+trovava alla cartella di lavoro corrente. <code>ls</code> ora mostra che
+<code>thesis</code> è vuoto:</p>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2170,11 +2170,11 @@ che <code>thesis</code> è vuoto:</p>
 </h3>
 <pre class="error" tabindex="0"><code>ls: cannot access 'thesis/quotes.txt': No such file or directory</code></pre>
 </div>
-<p><code>ls</code> con un nome di file o una directory come argomento
-elenca solo il file o la directory richiesti. Se il file dato come
+<p><code>ls</code> con un nome di file o una cartella come argomento
+elenca solo il file o la cartella richiesti. Se il file dato come
 argomento non esiste, la shell restituisce un errore come abbiamo visto
 sopra. Possiamo usare questa funzione per vedere che
-<code>quotes.txt</code> è ora presente nella nostra directory
+<code>quotes.txt</code> è ora presente nella nostra cartella
 corrente:</p>
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2230,9 +2230,9 @@ cartella <code>raw</code>.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="ex">$</span> mv sucrose.dat maltose.dat ../raw</span></code></pre>
 </div>
-<p>Ricordate che <code>..</code> si riferisce alla directory padre (cioè
-quella sopra la directory corrente) e che <code>.</code> si riferisce
-alla directory corrente.</p>
+<p>Ricordate che <code>..</code> si riferisce alla cartella padre (cioè
+quella sopra la cartella corrente) e che <code>.</code> si riferisce
+alla cartella corrente.</p>
 </div>
 </div>
 </div>
@@ -2256,16 +2256,16 @@ percorsi come argomenti — come la maggior parte dei comandi Unix, a
 </h3>
 <pre class="output" tabindex="0"><code>quotes.txt   thesis/quotations.txt</code></pre>
 </div>
-<p>Possiamo anche copiare una directory e tutto il suo contenuto usando
+<p>Possiamo anche copiare una cartella e tutto il suo contenuto usando
 l’opzione <a href="https://en.wikipedia.org/wiki/Recursion" class="external-link">recursive</a>
-<code>-r</code>, ad esempio per fare il backup di una directory:</p>
+<code>-r</code>, ad esempio per fare il backup di una cartella:</p>
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="ex">$</span> cp <span class="at">-r</span> thesis thesis_backup</span></code></pre>
 </div>
 <p>Possiamo verificare il risultato elencando il contenuto di entrambe
-le directory <code>thesis</code> e <code>thesis_backup</code>:</p>
+le cartelle <code>thesis</code> e <code>thesis_backup</code>:</p>
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2281,8 +2281,8 @@ le directory <code>thesis</code> e <code>thesis_backup</code>:</p>
 <span><span class="va">quotations.txt</span></span></code></pre>
 </div>
 <p>È importante includere il flag <code>-r</code>. Se si vuole copiare
-una directory e si omette questa opzione, verrà visualizzato un
-messaggio che indica che la directory è stata omessa perché
+una cartella e si omette questa opzione, verrà visualizzato un messaggio
+che indica che la cartella è stata omessa perché
 <code>-r not specified</code>.</p>
 <div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2299,7 +2299,7 @@ messaggio che indica che la directory è stata omessa perché
 <h3 class="callout-title">Rinominare i file</h3>
 <div class="callout-content">
 <p>Supponiamo di aver creato un file di testo semplice nella nostra
-directory corrente per contenere un elenco dei test statistici che
+cartella corrente per contenere un elenco dei test statistici che
 dovremo fare per analizzare i nostri dati, e di averlo chiamato
 <code>statstics.txt</code></p>
 <p>Dopo aver creato e salvato questo file ci si accorge di aver
@@ -2323,7 +2323,7 @@ comandi si può utilizzare?</p>
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>No. Sebbene questa operazione crei un file con il nome corretto, il
-file con il nome sbagliato esiste ancora nella directory e deve essere
+file con il nome sbagliato esiste ancora nella cartella e deve essere
 cancellato.</li>
 <li>Sì, questo funzionerebbe per rinominare il file.</li>
 <li>No, il punto(.) indica dove spostare il file, ma non fornisce un
@@ -2389,14 +2389,14 @@ sequenza mostrata sotto?</p>
 </button>
 <div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
-<p>Partiamo dalla directory <code>/Users/jamie/data</code> e creiamo una
+<p>Partiamo dalla cartella <code>/Users/jamie/data</code> e creiamo una
 nuova cartella chiamata <code>recombined</code>. La seconda riga sposta
 (<code>mv</code>) il file <code>proteins.dat</code> nella nuova cartella
 (<code>recombined</code>). La terza riga crea una copia del file appena
 spostato. La parte difficile è dove il file è stato copiato. Ricordiamo
 che <code>..</code> significa “salire di livello”, quindi il file
 copiato si trova ora in <code>/Users/jamie</code>. Si noti che
-<code>..</code> è interpretato rispetto alla directory di lavoro
+<code>..</code> è interpretato rispetto alla cartella di lavoro
 corrente, <strong>non</strong> rispetto alla posizione del file copiato.
 Quindi, l’unica cosa che verrà mostrata usando ls (in
 <code>/Users/jamie/data</code>) è la cartella ricombinata.</p>
@@ -2416,10 +2416,10 @@ in <code>/Users/jamie</code>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="rimozione-di-file-e-directory">Rimozione di file e directory<a class="anchor" aria-label="anchor" href="#rimozione-di-file-e-directory"></a>
+</section><section><h2 class="section-heading" id="rimozione-di-file-e-cartella">Rimozione di file e cartella<a class="anchor" aria-label="anchor" href="#rimozione-di-file-e-cartella"></a>
 </h2>
 <hr class="half-width">
-<p>Tornando alla directory
+<p>Tornando alla cartella
 <code>shell-lesson-data/exercise-data/writing</code>, riordiniamola
 rimuovendo il file <code>quotes.txt</code> che abbiamo creato. Il
 comando Unix che useremo a questo scopo è <code>rm</code> (abbreviazione
@@ -2509,8 +2509,8 @@ si desidera rimuovere.</p>
 <pre class="error" tabindex="0"><code>rm: cannot remove 'thesis': Is a directory</code></pre>
 </div>
 <p>Questo accade perché <code>rm</code> per impostazione predefinita
-funziona solo sui file, non sulle directory.</p>
-<p><code>rm</code> può rimuovere una directory <em>e tutto il suo
+funziona solo sui file, non sulle cartelle.</p>
+<p><code>rm</code> può rimuovere una cartella <em>e tutto il suo
 contenuto</em> se si usa l’opzione ricorsiva <code>-r</code>, e lo farà
 <em>senza alcuna richiesta di conferma</em>:</p>
 <div class="codewrapper sourceCode" id="cb48">
@@ -2522,7 +2522,7 @@ contenuto</em> se si usa l’opzione ricorsiva <code>-r</code>, e lo farà
 shell, <code>rm -r</code> <em>dovrebbe essere usato con grande
 cautela</em> (si potrebbe considerare di aggiungere l’opzione
 interattiva <code>rm -r -i</code>).</p>
-</section><section><h2 class="section-heading" id="operazioni-con-più-file-e-directory">Operazioni con più file e directory<a class="anchor" aria-label="anchor" href="#operazioni-con-pi%C3%B9-file-e-directory"></a>
+</section><section><h2 class="section-heading" id="operazioni-con-più-file-e-cartelle">Operazioni con più file e cartelle<a class="anchor" aria-label="anchor" href="#operazioni-con-pi%C3%B9-file-e-cartelle"></a>
 </h2>
 <hr class="half-width">
 <p>Spesso è necessario copiare o spostare più file contemporaneamente.
@@ -2539,10 +2539,10 @@ la navigazione nel file system Unix.</p>
 <div id="copia-con-più-nomi-di-file" class="callout-inner">
 <h3 class="callout-title">Copia con più nomi di file</h3>
 <div class="callout-content">
-<p>Per questo esercizio, è possibile provare i comandi nella directory
+<p>Per questo esercizio, è possibile provare i comandi nella cartella
 <code>shell-lesson-data/exercise-data</code>.</p>
 <p>Nell’esempio seguente, cosa fa <code>cp</code> quando gli vengono
-dati diversi nomi di file e un nome di directory?</p>
+dati diversi nomi di file e un nome di cartella?</p>
 <div class="codewrapper sourceCode" id="cb49">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2577,11 +2577,11 @@ dati tre o più nomi di file?</p>
 </button>
 <div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
-<p>Se viene dato più di un nome di file seguito da un nome di directory
-(cioè la directory di destinazione deve essere l’ultimo argomento),
-<code>cp</code> copia i file nella directory nominata.</p>
+<p>Se viene dato più di un nome di file seguito da un nome di cartella
+(cioè la cartella di destinazione deve essere l’ultimo argomento),
+<code>cp</code> copia i file nella cartella nominata.</p>
 <p>Se vengono dati tre nomi di file, <code>cp</code> lancia un errore
-come quello che segue, perché si aspetta il nome di una directory come
+come quello che segue, perché si aspetta il nome di una cartella come
 ultimo argomento.</p>
 <div class="codewrapper">
 <h3 class="code-label">ERRORE<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2605,14 +2605,14 @@ contemporaneamente<a class="anchor" aria-label="anchor" href="#uso-dei-caratteri
 <h3 class="callout-title">Caratteri jolly</h3>
 <div class="callout-content">
 <p><code>*</code> è un <strong>wildcard</strong>, che rappresenta zero o
-più altri caratteri. Consideriamo la directory
+più altri caratteri. Consideriamo la cartella
 <code>shell-lesson-data/exercise-data/alkanes</code>: <code>*.pdb</code>
 rappresenta <code>ethane.pdb</code>, <code>propane.pdb</code> e ogni
 file che termina con ‘.pdb’. D’altra parte, <code>p*.pdb</code>
 rappresenta solo <code>pentane.pdb</code> e <code>propane.pdb</code>,
 perché la ‘p’ all’inizio può rappresentare solo nomi di file che
 iniziano con la lettera ‘p’.</p>
-<p>anche <code>?</code> è un carattere jolly, ma rappresenta esattamente
+<p>Anche <code>?</code> è un carattere jolly, ma rappresenta esattamente
 un carattere. Quindi <code>?ethane.pdb</code> potrebbe rappresentare
 <code>methane.pdb</code> mentre <code>*ethane.pdb</code> rappresenta sia
 <code>ethane.pdb</code> che <code>methane.pdb</code>.</p>
@@ -2625,7 +2625,7 @@ elenco di nomi di file corrispondenti <em>prima</em> di eseguire il
 comando precedente. Come eccezione, se un’espressione con il carattere
 jolly non corrisponde a nessun file, Bash passerà l’espressione come
 argomento al comando così com’è. Per esempio, digitando
-<code>ls *.pdf</code> nella directory <code>alkanes</code> (che contiene
+<code>ls *.pdf</code> nella cartella <code>alkanes</code> (che contiene
 solo file con nomi che terminano con <code>.pdb</code>) si ottiene un
 messaggio di errore che indica che non esiste un file chiamato
 <code>*.pdf</code>. Tuttavia, generalmente comandi come <code>wc</code>
@@ -2644,7 +2644,7 @@ altri programmi, a espandere i caratteri jolly.</p>
 <h3 class="callout-title">Elenca i nomi dei file che corrispondono a uno
 schema</h3>
 <div class="callout-content">
-<p>Quando vengono eseguiti nella directory <code>alkanes</code>, quali
+<p>Quando vengono eseguiti nella cartella <code>alkanes</code>, quali
 comandi <code>ls</code> produrranno questo output?</p>
 <p><code>ethane.pdb methane.pdb</code></p>
 <ol style="list-style-type: decimal">
@@ -2729,7 +2729,7 @@ i seguenti comandi:</p>
 <span id="cb55-4"><a href="#cb55-4" tabindex="-1"></a><span class="ex">$</span> cp ____ send_to_bob/all_datasets_created_on_a_23rd/</span></code></pre>
 </div>
 <p>Aiutate Sam a riempire gli spazi vuoti.</p>
-<p>La struttura di directory risultante dovrebbe essere la seguente</p>
+<p>La struttura risultante dovrebbe essere la seguente</p>
 <div class="codewrapper sourceCode" id="cb56">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2796,13 +2796,13 @@ i seguenti comandi:</p>
 </div>
 </div>
 </div>
-<div id="organizzazione-di-directory-e-file" class="callout challenge">
+<div id="organizzazione-di-cartelle-e-file" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Sfida</span>
-<div id="organizzazione-di-directory-e-file" class="callout-inner">
-<h3 class="callout-title">Organizzazione di directory e file</h3>
+<div id="organizzazione-di-cartelle-e-file" class="callout-inner">
+<h3 class="callout-title">Organizzazione di cartelle e file</h3>
 <div class="callout-content">
 <p>Jamie sta lavorando a un progetto e vede che i suoi file non sono ben
 organizzati:</p>
@@ -2856,10 +2856,10 @@ l’output mostrato?</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb64-1"><a href="#cb64-1" tabindex="-1"></a><span class="fu">mv</span> <span class="pp">*</span>.dat analyzed</span></code></pre>
 </div>
 <p>Jamie deve spostare i suoi file <code>fructose.dat</code> e
-<code>sucrose.dat</code> nella directory <code>analyzed</code>. La shell
+<code>sucrose.dat</code> nella cartella <code>analyzed</code>. La shell
 espanderà *.dat in modo che corrisponda a tutti i file .dat presenti
-nella directory corrente. Il comando <code>mv</code> sposta quindi
-l’elenco dei file .dat nella directory ‘analyzed’.</p>
+nella cartella corrente. Il comando <code>mv</code> sposta quindi
+l’elenco dei file .dat nella cartella ‘analyzed’.</p>
 </div>
 </div>
 </div>
@@ -2941,18 +2941,18 @@ farebbero gli altri comandi?</p>
 <div id="collapseSolution10" class="accordion-collapse collapse" aria-labelledby="headingSolution10" data-bs-parent="#accordionSolution10">
 <div class="accordion-body">
 <p>Le prime due serie di comandi raggiungono questo obiettivo. La prima
-serie utilizza percorsi relativi per creare la directory di primo
-livello prima delle sottodirectory.</p>
+serie utilizza percorsi relativi per creare la cartella di primo livello
+prima delle sottocartelle.</p>
 <p>La terza serie di comandi darà un errore perché il comportamento
-predefinito di <code>mkdir</code> non crea una sottodirectory di una
-directory inesistente: le cartelle di livello intermedio devono essere
+predefinito di <code>mkdir</code> non crea una sottocartella di una
+cartella inesistente: le cartelle di livello intermedio devono essere
 create per prime.</p>
 <p>La quarta serie di comandi raggiunge questo obiettivo. Ricordate che
-l’opzione <code>-p</code>, seguita da un percorso di una o più
-directory, farà sì che <code>mkdir</code> crei tutte le sottodirectory
-intermedie necessarie.</p>
-<p>La serie finale di comandi genera le directory ‘raw’ e ‘processed’
-allo stesso livello della directory ‘data’.</p>
+l’opzione <code>-p</code>, seguita da un percorso di una o più cartelle,
+farà sì che <code>mkdir</code> crei tutte le sottocartelle intermedie
+necessarie.</p>
+<p>La serie finale di comandi genera le cartelle ‘raw’ e ‘processed’
+allo stesso livello della cartella ‘data’.</p>
 </div>
 </div>
 </div>
@@ -2971,7 +2971,7 @@ allo stesso livello della directory ‘data’.</p>
 <code>mkdir [path]</code> crea una nuova cartella.</li>
 <li>
 <code>mv [old] [new]</code> sposta (rinomina) un file o una
-directory.</li>
+cartella.</li>
 <li>
 <code>rm [path]</code> rimuove (elimina) un file.</li>
 <li>
@@ -4149,7 +4149,7 @@ nomi di file, come un elenco di numeri o un sottoinsieme di dati.</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4222,7 +4222,7 @@ nomi di file, come un elenco di numeri o un sottoinsieme di dati.</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Il primo blocco di codice dà lo stesso risultato a ogni iterazione
 del ciclo. Bash espande il carattere jolly <code>*.pdb</code>
@@ -4301,7 +4301,7 @@ e <code>pentane.pdb</code>.</li>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>4 è la risposta corretta. <code>*</code> corrisponde a zero o più
 caratteri, quindi qualsiasi nome di file che inizia con la lettera c,
@@ -4348,7 +4348,7 @@ elencati.</li>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>4 è la risposta corretta. <code>*</code> corrisponde a zero o più
 caratteri, quindi un nome di file con zero o più caratteri prima di una
@@ -4402,7 +4402,7 @@ salvato in un file chiamato <code>alkanes.pdb</code>.</li>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>il testo di ogni file viene scritto a turno nel file
@@ -4461,7 +4461,7 @@ sullo schermo e salvato in un file chiamato <code>all.pdb</code>.</li>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>3 è la risposta corretta. <code>&gt;&gt;</code> aggiunge a un file,
 invece di sovrascriverlo con l’output rediretto da un comando. Dato che
@@ -4881,7 +4881,7 @@ eseguire?</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <p>la seconda versione è quella che vogliamo eseguire. Questa stampa
 sullo schermo tutto ciò che è racchiuso tra le virgolette, espandendo il
@@ -4934,7 +4934,7 @@ sarebbe il risultato del seguente codice:</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <p>Abbiamo un ciclo annidato, cioè contenuto all’interno di un altro
 ciclo, quindi per ogni specie nel ciclo esterno, il ciclo interno (il
@@ -5310,7 +5310,7 @@ separatamente.</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5380,7 +5380,7 @@ comandi al log prima di eseguirli. Perché pensate che lo faccia?</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Se un comando provoca un arresto anomalo o un blocco, potrebbe essere
 utile sapere qual è il comando in questione, per poter indagare sul
@@ -5513,7 +5513,7 @@ seguente comando:</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>la risposta corretta è 2.</p>
 <p>Le variabili speciali <code>$1</code>, <code>$2</code> e
@@ -5571,7 +5571,7 @@ ad es.</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5643,7 +5643,7 @@ eseguito rispettivamente come <code>bash script1.sh *.pdb</code>,
   Soluzioni
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>In ogni caso, la shell espande il carattere jolly in
 <code>*.pdb</code> prima di passare l’elenco risultante di nomi di file
@@ -5714,7 +5714,7 @@ utilizzando l’opzione <code>-x</code>:</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>L’opzione <code>-x</code> fa sì che <code>bash</code> venga eseguito
 in modalità di debug. In questo modo viene stampato ogni comando man
@@ -6052,7 +6052,7 @@ Miscellaneous:
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>La risposta corretta è 3, perché l’opzione <code>-w</code> cerca solo
 le corrispondenze con le parole intere. Le altre opzioni corrispondono
@@ -6156,7 +6156,7 @@ selezionare più di un campo in una riga.</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <pre class="source"><code>grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3 &gt; $1.txt</code></pre>
 <p>In realtà, è possibile scambiare l’ordine dei due comandi di taglio e
@@ -6208,7 +6208,7 @@ velocità.</p>
   Soluzioni
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <pre class="source"><code>for sis in Jo Meg Beth Amy
 do
@@ -6488,7 +6488,7 @@ si possono testare i comandi nella directory
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>L’opzione 1 è corretta. Mettere l’espressione di corrispondenza tra
 virgolette impedisce alla shell di espanderla, quindi viene passata al
@@ -6572,7 +6572,7 @@ shell:</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Trova tutti i file con estensione <code>.dat</code> ricorsivamente
