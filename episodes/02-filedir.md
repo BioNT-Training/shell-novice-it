@@ -8,8 +8,8 @@ exercises: 10
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Spiegare le somiglianze e le differenze tra un file e una directory.
-- Traduce un percorso assoluto in un percorso relativo e viceversa.
-- Costruire percorsi assoluti e relativi che identificano file e directory specifici.
+- Tradurre un percorso assoluto in un percorso relativo e viceversa.
+- Costruire percorsi assoluti e relativi che identificano file e cartelle specifici.
 - Usare opzioni e argomenti per modificare il comportamento di un comando di shell.
 - Dimostrare l'uso del completamento a schede e spiegarne i vantaggi.
 
@@ -18,8 +18,8 @@ exercises: 10
 :::::::::::::::::::::::::::::::::::::::: questions
 
 - Come posso muovermi nel mio computer?
-- Come posso vedere quali file e directory ho?
-- Come posso specificare la posizione di un file o di una directory sul mio computer?
+- Come posso vedere quali file e cartelle ci sono?
+- Come posso specificare la posizione di un file o di una cartella sul mio computer?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -29,9 +29,9 @@ L'introduzione e la navigazione del filesystem nella shell (trattata nella sezio
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-La parte del sistema operativo responsabile della gestione dei file e delle directory si chiama **file system**. Organizza i dati in file, che contengono informazioni, e directory (chiamate anche "cartelle"), che contengono file o altre directory.
+La parte del sistema operativo responsabile della gestione dei file e delle directory si chiama **file system**. Organizza i dati in file, che contengono informazioni, e cartelle, che contengono file o altre cartelle.
 
-Diversi comandi sono usati frequentemente per creare, ispezionare, rinominare e cancellare file e directory. Per iniziare a esplorarli, andiamo alla nostra finestra di shell aperta.
+Diversi comandi sono usati frequentemente per creare, ispezionare, rinominare e cancellare file e cartelle. Per iniziare a esplorarli, andiamo alla nostra finestra di shell aperta.
 
 Per prima cosa, scopriamo dove ci troviamo eseguendo un comando chiamato `pwd` (che sta per 'print working directory'). Le directory sono come *luoghi*: in qualsiasi momento, mentre si utilizza la shell, ci si trova esattamente in un luogo chiamato **current working directory**. I comandi leggono e scrivono i file nella directory di lavoro corrente, cioè "qui", quindi è importante sapere dove ci si trova prima di eseguire un comando. `pwd` mostra la posizione in cui ci si trova:
 
@@ -56,34 +56,34 @@ Si suppone inoltre che il comando `pwd` restituisca la home directory dell'utent
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Per capire che cos'è una "home directory", diamo un'occhiata a come è organizzato il file system nel suo complesso. Per il bene di questo esempio, illustreremo il filesystem del computer della nostra scienziata Nelle. Dopo questa illustrazione, imparerete i comandi per esplorare il vostro filesystem, che sarà costruito in modo simile, ma non esattamente identico.
+Per capire che cos'è una "cartella home", diamo un'occhiata a come è organizzato il file system nel suo complesso. Per il bene di questo esempio, illustreremo il filesystem del computer della nostra scienziata Nelle. Dopo questa illustrazione, imparerete i comandi per esplorare il vostro filesystem, che sarà costruito in modo simile, ma non esattamente identico.
 
 Sul computer di Nelle, il filesystem ha questo aspetto:
 
-![](fig/filesystem.svg){alt='Il file system è costituito da una directory principale che contiene sottodirectory intitolate bin, data, users e tmp'}
+![](fig/filesystem.svg){alt='Il file system è costituito da una cartella principale che contiene sottocartelle intitolate bin, data, users e tmp'}
 
-Il filesystem ha l'aspetto di un albero capovolto. La directory più in alto è la **root directory** che contiene tutto il resto. Ci si riferisce ad essa usando un carattere slash, `/`, da solo; questo carattere è lo slash iniziale di `/Users/nelle`.
+Il filesystem ha l'aspetto di un albero capovolto. La cartella più in alto è la **cartella di root** che contiene tutto il resto. Ci si riferisce ad essa usando un carattere slash, `/`, da solo; questo carattere è lo slash iniziale di `/Users/nelle`.
 
-all'interno di questa directory ci sono diverse altre directory: `bin` (dove sono memorizzati alcuni programmi integrati), `data` (per i file di dati vari), `Users` (dove si trovano le directory personali degli utenti), `tmp` (per i file temporanei che non devono essere memorizzati a lungo) e così via.
+All'interno di questa cartella ci sono diverse altre cartelle: `bin` (dove sono memorizzati alcuni programmi integrati), `data` (per i file di dati vari), `Users` (dove si trovano le cartelle personali degli utenti), `tmp` (per i file temporanei che non devono essere memorizzati a lungo) e così via.
 
-Sappiamo che la nostra directory di lavoro corrente `/Users/nelle` è memorizzata all'interno di `/Users` perché `/Users` è la prima parte del suo nome. Allo stesso modo, sappiamo che `/Users` è memorizzata nella directory principale `/` perché il suo nome inizia con `/`.
+Sappiamo che la nostra cartella di lavoro corrente `/Users/nelle` è memorizzata all'interno di `/Users` perché `/Users` è la prima parte del suo nome. Allo stesso modo, sappiamo che `/Users` è memorizzata nella cartella principale `/` perché il suo nome inizia con `/`.
 
 ::::::::::::::::::::::::::::::::::::::::: callout
 
 ## Slash
 
-Si noti che il carattere `/` ha due significati. Quando compare davanti al nome di un file o di una directory, si riferisce alla directory principale. Quando appare *all'interno* di un percorso, è solo un separatore.
+Si noti che il carattere `/` ha due significati. Quando compare davanti al nome di un file o di una cartella, si riferisce alla cartella principale. Quando appare *all'interno* di un percorso, è solo un separatore.
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Sotto `/Users`, troviamo una directory per ogni utente con un account sulla macchina di Nelle, i suoi colleghi *imhotep* e *larry*.
 
-![](fig/home-directories.svg){alt='Come altre directory, le directory home sono sottodirectory sotto "/Users", come "/Users/imhotep", "/Users/larry" o "/Users/nelle"'}
+![](fig/home-directories.svg){alt='Come altre directory, le cartelle home sono sottocartelle di "/Users", come "/Users/imhotep", "/Users/larry" o "/Users/nelle"'}
 
-I file dell'utente *imhotep* sono memorizzati in `/Users/imhotep`, quelli dell'utente *larry* in `/Users/larry` e quelli di Nelle in `/Users/nelle`. Nelle è l'utente degli esempi; pertanto, la nostra home directory è `/Users/nelle`. In genere, quando si apre un nuovo prompt dei comandi, all'inizio ci si trova nella propria home directory.
+I file dell'utente *imhotep* sono memorizzati in `/Users/imhotep`, quelli dell'utente *larry* in `/Users/larry` e quelli di Nelle in `/Users/nelle`. Nelle è l'utente degli esempi; pertanto, la nostra cartella home è `/Users/nelle`. In genere, quando si apre un nuovo prompt dei comandi, all'inizio ci si trova nella propria cartella home.
 
-Ora impariamo il comando che ci permetterà di vedere il contenuto del nostro filesystem. Possiamo vedere cosa c'è nella nostra home directory eseguendo `ls`:
+Ora impariamo il comando che ci permetterà di vedere il contenuto del nostro filesystem. Possiamo vedere cosa c'è nella nostra cartella home eseguendo `ls`:
 
 ```bash
 $ ls
@@ -96,13 +96,13 @@ Desktop      Downloads    Movies       Pictures
 
 (Anche in questo caso, i risultati possono essere leggermente diversi a seconda del sistema operativo e di come è stato personalizzato il filesystem)
 
-`ls` stampa i nomi dei file e delle directory nella directory corrente. È possibile rendere il suo output più comprensibile utilizzando l'opzione `-F` **che indica a `ls` di classificare l'output aggiungendo un marcatore ai nomi dei file e delle directory per indicare di cosa si tratta:
+`ls` stampa i nomi dei file e delle cartelle nella cartella corrente. È possibile rendere il suo output più comprensibile utilizzando l'opzione `-F` **che indica a `ls` di classificare l'output aggiungendo un marcatore ai nomi dei file e delle cartelle per indicare di cosa si tratta:
 
 - il trattino `/` indica che si tratta di una directory
 - `@` indica un link
 - `*` indica un eseguibile
 
-A seconda delle impostazioni predefinite della shell, questa potrebbe anche utilizzare dei colori per indicare se ogni voce è un file o una directory.
+A seconda delle impostazioni predefinite della shell, questa potrebbe anche utilizzare dei colori per indicare se ogni voce è un file o una cartella.
 
 ```bash
 $ ls -F
@@ -113,7 +113,7 @@ Applications/ Documents/    Library/      Music/        Public/
 Desktop/      Downloads/    Movies/       Pictures/
 ```
 
-Qui possiamo vedere che la directory home contiene solo **sottodirectory**. Tutti i nomi nell'output che non hanno un simbolo di classificazione sono **file** nella directory di lavoro corrente.
+Qui possiamo vedere che la cartella home contiene solo **sottocartelle**. Tutti i nomi nell'output che non hanno un simbolo di classificazione sono **file** nella cartella di lavoro corrente.
 
 ::::::::::::::::::::::::::::::::::::::::: callout
 
@@ -151,7 +151,7 @@ Alcuni comandi sono integrati nella shell Bash, anziché esistere come programmi
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-#### L'opzione `--help` è stata utilizzata per elencare i contenuti della directory di lavoro corrente
+#### L'opzione `--help` è stata utilizzata per elencare i contenuti della cartella di lavoro corrente
 
 La maggior parte dei comandi di bash e dei programmi scritti per essere eseguiti all'interno di bash supportano un'opzione `--help` che mostra ulteriori informazioni su come utilizzare il comando o il programma.
 
@@ -263,7 +263,7 @@ L'opzione `-l` fa sì che `ls` utilizzi un formato di elenco **l**lungo, mostran
 
 ## Elenco in ordine cronologico inverso
 
-Per impostazione predefinita, `ls` elenca il contenuto di una directory in ordine alfabetico per nome. Il comando `ls -t` elenca gli elementi in base all'ora dell'ultima modifica invece che in ordine alfabetico. Il comando `ls -r` elenca il contenuto di una directory in ordine inverso. Quale file viene visualizzato per ultimo quando si combinano le opzioni `-t` e `-r`? Suggerimento: Potrebbe essere necessario usare l'opzione `-l` per vedere le ultime date di modifica.
+Per impostazione predefinita, `ls` elenca il contenuto di una cartella in ordine alfabetico per nome. Il comando `ls -t` elenca gli elementi in base all'ora dell'ultima modifica invece che in ordine alfabetico. Il comando `ls -r` elenca il contenuto di una cartella in ordine inverso. Quale file viene visualizzato per ultimo quando si combinano le opzioni `-t` e `-r`? Suggerimento: Potrebbe essere necessario usare l'opzione `-l` per vedere le ultime date di modifica.
 
 ::::::::::::::: solution
 
@@ -277,9 +277,9 @@ Il file modificato più di recente è elencato per ultimo quando si usa `-rt`. Q
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Esplorazione di altre directory
+### Esplorazione di altre cartelle
 
-Non solo si può usare `ls` sulla directory di lavoro corrente, ma anche per elencare il contenuto di una directory diversa. Diamo un'occhiata alla nostra directory `Desktop` eseguendo `ls -F Desktop`, cioè il comando `ls` con la **opzione** `-F` e l'[**argomento**][Argomenti] `Desktop`. L'argomento `Desktop` indica a `ls` che si vuole un elenco di qualcosa di diverso dalla directory di lavoro corrente:
+Non solo si può usare `ls` sulla cartella di lavoro corrente, ma anche per elencare il contenuto di una cartella diversa. Diamo un'occhiata alla nostra cartella `Desktop` eseguendo `ls -F Desktop`, cioè il comando `ls` con la **opzione** `-F` e l'[**argomento**][Argomenti] `Desktop`. L'argomento `Desktop` indica a `ls` che si vuole un elenco di qualcosa di diverso dalla cartella di lavoro corrente:
 
 ```bash
 $ ls -F Desktop
@@ -289,15 +289,15 @@ $ ls -F Desktop
 shell-lesson-data/
 ```
 
-Si noti che se una directory denominata `Desktop` non esiste nella directory di lavoro corrente, questo comando restituirà un errore. In genere, una directory `Desktop` esiste nella propria home directory, che si presume sia la directory di lavoro corrente della shell bash.
+Si noti che se una cartella denominata `Desktop` non esiste nella cartella di lavoro corrente, questo comando restituirà un errore. In genere, una cartella `Desktop` esiste nella propria home directory, che si presume sia la cartella di lavoro corrente della shell bash.
 
-L'output dovrebbe essere un elenco di tutti i file e le sottodirectory della vostra directory Desktop, compresa la directory `shell-lesson-data` che avete scaricato nel [setup per questa lezione](../learners/setup.md). (Nella maggior parte dei sistemi, il contenuto della directory `Desktop` nella shell viene visualizzato come icona in un'interfaccia grafica dietro tutte le finestre aperte. Verificate se questo è il vostro caso)
+L'output dovrebbe essere un elenco di tutti i file e le sottocartelle della vostra cartella Desktop, compresa la cartella `shell-lesson-data` che avete scaricato nel [setup per questa lezione](../learners/setup.md). (Nella maggior parte dei sistemi, il contenuto della cartella `Desktop` nella shell viene visualizzato come icona in un'interfaccia grafica dietro tutte le finestre aperte. Verificate se questo è il vostro caso)
 
-Organizzare le cose in modo gerarchico ci aiuta a tenere traccia del nostro lavoro. Sebbene sia possibile mettere centinaia di file nella nostra home directory, così come è possibile ammassare centinaia di fogli stampati sulla nostra scrivania, è molto più facile trovare le cose quando sono organizzate in sottodirectory con nomi ragionevoli.
+Organizzare le cose in modo gerarchico ci aiuta a tenere traccia del nostro lavoro. Sebbene sia possibile mettere centinaia di file nella nostra cartella home, così come è possibile ammassare centinaia di fogli stampati sulla nostra scrivania, è molto più facile trovare le cose quando sono organizzate in sottocartelle con nomi ragionevoli.
 
-Ora che sappiamo che la directory `shell-lesson-data` si trova nella nostra directory Desktop, possiamo fare due cose.
+Ora che sappiamo che la cartella `shell-lesson-data` si trova nella nostra cartella Desktop, possiamo fare due cose.
 
-Per prima cosa, usando la stessa strategia di prima, possiamo esaminare il suo contenuto passando il nome di una directory a `ls`:
+Per prima cosa, usando la stessa strategia di prima, possiamo esaminare il suo contenuto passando il nome di una cartella a `ls`:
 
 ```bash
 $ ls -F Desktop/shell-lesson-data
@@ -307,11 +307,11 @@ $ ls -F Desktop/shell-lesson-data
 exercise-data/  north-pacific-gyre/
 ```
 
-In secondo luogo, possiamo cambiare la nostra posizione in una directory diversa, in modo da non trovarci più nella nostra home directory.
+In secondo luogo, possiamo cambiare la nostra posizione in una cartella diversa, in modo da non trovarci più nella nostra cartella home.
 
-Il comando per cambiare posizione è `cd` seguito da un nome di directory per cambiare la nostra directory di lavoro. `cd` sta per 'change directory', il che è un po' fuorviante. Il comando non cambia la directory, ma la directory di lavoro corrente della shell. In altre parole, cambia le impostazioni della shell per quanto riguarda la directory in cui ci troviamo. Il comando `cd` è simile a un doppio clic su una cartella in un'interfaccia grafica per entrare in quella cartella.
+Il comando per cambiare posizione è `cd` seguito da un nome di cartella per cambiare la nostra cartella di lavoro. `cd` sta per 'change directory', il che è un po' fuorviante. Il comando non cambia la cartella, ma la cartella di lavoro corrente della shell. In altre parole, cambia le impostazioni della shell per quanto riguarda la cartella in cui ci troviamo. Il comando `cd` è simile a un doppio clic su una cartella in un'interfaccia grafica per entrare in quella cartella.
 
-Supponiamo di volerci spostare nella directory `exercise-data` che abbiamo visto sopra. Per arrivarci possiamo usare la seguente serie di comandi:
+Supponiamo di volerci spostare nella cartella `exercise-data` che abbiamo visto sopra. Per arrivarci possiamo usare la seguente serie di comandi:
 
 ```bash
 $ cd Desktop
@@ -319,7 +319,7 @@ $ cd shell-lesson-data
 $ cd exercise-data
 ```
 
-Questi comandi ci spostano dalla nostra home directory alla nostra directory Desktop, poi alla directory `shell-lesson-data`, quindi alla directory `exercise-data`. Si noterà che `cd` non stampa nulla. Questo è normale. Molti comandi di shell non producono nulla sullo schermo quando vengono eseguiti con successo. Ma se si esegue `pwd` dopo di esso, si può vedere che ora ci troviamo in `/Users/nelle/Desktop/shell-lesson-data/exercise-data`.
+Questi comandi ci spostano dalla nostra cartella home alla nostra cartella Desktop, poi alla cartella `shell-lesson-data`, quindi alla directory `exercise-data`. Si noterà che `cd` non stampa nulla. Questo è normale. Molti comandi di shell non producono nulla sullo schermo quando vengono eseguiti con successo. Ma se si esegue `pwd` dopo di esso, si può vedere che ora ci troviamo in `/Users/nelle/Desktop/shell-lesson-data/exercise-data`.
 
 Se ora si esegue `ls -F` senza argomenti, viene elencato il contenuto di `/Users/nelle/Desktop/shell-lesson-data/exercise-data`, perché è lì che ci troviamo:
 
@@ -339,7 +339,7 @@ $ ls -F
 alkanes/  animal-counts/  creatures/  numbers.txt  writing/
 ```
 
-Ora sappiamo come scendere nell'albero delle directory (cioè come entrare in una sottodirectory), ma come salire (cioè come lasciare una directory e andare nella sua directory madre)? Potremmo provare a fare come segue:
+Ora sappiamo come scendere nell'albero delle cartelle (cioè come entrare in una sottocartella), ma come salire (cioè come lasciare una cartella e andare nella sua cartella home)? Potremmo provare a fare come segue:
 
 ```bash
 $ cd shell-lesson-data
@@ -351,15 +351,15 @@ $ cd shell-lesson-data
 
 ma si ottiene un errore! Perché?
 
-Con i metodi utilizzati finora, `cd` può vedere solo le sottodirectory all'interno della directory corrente. Esistono diversi modi per vedere le directory al di sopra della posizione corrente; inizieremo con il più semplice.
+Con i metodi utilizzati finora, `cd` può vedere solo le sottocartelle all'interno della cartella corrente. Esistono diversi modi per vedere le cartella al di sopra della posizione corrente; inizieremo con il più semplice.
 
-esiste una scorciatoia nella shell per spostarsi su un livello di directory. Funziona come segue:
+Esiste una scorciatoia nella shell per spostarsi su un livello di cartella. Funziona come segue:
 
 ```bash
 $ cd ..
 ```
 
-`..` è un nome speciale di directory che significa "la directory che contiene questa", o più brevemente, il **genitore** della directory corrente. Sicuramente, se si esegue `pwd` dopo aver eseguito `cd ..`, ci si ritrova in `/Users/nelle/Desktop/shell-lesson-data`:
+`..` è un nome speciale di cartella che significa "la cartella che contiene questa", o più brevemente, il **genitore** della cartella corrente. Sicuramente, se si esegue `pwd` dopo aver eseguito `cd ..`, ci si ritrova in `/Users/nelle/Desktop/shell-lesson-data`:
 
 ```bash
 $ pwd
@@ -369,7 +369,7 @@ $ pwd
 /Users/nelle/Desktop/shell-lesson-data
 ```
 
-La directory speciale `..` di solito non viene visualizzata quando si esegue `ls`. Se si desidera visualizzarla, si può aggiungere l'opzione `-a` a `ls -F`:
+La cartella speciale `..` di solito non viene visualizzata quando si esegue `ls`. Se si desidera visualizzarla, si può aggiungere l'opzione `-a` a `ls -F`:
 
 ```bash
 $ ls -F -a
@@ -379,7 +379,7 @@ $ ls -F -a
 ./  ../  exercise-data/  north-pacific-gyre/
 ```
 
-`-a` sta per "mostra tutto" (compresi i file nascosti); obbliga `ls` a mostrare i nomi dei file e delle directory che iniziano con `.`, come ad esempio `..` (che, se ci troviamo in `/Users/nelle`, si riferisce alla directory `/Users`). Come si può vedere, viene visualizzata anche un'altra directory speciale, chiamata `.`, che significa "la directory di lavoro corrente". Può sembrare superfluo avere un nome per questa directory, ma presto ne vedremo l'uso.
+`-a` sta per "mostra tutto" (compresi i file nascosti); obbliga `ls` a mostrare i nomi dei file e delle cartella che iniziano con `.`, come ad esempio `..` (che, se ci troviamo in `/Users/nelle`, si riferisce alla cartella `/Users`). Come si può vedere, viene visualizzata anche un'altra cartella speciale, chiamata `.`, che significa "la cartella di lavoro corrente". Può sembrare superfluo avere un nome per questa cartella, ma presto ne vedremo l'uso.
 
 Si noti che nella maggior parte degli strumenti a riga di comando, più opzioni possono essere combinate con un singolo `-` e senza spazi tra le opzioni; `ls -F -a` è equivalente a `ls -Fa`.
 
@@ -387,7 +387,7 @@ Si noti che nella maggior parte degli strumenti a riga di comando, più opzioni 
 
 ## Altri file nascosti
 
-Oltre alle directory nascoste `..` e `.`, è possibile che venga visualizzato anche un file chiamato `.bash_profile`. Questo file contiene solitamente le impostazioni di configurazione della shell. Si possono vedere anche altri file e directory che iniziano con `.`. Si tratta in genere di file e directory utilizzati per configurare diversi programmi sul computer. Il prefisso `.` è usato per evitare che questi file di configurazione ingombrino il terminale quando si usa il comando standard `ls`.
+Oltre alle cartella nascoste `..` e `.`, è possibile che venga visualizzato anche un file chiamato `.bash_profile`. Questo file contiene solitamente le impostazioni di configurazione della shell. Si possono vedere anche altri file e cartella che iniziano con `.`. Si tratta in genere di file e cartella utilizzati per configurare diversi programmi sul computer. Il prefisso `.` è usato per evitare che questi file di configurazione ingombrino il terminale quando si usa il comando standard `ls`.
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -408,9 +408,9 @@ $ pwd
 /Users/nelle
 ```
 
-Si scopre che `cd` senza un argomento vi riporterà alla vostra home directory, il che è ottimo se vi siete persi nel vostro filesystem.
+Si scopre che `cd` senza un argomento vi riporterà alla vostra cartella home, il che è ottimo se vi siete persi nel vostro filesystem.
 
-Proviamo a tornare alla directory `exercise-data` di prima. L'ultima volta abbiamo usato tre comandi, ma possiamo mettere insieme l'elenco delle directory per spostarci a `exercise-data` in un solo passaggio:
+Proviamo a tornare alla cartella `exercise-data` di prima. L'ultima volta abbiamo usato tre comandi, ma possiamo mettere insieme l'elenco delle cartella per spostarci a `exercise-data` in un solo passaggio:
 
 ```bash
 $ cd Desktop/shell-lesson-data/exercise-data
@@ -418,13 +418,13 @@ $ cd Desktop/shell-lesson-data/exercise-data
 
 Verificare che ci si sia spostati nel posto giusto eseguendo `pwd` e `ls -F`.
 
-Se si vuole salire di un livello dalla directory dei dati, si può usare `cd ..`. Ma c'è un altro modo per spostarsi in qualsiasi directory, indipendentemente dalla posizione attuale.
+Se si vuole salire di un livello dalla cartella dei dati, si può usare `cd ..`. Ma c'è un altro modo per spostarsi in qualsiasi cartella, indipendentemente dalla posizione attuale.
 
-Finora, quando si sono specificati i nomi delle directory, o anche un percorso di directory (come sopra), si sono usati **percorsi relativi**. Quando si usa un percorso relativo con un comando come `ls` o `cd`, si cerca di trovare quella posizione dal punto in cui ci si trova, piuttosto che dalla radice del file system.
+Finora, quando si sono specificati i nomi delle cartella, o anche un percorso di cartella (come sopra), si sono usati **percorsi relativi**. Quando si usa un percorso relativo con un comando come `ls` o `cd`, si cerca di trovare quella posizione dal punto in cui ci si trova, piuttosto che dalla radice del file system.
 
-Tuttavia, è possibile specificare il **percorso assoluto** di una directory includendo il suo intero percorso a partire dalla directory principale, indicata da una barra iniziale. La barra iniziale `/` indica al computer di seguire il percorso dalla radice del file system, in modo da riferirsi sempre esattamente a una directory, indipendentemente dalla posizione in cui ci si trova quando si esegue il comando.
+Tuttavia, è possibile specificare il **percorso assoluto** di una cartella includendo il suo intero percorso a partire dalla cartella principale, indicata da una barra iniziale. La barra iniziale `/` indica al computer di seguire il percorso dalla radice del file system, in modo da riferirsi sempre esattamente a una cartella, indipendentemente dalla posizione in cui ci si trova quando si esegue il comando.
 
-Questo ci permette di spostarci nella nostra directory `shell-lesson-data` da qualsiasi punto del filesystem (anche da dentro `exercise-data`). Per trovare il percorso assoluto che stiamo cercando, possiamo usare `pwd` e poi estrarre il pezzo che dobbiamo spostare in `shell-lesson-data`.
+Questo ci permette di spostarci nella nostra cartella `shell-lesson-data` da qualsiasi punto del filesystem (anche da dentro `exercise-data`). Per trovare il percorso assoluto che stiamo cercando, possiamo usare `pwd` e poi estrarre il pezzo che dobbiamo spostare in `shell-lesson-data`.
 
 ```bash
 $ pwd
@@ -444,9 +444,9 @@ Eseguire `pwd` e `ls -F` per assicurarsi di essere nella directory prevista.
 
 ## Altre due scorciatoie
 
-La shell interpreta il carattere tilde (`~`) all'inizio di un percorso come "la home directory dell'utente corrente". Ad esempio, se la home directory di Nelle è `/Users/nelle`, allora `~/data` è equivalente a `/Users/nelle/data`. Questo funziona solo se è il primo carattere del percorso; `here/there/~/elsewhere` è *non* `here/there/Users/nelle/elsewhere`.
+La shell interpreta il carattere tilde (`~`) all'inizio di un percorso come "la cartella home dell'utente corrente". Ad esempio, se la cartella home di Nelle è `/Users/nelle`, allora `~/data` è equivalente a `/Users/nelle/data`. Questo funziona solo se è il primo carattere del percorso; `here/there/~/elsewhere` è *non* `here/there/Users/nelle/elsewhere`.
 
-Un'altra scorciatoia è il carattere `-` (trattino).`cd` tradurrà `-` in *la directory precedente in cui mi trovavo*, il che è più veloce che dover ricordare, e poi digitare, il percorso completo. Questo è un modo *molto* efficiente di spostarsi *avanti e indietro tra due directory* -- cioè se si esegue `cd -` due volte, si torna alla directory di partenza.
+Un'altra scorciatoia è il carattere `-` (trattino).`cd` tradurrà `-` in *la cartella precedente in cui mi trovavo*, il che è più veloce che dover ricordare, e poi digitare, il percorso completo. Questo è un modo *molto* efficiente di spostarsi *avanti e indietro tra due cartella* -- cioè se si esegue `cd -` due volte, si torna alla cartella di partenza.
 
 La differenza tra `cd ..` e `cd -` è che il primo porta *su*, mentre il secondo porta *indietro*.
 
@@ -458,7 +458,7 @@ Provate! Per prima cosa spostatevi in `~/Desktop/shell-lesson-data` (dovreste es
 $ cd ~/Desktop/shell-lesson-data
 ```
 
-Poi `cd` nella directory `exercise-data/creatures`
+Poi `cd` nella cartella `exercise-data/creatures`
 
 ```bash
 $ cd exercise-data/creatures
@@ -479,7 +479,7 @@ vedrete che siete tornati in `~/Desktop/shell-lesson-data`. Eseguite di nuovo `c
 
 ## Percorsi assoluti e relativi
 
-Partendo da `/Users/nelle/data`, quale dei seguenti comandi potrebbe essere usato da Nelle per navigare verso la sua home directory, che è `/Users/nelle`?
+Partendo da `/Users/nelle/data`, quale dei seguenti comandi potrebbe essere usato da Nelle per navigare verso la sua cartella home, che è `/Users/nelle`?
 
 1. `cd .`
 2. `cd /`
@@ -495,14 +495,14 @@ Partendo da `/Users/nelle/data`, quale dei seguenti comandi potrebbe essere usat
 
 ## Soluzione
 
-1. No: `.` sta per la directory corrente.
-2. No: `/` sta per la directory principale.
-3. No: la directory home di Nelle è `/Users/nelle`.
+1. No: `.` sta per la cartella corrente.
+2. No: `/` sta per la cartella principale.
+3. No: la cartella home di Nelle è `/Users/nelle`.
 4. No: questo comando sale di due livelli, cioè termina con `/Users`.
-5. Sì: `~` sta per la home directory dell'utente, in questo caso `/Users/nelle`.
-6. No: questo comando naviga in una directory `home` nella directory corrente, se esiste.
+5. Sì: `~` sta per la cartella home dell'utente, in questo caso `/Users/nelle`.
+6. No: questo comando naviga in una cartella `home` nella cartella corrente, se esiste.
 7. Sì: inutilmente complicato, ma corretto.
-8. Sì: scorciatoia per tornare alla directory principale dell'utente.
+8. Sì: scorciatoia per tornare alla cartella principale dell'utente.
 9. Sì: sale di un livello.
 
 :::::::::::::::::::::::::
@@ -520,13 +520,13 @@ Utilizzando il diagramma del filesystem qui sotto, se `pwd` visualizza `/Users/t
 3. `2012-12-01/ 2013-01-08/ 2013-01-27/`
 4. `original/ pnas_final/ pnas_sub/`
 
-![](fig/filesystem-challenge.svg){alt='Un albero di directory sotto la directory Utenti dove "/Utenti" contiene le directory "backup" e "thing"; "/Utenti/backup" contiene "original", "pnas\_final" e "pnas\_sub"; "/Utenti/thing" contiene "backup"; e "/Utenti/thing/backup" contiene "2012-12-01", "2013-01-08" e "2013-01-27"'}
+![](fig/filesystem-challenge.svg){alt='Un albero di cartella sotto la cartella Utenti dove "/Utenti" contiene le cartella "backup" e "thing"; "/Utenti/backup" contiene "original", "pnas\_final" e "pnas\_sub"; "/Utenti/thing" contiene "backup"; e "/Utenti/thing/backup" contiene "2012-12-01", "2013-01-08" e "2013-01-27"'}
 
 ::::::::::::::: solution
 
 ## Soluzione
 
-1. No: c'è *una directory `backup` in `/Users`.
+1. No: c'è *una cartella `backup` in `/Users`.
 2. No: questo è il contenuto di `Users/thing/backup`, ma con `..`, abbiamo chiesto un livello più in alto.
 3. No: vedi spiegazione precedente.
 4. Sì: `../backup/` si riferisce a `/Users/backup/`.
@@ -545,7 +545,7 @@ Utilizzando il diagramma del filesystem qui sotto, se `pwd` visualizza `/Users/b
 pnas_sub/ pnas_final/ original/
 ```
 
-![](fig/filesystem-challenge.svg){alt='Un albero di directory sotto la directory Utenti dove "/Utenti" contiene le directory "backup" e "thing"; "/Utenti/backup" contiene "original", "pnas\_final" e "pnas\_sub"; "/Utenti/thing" contiene "backup"; e "/Utenti/thing/backup" contiene "2012-12-01", "2013-01-08" e "2013-01-27"'}
+![](fig/filesystem-challenge.svg){alt='Un albero di directory sotto la directory Utenti dove "/Utenti" contiene le cartella "backup" e "thing"; "/Utenti/backup" contiene "original", "pnas\_final" e "pnas\_sub"; "/Utenti/thing" contiene "backup"; e "/Utenti/thing/backup" contiene "2012-12-01", "2013-01-08" e "2013-01-27"'}
 
 1. `ls pwd`
 2. `ls -r -F`
@@ -555,8 +555,8 @@ pnas_sub/ pnas_final/ original/
 
 ## Soluzione
 
-1. No: `pwd` non è il nome di una directory.
-2. Sì: `ls` senza l'argomento directory elenca i file e le directory nella directory corrente.
+1. No: `pwd` non è il nome di una cartella.
+2. Sì: `ls` senza l'argomento cartella elenca i file e le directory nella directory corrente.
 3. Sì: utilizza esplicitamente il percorso assoluto.
 
 :::::::::::::::::::::::::
@@ -575,11 +575,11 @@ $ ls -F /
 
 ![](fig/shell_command_syntax.svg){alt='Sintassi generale di un comando di shell'}
 
-`ls` è il **comando**, con una **opzione** `-F` e un **argomento** `/`. Abbiamo già incontrato opzioni che iniziano con un solo trattino (`-`), note come **opzioni corte**, o con due trattini (`--`), note come **opzioni lunghe**. le [Opzioni] modificano il comportamento di un comando e gli [Argomenti] indicano al comando su cosa operare (ad esempio, file e directory). A volte le opzioni e gli argomenti sono indicati come **parametri**. Un comando può essere chiamato con più di un'opzione e più di un argomento, ma non sempre un comando richiede un argomento o un'opzione.
+`ls` è il **comando**, con una **opzione** `-F` e un **argomento** `/`. Abbiamo già incontrato opzioni che iniziano con un solo trattino (`-`), note come **opzioni corte**, o con due trattini (`--`), note come **opzioni lunghe**. le [Opzioni] modificano il comportamento di un comando e gli [Argomenti] indicano al comando su cosa operare (ad esempio, file e cartella). A volte le opzioni e gli argomenti sono indicati come **parametri**. Un comando può essere chiamato con più di un'opzione e più di un argomento, ma non sempre un comando richiede un argomento o un'opzione.
 
 A volte si può vedere che le opzioni vengono chiamate **scambi** o **flags**, specialmente per le opzioni che non richiedono argomenti. In questa lezione useremo il termine *opzione*.
 
-Ogni parte è separata da spazi. Se si omette lo spazio tra `ls` e `-F` la shell cercherà un comando chiamato `ls-F`, che non esiste. Inoltre, la capitalizzazione può essere importante. Ad esempio, `ls -s` visualizzerà la dimensione dei file e delle directory accanto ai nomi, mentre `ls -S` ordinerà i file e le directory per dimensione, come mostrato di seguito:
+Ogni parte è separata da spazi. Se si omette lo spazio tra `ls` e `-F` la shell cercherà un comando chiamato `ls-F`, che non esiste. Inoltre, la capitalizzazione può essere importante. Ad esempio, `ls -s` visualizzerà la dimensione dei file e delle cartella accanto ai nomi, mentre `ls -S` ordinerà i file e le cartella per dimensione, come mostrato di seguito:
 
 ```bash
 $ cd ~/Desktop/shell-lesson-data
@@ -601,7 +601,7 @@ $ ls -S exercise-data
 animal-counts  creatures  alkanes  writing  numbers.txt
 ```
 
-Mettendo insieme tutti questi elementi, il comando `ls -F /` di cui sopra fornisce un elenco di file e directory nella directory principale `/`. Di seguito è riportato un esempio dell'output che si potrebbe ottenere dal comando precedente:
+Mettendo insieme tutti questi elementi, il comando `ls -F /` di cui sopra fornisce un elenco di file e cartella nella cartella principale `/`. Di seguito è riportato un esempio dell'output che si potrebbe ottenere dal comando precedente:
 
 ```bash
 $ ls -F /
@@ -615,13 +615,13 @@ Network/              Volumes/
 
 ### Pipeline di Nelle: Organizzare i file
 
-sapendo queste informazioni su file e directory, Nelle è pronta a organizzare i file che la macchina per il saggio delle proteine creerà.
+sapendo queste informazioni su file e cartella, Nelle è pronta a organizzare i file che la macchina per il saggio delle proteine creerà.
 
-crea una directory chiamata `north-pacific-gyre` (per ricordarsi da dove provengono i dati), che conterrà i file di dati della macchina di analisi e i suoi script di elaborazione dei dati.
+Crea una cartella chiamata `north-pacific-gyre` (per ricordarsi da dove provengono i dati), che conterrà i file di dati della macchina di analisi e i suoi script di elaborazione dei dati.
 
 Ogni campione fisico è etichettato secondo la convenzione del suo laboratorio con un ID unico di dieci caratteri, ad esempio "NENE01729A". Questo ID viene utilizzato nel registro di raccolta per registrare la posizione, l'ora, la profondità e altre caratteristiche del campione, quindi decide di utilizzarlo nel nome di ogni file di dati. Poiché l'output della macchina di analisi è un testo semplice, chiamerà i suoi file `NENE01729A.txt`, `NENE01812A.txt` e così via. Tutti i 1520 file andranno nella stessa directory.
 
-ora nella sua directory corrente `shell-lesson-data`, Nelle può vedere quali file ha usando il comando:
+Ora nella sua cartella corrente `shell-lesson-data`, Nelle può vedere quali file ha usando il comando:
 
 ```bash
 $ ls north-pacific-gyre/
@@ -633,7 +633,7 @@ Questo comando è molto impegnativo da digitare, ma si può lasciare che la shel
 $ ls nor
 ```
 
-e poi preme <kbd>Tab</kbd> (il tasto tab della tastiera), la shell completa automaticamente il nome della directory:
+e poi preme <kbd>Tab</kbd> (il tasto tab della tastiera), la shell completa automaticamente il nome della cartella:
 
 ```bash
 $ ls north-pacific-gyre/
@@ -664,17 +664,17 @@ questo si chiama **completamento delle tabelle** e lo vedremo in molti altri str
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Il file system è responsabile della gestione delle informazioni sul disco.
-- Le informazioni sono memorizzate in file, che sono memorizzati in directory (cartelle).
-- le directory possono anche memorizzare altre directory, che formano un albero di directory.
-- `pwd` stampa la directory di lavoro corrente dell'utente.
-- `ls [path]` stampa un elenco di uno specifico file o directory; `ls` da solo elenca la directory di lavoro corrente.
-- `cd [path]` cambia la directory di lavoro corrente.
+- Le informazioni sono memorizzate in file, che sono memorizzati in cartelle.
+- le cartelle possono anche memorizzare altre cartelle, che formano un albero di cartelle.
+- `pwd` stampa la cartella di lavoro corrente dell'utente.
+- `ls [path]` stampa un elenco di uno specifico file o cartella; `ls` da solo elenca la cartella di lavoro corrente.
+- `cd [path]` cambia la cartella di lavoro corrente.
 - La maggior parte dei comandi accetta opzioni che iniziano con un singolo `-`.
-- i nomi delle directory in un percorso sono separati con `/` su Unix, ma `\` su Windows.
-- `/` da sola è la directory principale dell'intero file system.
+- i nomi delle cartelle in un percorso sono separati con `/` su Unix, ma `\` su Windows.
+- `/` da sola è la cartella principale dell'intero file system.
 - Un percorso assoluto specifica una posizione dalla radice del file system.
 - Un percorso relativo specifica una posizione a partire da quella corrente.
-- `.` da solo significa "la directory corrente"; `..` significa "la directory sopra quella corrente".
+- `.` da solo significa "la cartella corrente"; `..` significa "la cartella sopra quella corrente".
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
