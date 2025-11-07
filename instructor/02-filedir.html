@@ -325,7 +325,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Navigazione tra file e directory</h1>
-        <p>Ultimo aggiornamento il 2025-04-03 |
+        <p>Ultimo aggiornamento il 2025-11-07 |
 
         <a href="https://github.com/swcarpentry/shell-novice/edit/main/episodes/02-filedir.md" class="external-link">Modifica questa pagina <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -347,9 +347,9 @@
 <div class="inner">
 <h3 class="card-title">Domande</h3>
 <ul><li>Come posso muovermi nel mio computer?</li>
-<li>Come posso vedere quali file e directory ho?</li>
-<li>Come posso specificare la posizione di un file o di una directory
-sul mio computer?</li>
+<li>Come posso vedere quali file e cartelle ci sono?</li>
+<li>Come posso specificare la posizione di un file o di una cartella sul
+mio computer?</li>
 </ul></div>
 </div>
 </div>
@@ -359,10 +359,10 @@ sul mio computer?</li>
 <h3 class="card-title">Obiettivi</h3>
 <ul><li>Spiegare le somiglianze e le differenze tra un file e una
 directory.</li>
-<li>Traduce un percorso assoluto in un percorso relativo e
+<li>Tradurre un percorso assoluto in un percorso relativo e
 viceversa.</li>
 <li>Costruire percorsi assoluti e relativi che identificano file e
-directory specifici.</li>
+cartelle specifici.</li>
 <li>Usare opzioni e argomenti per modificare il comportamento di un
 comando di shell.</li>
 <li>Dimostrare l’uso del completamento a schede e spiegarne i
@@ -391,10 +391,10 @@ usano il terminale per navigare nel sistema.</p>
 </div>
 <p>La parte del sistema operativo responsabile della gestione dei file e
 delle directory si chiama <strong>file system</strong>. Organizza i dati
-in file, che contengono informazioni, e directory (chiamate anche
-“cartelle”), che contengono file o altre directory.</p>
+in file, che contengono informazioni, e cartelle, che contengono file o
+altre cartelle.</p>
 <p>Diversi comandi sono usati frequentemente per creare, ispezionare,
-rinominare e cancellare file e directory. Per iniziare a esplorarli,
+rinominare e cancellare file e cartelle. Per iniziare a esplorarli,
 andiamo alla nostra finestra di shell aperta.</p>
 <p>Per prima cosa, scopriamo dove ci troviamo eseguendo un comando
 chiamato <code>pwd</code> (che sta per ‘print working directory’). Le
@@ -440,29 +440,29 @@ maggiori dettagli sul comando <code>cd</code>.</p>
 </div>
 </div>
 </div>
-<p>Per capire che cos’è una “home directory”, diamo un’occhiata a come è
+<p>Per capire che cos’è una “cartella home”, diamo un’occhiata a come è
 organizzato il file system nel suo complesso. Per il bene di questo
 esempio, illustreremo il filesystem del computer della nostra scienziata
 Nelle. Dopo questa illustrazione, imparerete i comandi per esplorare il
 vostro filesystem, che sarà costruito in modo simile, ma non esattamente
 identico.</p>
 <p>Sul computer di Nelle, il filesystem ha questo aspetto:</p>
-<figure><img src="../fig/filesystem.svg" alt="Il file system è costituito da una directory principale che contiene sottodirectory intitolate bin, data, users e tmp" class="figure mx-auto d-block"></figure><p>Il filesystem ha l’aspetto di un albero capovolto. La directory più
-in alto è la <strong>root directory</strong> che contiene tutto il
-resto. Ci si riferisce ad essa usando un carattere slash,
-<code>/</code>, da solo; questo carattere è lo slash iniziale di
+<figure><img src="../fig/filesystem.svg" alt="Il file system è costituito da una cartella principale che contiene sottocartelle intitolate bin, data, users e tmp" class="figure mx-auto d-block"></figure><p>Il filesystem ha l’aspetto di un albero capovolto. La cartella più in
+alto è la <strong>cartella di root</strong> che contiene tutto il resto.
+Ci si riferisce ad essa usando un carattere slash, <code>/</code>, da
+solo; questo carattere è lo slash iniziale di
 <code>/Users/nelle</code>.</p>
-<p>all’interno di questa directory ci sono diverse altre directory:
+<p>All’interno di questa cartella ci sono diverse altre cartelle:
 <code>bin</code> (dove sono memorizzati alcuni programmi integrati),
 <code>data</code> (per i file di dati vari), <code>Users</code> (dove si
-trovano le directory personali degli utenti), <code>tmp</code> (per i
+trovano le cartelle personali degli utenti), <code>tmp</code> (per i
 file temporanei che non devono essere memorizzati a lungo) e così
 via.</p>
-<p>Sappiamo che la nostra directory di lavoro corrente
+<p>Sappiamo che la nostra cartella di lavoro corrente
 <code>/Users/nelle</code> è memorizzata all’interno di
 <code>/Users</code> perché <code>/Users</code> è la prima parte del suo
 nome. Allo stesso modo, sappiamo che <code>/Users</code> è memorizzata
-nella directory principale <code>/</code> perché il suo nome inizia con
+nella cartella principale <code>/</code> perché il suo nome inizia con
 <code>/</code>.</p>
 <div id="slash" class="callout">
 <div class="callout-square">
@@ -473,8 +473,8 @@ nella directory principale <code>/</code> perché il suo nome inizia con
 <h3 class="callout-title">Slash</h3>
 <div class="callout-content">
 <p>Si noti che il carattere <code>/</code> ha due significati. Quando
-compare davanti al nome di un file o di una directory, si riferisce alla
-directory principale. Quando appare <em>all’interno</em> di un percorso,
+compare davanti al nome di un file o di una cartella, si riferisce alla
+cartella principale. Quando appare <em>all’interno</em> di un percorso,
 è solo un separatore.</p>
 </div>
 </div>
@@ -482,15 +482,15 @@ directory principale. Quando appare <em>all’interno</em> di un percorso,
 <p>Sotto <code>/Users</code>, troviamo una directory per ogni utente con
 un account sulla macchina di Nelle, i suoi colleghi <em>imhotep</em> e
 <em>larry</em>.</p>
-<figure><img src="../fig/home-directories.svg" alt='Come altre directory, le directory home sono sottodirectory sotto "/Users", come "/Users/imhotep", "/Users/larry" o "/Users/nelle"' class="figure mx-auto d-block"></figure><p>I file dell’utente <em>imhotep</em> sono memorizzati in
+<figure><img src="../fig/home-directories.svg" alt='Come altre directory, le cartelle home sono sottocartelle di "/Users", come "/Users/imhotep", "/Users/larry" o "/Users/nelle"' class="figure mx-auto d-block"></figure><p>I file dell’utente <em>imhotep</em> sono memorizzati in
 <code>/Users/imhotep</code>, quelli dell’utente <em>larry</em> in
 <code>/Users/larry</code> e quelli di Nelle in
 <code>/Users/nelle</code>. Nelle è l’utente degli esempi; pertanto, la
-nostra home directory è <code>/Users/nelle</code>. In genere, quando si
+nostra cartella home è <code>/Users/nelle</code>. In genere, quando si
 apre un nuovo prompt dei comandi, all’inizio ci si trova nella propria
-home directory.</p>
+cartella home.</p>
 <p>Ora impariamo il comando che ci permetterà di vedere il contenuto del
-nostro filesystem. Possiamo vedere cosa c’è nella nostra home directory
+nostro filesystem. Possiamo vedere cosa c’è nella nostra cartella home
 eseguendo <code>ls</code>:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -506,11 +506,11 @@ Desktop      Downloads    Movies       Pictures</code></pre>
 <p>(Anche in questo caso, i risultati possono essere leggermente diversi
 a seconda del sistema operativo e di come è stato personalizzato il
 filesystem)</p>
-<p><code>ls</code> stampa i nomi dei file e delle directory nella
-directory corrente. È possibile rendere il suo output più comprensibile
+<p><code>ls</code> stampa i nomi dei file e delle cartelle nella
+cartella corrente. È possibile rendere il suo output più comprensibile
 utilizzando l’opzione <code>-F</code> **che indica a <code>ls</code> di
 classificare l’output aggiungendo un marcatore ai nomi dei file e delle
-directory per indicare di cosa si tratta:</p>
+cartelle per indicare di cosa si tratta:</p>
 <ul><li>il trattino <code>/</code> indica che si tratta di una
 directory</li>
 <li>
@@ -519,7 +519,7 @@ directory</li>
 <code>*</code> indica un eseguibile</li>
 </ul><p>A seconda delle impostazioni predefinite della shell, questa potrebbe
 anche utilizzare dei colori per indicare se ogni voce è un file o una
-directory.</p>
+cartella.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -531,9 +531,9 @@ directory.</p>
 <pre class="output" tabindex="0"><code>Applications/ Documents/    Library/      Music/        Public/
 Desktop/      Downloads/    Movies/       Pictures/</code></pre>
 </div>
-<p>Qui possiamo vedere che la directory home contiene solo
-<strong>sottodirectory</strong>. Tutti i nomi nell’output che non hanno
-un simbolo di classificazione sono <strong>file</strong> nella directory
+<p>Qui possiamo vedere che la cartella home contiene solo
+<strong>sottocartelle</strong>. Tutti i nomi nell’output che non hanno
+un simbolo di classificazione sono <strong>file</strong> nella cartella
 di lavoro corrente.</p>
 <div id="cancellazione-del-terminale" class="callout">
 <div class="callout-square">
@@ -590,8 +590,8 @@ built-ins</a>.</p>
 </div>
 </div>
 <div class="section level4">
-<h4 id="lopzione---help-è-stata-utilizzata-per-elencare-i-contenuti-della-directory-di-lavoro-corrente">L’opzione <code>--help</code> è stata utilizzata per elencare i
-contenuti della directory di lavoro corrente<a class="anchor" aria-label="anchor" href="#lopzione---help-%C3%A8-stata-utilizzata-per-elencare-i-contenuti-della-directory-di-lavoro-corrente"></a></h4>
+<h4 id="lopzione---help-è-stata-utilizzata-per-elencare-i-contenuti-della-cartella-di-lavoro-corrente">L’opzione <code>--help</code> è stata utilizzata per elencare i
+contenuti della cartella di lavoro corrente<a class="anchor" aria-label="anchor" href="#lopzione---help-%C3%A8-stata-utilizzata-per-elencare-i-contenuti-della-cartella-di-lavoro-corrente"></a></h4>
 <p>La maggior parte dei comandi di bash e dei programmi scritti per
 essere eseguiti all’interno di bash supportano un’opzione
 <code>--help</code> che mostra ulteriori informazioni su come utilizzare
@@ -760,10 +760,10 @@ del file “leggibile dall’uomo”, cioè si visualizza qualcosa come
 <h3 class="callout-title">Elenco in ordine cronologico inverso</h3>
 <div class="callout-content">
 <p>Per impostazione predefinita, <code>ls</code> elenca il contenuto di
-una directory in ordine alfabetico per nome. Il comando
+una cartella in ordine alfabetico per nome. Il comando
 <code>ls -t</code> elenca gli elementi in base all’ora dell’ultima
 modifica invece che in ordine alfabetico. Il comando <code>ls -r</code>
-elenca il contenuto di una directory in ordine inverso. Quale file viene
+elenca il contenuto di una cartella in ordine inverso. Quale file viene
 visualizzato per ultimo quando si combinano le opzioni <code>-t</code> e
 <code>-r</code>? Suggerimento: Potrebbe essere necessario usare
 l’opzione <code>-l</code> per vedere le ultime date di modifica.</p>
@@ -788,15 +788,15 @@ output.</p>
 </div>
 </div>
 <div class="section level3">
-<h3 id="esplorazione-di-altre-directory">Esplorazione di altre directory<a class="anchor" aria-label="anchor" href="#esplorazione-di-altre-directory"></a></h3>
-<p>Non solo si può usare <code>ls</code> sulla directory di lavoro
-corrente, ma anche per elencare il contenuto di una directory diversa.
-Diamo un’occhiata alla nostra directory <code>Desktop</code> eseguendo
+<h3 id="esplorazione-di-altre-cartelle">Esplorazione di altre cartelle<a class="anchor" aria-label="anchor" href="#esplorazione-di-altre-cartelle"></a></h3>
+<p>Non solo si può usare <code>ls</code> sulla cartella di lavoro
+corrente, ma anche per elencare il contenuto di una cartella diversa.
+Diamo un’occhiata alla nostra cartella <code>Desktop</code> eseguendo
 <code>ls -F Desktop</code>, cioè il comando <code>ls</code> con la
 <strong>opzione</strong> <code>-F</code> e
 l’[<strong>argomento</strong>][Argomenti] <code>Desktop</code>.
 L’argomento <code>Desktop</code> indica a <code>ls</code> che si vuole
-un elenco di qualcosa di diverso dalla directory di lavoro corrente:</p>
+un elenco di qualcosa di diverso dalla cartella di lavoro corrente:</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -807,26 +807,26 @@ un elenco di qualcosa di diverso dalla directory di lavoro corrente:</p>
 </h3>
 <pre class="output" tabindex="0"><code>shell-lesson-data/</code></pre>
 </div>
-<p>Si noti che se una directory denominata <code>Desktop</code> non
-esiste nella directory di lavoro corrente, questo comando restituirà un
-errore. In genere, una directory <code>Desktop</code> esiste nella
-propria home directory, che si presume sia la directory di lavoro
+<p>Si noti che se una cartella denominata <code>Desktop</code> non
+esiste nella cartella di lavoro corrente, questo comando restituirà un
+errore. In genere, una cartella <code>Desktop</code> esiste nella
+propria home directory, che si presume sia la cartella di lavoro
 corrente della shell bash.</p>
-<p>L’output dovrebbe essere un elenco di tutti i file e le
-sottodirectory della vostra directory Desktop, compresa la directory
+<p>L’output dovrebbe essere un elenco di tutti i file e le sottocartelle
+della vostra cartella Desktop, compresa la cartella
 <code>shell-lesson-data</code> che avete scaricato nel <a href="index.html#setup">setup per questa lezione</a>. (Nella maggior parte dei
-sistemi, il contenuto della directory <code>Desktop</code> nella shell
+sistemi, il contenuto della cartella <code>Desktop</code> nella shell
 viene visualizzato come icona in un’interfaccia grafica dietro tutte le
 finestre aperte. Verificate se questo è il vostro caso)</p>
 <p>Organizzare le cose in modo gerarchico ci aiuta a tenere traccia del
 nostro lavoro. Sebbene sia possibile mettere centinaia di file nella
-nostra home directory, così come è possibile ammassare centinaia di
-fogli stampati sulla nostra scrivania, è molto più facile trovare le
-cose quando sono organizzate in sottodirectory con nomi ragionevoli.</p>
-<p>Ora che sappiamo che la directory <code>shell-lesson-data</code> si
-trova nella nostra directory Desktop, possiamo fare due cose.</p>
+nostra cartella home, così come è possibile ammassare centinaia di fogli
+stampati sulla nostra scrivania, è molto più facile trovare le cose
+quando sono organizzate in sottocartelle con nomi ragionevoli.</p>
+<p>Ora che sappiamo che la cartella <code>shell-lesson-data</code> si
+trova nella nostra cartella Desktop, possiamo fare due cose.</p>
 <p>Per prima cosa, usando la stessa strategia di prima, possiamo
-esaminare il suo contenuto passando il nome di una directory a
+esaminare il suo contenuto passando il nome di una cartella a
 <code>ls</code>:</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -839,17 +839,17 @@ esaminare il suo contenuto passando il nome di una directory a
 <pre class="output" tabindex="0"><code>exercise-data/  north-pacific-gyre/</code></pre>
 </div>
 <p>In secondo luogo, possiamo cambiare la nostra posizione in una
-directory diversa, in modo da non trovarci più nella nostra home
-directory.</p>
+cartella diversa, in modo da non trovarci più nella nostra cartella
+home.</p>
 <p>Il comando per cambiare posizione è <code>cd</code> seguito da un
-nome di directory per cambiare la nostra directory di lavoro.
+nome di cartella per cambiare la nostra cartella di lavoro.
 <code>cd</code> sta per ‘change directory’, il che è un po’ fuorviante.
-Il comando non cambia la directory, ma la directory di lavoro corrente
+Il comando non cambia la cartella, ma la cartella di lavoro corrente
 della shell. In altre parole, cambia le impostazioni della shell per
-quanto riguarda la directory in cui ci troviamo. Il comando
+quanto riguarda la cartella in cui ci troviamo. Il comando
 <code>cd</code> è simile a un doppio clic su una cartella in
 un’interfaccia grafica per entrare in quella cartella.</p>
-<p>Supponiamo di volerci spostare nella directory
+<p>Supponiamo di volerci spostare nella cartella
 <code>exercise-data</code> che abbiamo visto sopra. Per arrivarci
 possiamo usare la seguente serie di comandi:</p>
 <div class="codewrapper sourceCode" id="cb18">
@@ -859,8 +859,8 @@ possiamo usare la seguente serie di comandi:</p>
 <span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="ex">$</span> cd shell-lesson-data</span>
 <span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a><span class="ex">$</span> cd exercise-data</span></code></pre>
 </div>
-<p>Questi comandi ci spostano dalla nostra home directory alla nostra
-directory Desktop, poi alla directory <code>shell-lesson-data</code>,
+<p>Questi comandi ci spostano dalla nostra cartella home alla nostra
+cartella Desktop, poi alla cartella <code>shell-lesson-data</code>,
 quindi alla directory <code>exercise-data</code>. Si noterà che
 <code>cd</code> non stampa nulla. Questo è normale. Molti comandi di
 shell non producono nulla sullo schermo quando vengono eseguiti con
@@ -891,10 +891,10 @@ perché è lì che ci troviamo:</p>
 </h3>
 <pre class="output" tabindex="0"><code>alkanes/  animal-counts/  creatures/  numbers.txt  writing/</code></pre>
 </div>
-<p>Ora sappiamo come scendere nell’albero delle directory (cioè come
-entrare in una sottodirectory), ma come salire (cioè come lasciare una
-directory e andare nella sua directory madre)? Potremmo provare a fare
-come segue:</p>
+<p>Ora sappiamo come scendere nell’albero delle cartelle (cioè come
+entrare in una sottocartella), ma come salire (cioè come lasciare una
+cartella e andare nella sua cartella home)? Potremmo provare a fare come
+segue:</p>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -907,19 +907,19 @@ come segue:</p>
 </div>
 <p>ma si ottiene un errore! Perché?</p>
 <p>Con i metodi utilizzati finora, <code>cd</code> può vedere solo le
-sottodirectory all’interno della directory corrente. Esistono diversi
-modi per vedere le directory al di sopra della posizione corrente;
-inizieremo con il più semplice.</p>
-<p>esiste una scorciatoia nella shell per spostarsi su un livello di
-directory. Funziona come segue:</p>
+sottocartelle all’interno della cartella corrente. Esistono diversi modi
+per vedere le cartella al di sopra della posizione corrente; inizieremo
+con il più semplice.</p>
+<p>Esiste una scorciatoia nella shell per spostarsi su un livello di
+cartella. Funziona come segue:</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> cd ..</span></code></pre>
 </div>
-<p><code>..</code> è un nome speciale di directory che significa “la
-directory che contiene questa”, o più brevemente, il
-<strong>genitore</strong> della directory corrente. Sicuramente, se si
+<p><code>..</code> è un nome speciale di cartella che significa “la
+cartella che contiene questa”, o più brevemente, il
+<strong>genitore</strong> della cartella corrente. Sicuramente, se si
 esegue <code>pwd</code> dopo aver eseguito <code>cd ..</code>, ci si
 ritrova in <code>/Users/nelle/Desktop/shell-lesson-data</code>:</p>
 <div class="codewrapper sourceCode" id="cb26">
@@ -932,10 +932,9 @@ ritrova in <code>/Users/nelle/Desktop/shell-lesson-data</code>:</p>
 </h3>
 <pre class="output" tabindex="0"><code>/Users/nelle/Desktop/shell-lesson-data</code></pre>
 </div>
-<p>La directory speciale <code>..</code> di solito non viene
-visualizzata quando si esegue <code>ls</code>. Se si desidera
-visualizzarla, si può aggiungere l’opzione <code>-a</code> a
-<code>ls -F</code>:</p>
+<p>La cartella speciale <code>..</code> di solito non viene visualizzata
+quando si esegue <code>ls</code>. Se si desidera visualizzarla, si può
+aggiungere l’opzione <code>-a</code> a <code>ls -F</code>:</p>
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -947,13 +946,13 @@ visualizzarla, si può aggiungere l’opzione <code>-a</code> a
 <pre class="output" tabindex="0"><code>./  ../  exercise-data/  north-pacific-gyre/</code></pre>
 </div>
 <p><code>-a</code> sta per “mostra tutto” (compresi i file nascosti);
-obbliga <code>ls</code> a mostrare i nomi dei file e delle directory che
+obbliga <code>ls</code> a mostrare i nomi dei file e delle cartella che
 iniziano con <code>.</code>, come ad esempio <code>..</code> (che, se ci
-troviamo in <code>/Users/nelle</code>, si riferisce alla directory
+troviamo in <code>/Users/nelle</code>, si riferisce alla cartella
 <code>/Users</code>). Come si può vedere, viene visualizzata anche
-un’altra directory speciale, chiamata <code>.</code>, che significa “la
-directory di lavoro corrente”. Può sembrare superfluo avere un nome per
-questa directory, ma presto ne vedremo l’uso.</p>
+un’altra cartella speciale, chiamata <code>.</code>, che significa “la
+cartella di lavoro corrente”. Può sembrare superfluo avere un nome per
+questa cartella, ma presto ne vedremo l’uso.</p>
 <p>Si noti che nella maggior parte degli strumenti a riga di comando,
 più opzioni possono essere combinate con un singolo <code>-</code> e
 senza spazi tra le opzioni; <code>ls -F -a</code> è equivalente a
@@ -966,12 +965,12 @@ senza spazi tra le opzioni; <code>ls -F -a</code> è equivalente a
 <div id="altri-file-nascosti" class="callout-inner">
 <h3 class="callout-title">Altri file nascosti</h3>
 <div class="callout-content">
-<p>Oltre alle directory nascoste <code>..</code> e <code>.</code>, è
+<p>Oltre alle cartella nascoste <code>..</code> e <code>.</code>, è
 possibile che venga visualizzato anche un file chiamato
 <code>.bash_profile</code>. Questo file contiene solitamente le
 impostazioni di configurazione della shell. Si possono vedere anche
-altri file e directory che iniziano con <code>.</code>. Si tratta in
-genere di file e directory utilizzati per configurare diversi programmi
+altri file e cartella che iniziano con <code>.</code>. Si tratta in
+genere di file e cartella utilizzati per configurare diversi programmi
 sul computer. Il prefisso <code>.</code> è usato per evitare che questi
 file di configurazione ingombrino il terminale quando si usa il comando
 standard <code>ls</code>.</p>
@@ -1000,12 +999,12 @@ risposta!</p>
 <pre class="output" tabindex="0"><code>/Users/nelle</code></pre>
 </div>
 <p>Si scopre che <code>cd</code> senza un argomento vi riporterà alla
-vostra home directory, il che è ottimo se vi siete persi nel vostro
+vostra cartella home, il che è ottimo se vi siete persi nel vostro
 filesystem.</p>
-<p>Proviamo a tornare alla directory <code>exercise-data</code> di
-prima. L’ultima volta abbiamo usato tre comandi, ma possiamo mettere
-insieme l’elenco delle directory per spostarci a
-<code>exercise-data</code> in un solo passaggio:</p>
+<p>Proviamo a tornare alla cartella <code>exercise-data</code> di prima.
+L’ultima volta abbiamo usato tre comandi, ma possiamo mettere insieme
+l’elenco delle cartella per spostarci a <code>exercise-data</code> in un
+solo passaggio:</p>
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1013,23 +1012,23 @@ insieme l’elenco delle directory per spostarci a
 </div>
 <p>Verificare che ci si sia spostati nel posto giusto eseguendo
 <code>pwd</code> e <code>ls -F</code>.</p>
-<p>Se si vuole salire di un livello dalla directory dei dati, si può
+<p>Se si vuole salire di un livello dalla cartella dei dati, si può
 usare <code>cd ..</code>. Ma c’è un altro modo per spostarsi in
-qualsiasi directory, indipendentemente dalla posizione attuale.</p>
-<p>Finora, quando si sono specificati i nomi delle directory, o anche un
-percorso di directory (come sopra), si sono usati <strong>percorsi
+qualsiasi cartella, indipendentemente dalla posizione attuale.</p>
+<p>Finora, quando si sono specificati i nomi delle cartella, o anche un
+percorso di cartella (come sopra), si sono usati <strong>percorsi
 relativi</strong>. Quando si usa un percorso relativo con un comando
 come <code>ls</code> o <code>cd</code>, si cerca di trovare quella
 posizione dal punto in cui ci si trova, piuttosto che dalla radice del
 file system.</p>
 <p>Tuttavia, è possibile specificare il <strong>percorso
-assoluto</strong> di una directory includendo il suo intero percorso a
-partire dalla directory principale, indicata da una barra iniziale. La
+assoluto</strong> di una cartella includendo il suo intero percorso a
+partire dalla cartella principale, indicata da una barra iniziale. La
 barra iniziale <code>/</code> indica al computer di seguire il percorso
 dalla radice del file system, in modo da riferirsi sempre esattamente a
-una directory, indipendentemente dalla posizione in cui ci si trova
+una cartella, indipendentemente dalla posizione in cui ci si trova
 quando si esegue il comando.</p>
-<p>Questo ci permette di spostarci nella nostra directory
+<p>Questo ci permette di spostarci nella nostra cartella
 <code>shell-lesson-data</code> da qualsiasi punto del filesystem (anche
 da dentro <code>exercise-data</code>). Per trovare il percorso assoluto
 che stiamo cercando, possiamo usare <code>pwd</code> e poi estrarre il
@@ -1060,19 +1059,19 @@ essere nella directory prevista.</p>
 <h3 class="callout-title">Altre due scorciatoie</h3>
 <div class="callout-content">
 <p>La shell interpreta il carattere tilde (<code>~</code>) all’inizio di
-un percorso come “la home directory dell’utente corrente”. Ad esempio,
-se la home directory di Nelle è <code>/Users/nelle</code>, allora
+un percorso come “la cartella home dell’utente corrente”. Ad esempio, se
+la cartella home di Nelle è <code>/Users/nelle</code>, allora
 <code>~/data</code> è equivalente a <code>/Users/nelle/data</code>.
 Questo funziona solo se è il primo carattere del percorso;
 <code>here/there/~/elsewhere</code> è <em>non</em>
 <code>here/there/Users/nelle/elsewhere</code>.</p>
 <p>Un’altra scorciatoia è il carattere <code>-</code>
-(trattino).<code>cd</code> tradurrà <code>-</code> in <em>la directory
+(trattino).<code>cd</code> tradurrà <code>-</code> in <em>la cartella
 precedente in cui mi trovavo</em>, il che è più veloce che dover
 ricordare, e poi digitare, il percorso completo. Questo è un modo
 <em>molto</em> efficiente di spostarsi <em>avanti e indietro tra due
-directory</em> – cioè se si esegue <code>cd -</code> due volte, si torna
-alla directory di partenza.</p>
+cartella</em> – cioè se si esegue <code>cd -</code> due volte, si torna
+alla cartella di partenza.</p>
 <p>La differenza tra <code>cd ..</code> e <code>cd -</code> è che il
 primo porta <em>su</em>, mentre il secondo porta <em>indietro</em>.</p>
 <hr><p>Provate! Per prima cosa spostatevi in
@@ -1082,7 +1081,7 @@ primo porta <em>su</em>, mentre il secondo porta <em>indietro</em>.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="ex">$</span> cd ~/Desktop/shell-lesson-data</span></code></pre>
 </div>
-<p>Poi <code>cd</code> nella directory
+<p>Poi <code>cd</code> nella cartella
 <code>exercise-data/creatures</code></p>
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1111,8 +1110,8 @@ primo porta <em>su</em>, mentre il secondo porta <em>indietro</em>.</p>
 <h3 class="callout-title">Percorsi assoluti e relativi</h3>
 <div class="callout-content">
 <p>Partendo da <code>/Users/nelle/data</code>, quale dei seguenti
-comandi potrebbe essere usato da Nelle per navigare verso la sua home
-directory, che è <code>/Users/nelle</code>?</p>
+comandi potrebbe essere usato da Nelle per navigare verso la sua
+cartella home, che è <code>/Users/nelle</code>?</p>
 <ol style="list-style-type: decimal"><li><code>cd .</code></li>
 <li><code>cd /</code></li>
 <li><code>cd /home/nelle</code></li>
@@ -1132,17 +1131,17 @@ directory, che è <code>/Users/nelle</code>?</p>
 </button>
 <div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
-<ol style="list-style-type: decimal"><li>No: <code>.</code> sta per la directory corrente.</li>
-<li>No: <code>/</code> sta per la directory principale.</li>
-<li>No: la directory home di Nelle è <code>/Users/nelle</code>.</li>
+<ol style="list-style-type: decimal"><li>No: <code>.</code> sta per la cartella corrente.</li>
+<li>No: <code>/</code> sta per la cartella principale.</li>
+<li>No: la cartella home di Nelle è <code>/Users/nelle</code>.</li>
 <li>No: questo comando sale di due livelli, cioè termina con
 <code>/Users</code>.</li>
-<li>Sì: <code>~</code> sta per la home directory dell’utente, in questo
+<li>Sì: <code>~</code> sta per la cartella home dell’utente, in questo
 caso <code>/Users/nelle</code>.</li>
-<li>No: questo comando naviga in una directory <code>home</code> nella
-directory corrente, se esiste.</li>
+<li>No: questo comando naviga in una cartella <code>home</code> nella
+cartella corrente, se esiste.</li>
 <li>Sì: inutilmente complicato, ma corretto.</li>
-<li>Sì: scorciatoia per tornare alla directory principale
+<li>Sì: scorciatoia per tornare alla cartella principale
 dell’utente.</li>
 <li>Sì: sale di un livello.</li>
 </ol></div>
@@ -1164,7 +1163,7 @@ dell’utente.</li>
 <li><code>2012-12-01 2013-01-08 2013-01-27</code></li>
 <li><code>2012-12-01/ 2013-01-08/ 2013-01-27/</code></li>
 <li><code>original/ pnas_final/ pnas_sub/</code></li>
-</ol><figure><img src="../fig/filesystem-challenge.svg" alt='Un albero di directory sotto la directory Utenti dove "/Utenti" contiene le directory "backup" e "thing"; "/Utenti/backup" contiene "original", "pnas_final" e "pnas_sub"; "/Utenti/thing" contiene "backup"; e "/Utenti/thing/backup" contiene "2012-12-01", "2013-01-08" e "2013-01-27"' class="figure mx-auto d-block"></figure></div>
+</ol><figure><img src="../fig/filesystem-challenge.svg" alt='Un albero di cartella sotto la cartella Utenti dove "/Utenti" contiene le cartella "backup" e "thing"; "/Utenti/backup" contiene "original", "pnas_final" e "pnas_sub"; "/Utenti/thing" contiene "backup"; e "/Utenti/thing/backup" contiene "2012-12-01", "2013-01-08" e "2013-01-27"' class="figure mx-auto d-block"></figure></div>
 </div>
 </div>
 <div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
@@ -1174,7 +1173,7 @@ dell’utente.</li>
 </button>
 <div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
-<ol style="list-style-type: decimal"><li>No: c’è *una directory <code>backup</code> in
+<ol style="list-style-type: decimal"><li>No: c’è *una cartella <code>backup</code> in
 <code>/Users</code>.</li>
 <li>No: questo è il contenuto di <code>Users/thing/backup</code>, ma con
 <code>..</code>, abbiamo chiesto un livello più in alto.</li>
@@ -1204,7 +1203,7 @@ quale/i comando/i produrrà il seguente output:</p>
 </h3>
 <pre class="output" tabindex="0"><code>pnas_sub/ pnas_final/ original/</code></pre>
 </div>
-<figure><img src="../fig/filesystem-challenge.svg" alt='Un albero di directory sotto la directory Utenti dove "/Utenti" contiene le directory "backup" e "thing"; "/Utenti/backup" contiene "original", "pnas_final" e "pnas_sub"; "/Utenti/thing" contiene "backup"; e "/Utenti/thing/backup" contiene "2012-12-01", "2013-01-08" e "2013-01-27"' class="figure mx-auto d-block"></figure><ol style="list-style-type: decimal"><li><code>ls pwd</code></li>
+<figure><img src="../fig/filesystem-challenge.svg" alt='Un albero di directory sotto la directory Utenti dove "/Utenti" contiene le cartella "backup" e "thing"; "/Utenti/backup" contiene "original", "pnas_final" e "pnas_sub"; "/Utenti/thing" contiene "backup"; e "/Utenti/thing/backup" contiene "2012-12-01", "2013-01-08" e "2013-01-27"' class="figure mx-auto d-block"></figure><ol style="list-style-type: decimal"><li><code>ls pwd</code></li>
 <li><code>ls -r -F</code></li>
 <li><code>ls -r -F /Users/backup</code></li>
 </ol></div>
@@ -1217,8 +1216,8 @@ quale/i comando/i produrrà il seguente output:</p>
 </button>
 <div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
-<ol style="list-style-type: decimal"><li>No: <code>pwd</code> non è il nome di una directory.</li>
-<li>Sì: <code>ls</code> senza l’argomento directory elenca i file e le
+<ol style="list-style-type: decimal"><li>No: <code>pwd</code> non è il nome di una cartella.</li>
+<li>Sì: <code>ls</code> senza l’argomento cartella elenca i file e le
 directory nella directory corrente.</li>
 <li>Sì: utilizza esplicitamente il percorso assoluto.</li>
 </ol></div>
@@ -1243,7 +1242,7 @@ trattino (<code>-</code>), note come <strong>opzioni corte</strong>, o
 con due trattini (<code>--</code>), note come <strong>opzioni
 lunghe</strong>. le [Opzioni] modificano il comportamento di un comando
 e gli [Argomenti] indicano al comando su cosa operare (ad esempio, file
-e directory). A volte le opzioni e gli argomenti sono indicati come
+e cartella). A volte le opzioni e gli argomenti sono indicati come
 <strong>parametri</strong>. Un comando può essere chiamato con più di
 un’opzione e più di un argomento, ma non sempre un comando richiede un
 argomento o un’opzione.</p>
@@ -1255,8 +1254,8 @@ termine <em>opzione</em>.</p>
 <code>ls</code> e <code>-F</code> la shell cercherà un comando chiamato
 <code>ls-F</code>, che non esiste. Inoltre, la capitalizzazione può
 essere importante. Ad esempio, <code>ls -s</code> visualizzerà la
-dimensione dei file e delle directory accanto ai nomi, mentre
-<code>ls -S</code> ordinerà i file e le directory per dimensione, come
+dimensione dei file e delle cartella accanto ai nomi, mentre
+<code>ls -S</code> ordinerà i file e le cartella per dimensione, come
 mostrato di seguito:</p>
 <div class="codewrapper sourceCode" id="cb42">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1285,8 +1284,8 @@ cifre dell’esempio.</p>
 <pre class="output" tabindex="0"><code>animal-counts  creatures  alkanes  writing  numbers.txt</code></pre>
 </div>
 <p>Mettendo insieme tutti questi elementi, il comando
-<code>ls -F /</code> di cui sopra fornisce un elenco di file e directory
-nella directory principale <code>/</code>. Di seguito è riportato un
+<code>ls -F /</code> di cui sopra fornisce un elenco di file e cartella
+nella cartella principale <code>/</code>. Di seguito è riportato un
 esempio dell’output che si potrebbe ottenere dal comando precedente:</p>
 <div class="codewrapper sourceCode" id="cb46">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1302,10 +1301,10 @@ Network/              Volumes/</code></pre>
 </div>
 <div class="section level3">
 <h3 id="pipeline-di-nelle-organizzare-i-file">Pipeline di Nelle: Organizzare i file<a class="anchor" aria-label="anchor" href="#pipeline-di-nelle-organizzare-i-file"></a></h3>
-<p>sapendo queste informazioni su file e directory, Nelle è pronta a
+<p>sapendo queste informazioni su file e cartella, Nelle è pronta a
 organizzare i file che la macchina per il saggio delle proteine
 creerà.</p>
-<p>crea una directory chiamata <code>north-pacific-gyre</code> (per
+<p>Crea una cartella chiamata <code>north-pacific-gyre</code> (per
 ricordarsi da dove provengono i dati), che conterrà i file di dati della
 macchina di analisi e i suoi script di elaborazione dei dati.</p>
 <p>Ogni campione fisico è etichettato secondo la convenzione del suo
@@ -1316,8 +1315,8 @@ quindi decide di utilizzarlo nel nome di ogni file di dati. Poiché
 l’output della macchina di analisi è un testo semplice, chiamerà i suoi
 file <code>NENE01729A.txt</code>, <code>NENE01812A.txt</code> e così
 via. Tutti i 1520 file andranno nella stessa directory.</p>
-<p>ora nella sua directory corrente <code>shell-lesson-data</code>,
-Nelle può vedere quali file ha usando il comando:</p>
+<p>Ora nella sua cartella corrente <code>shell-lesson-data</code>, Nelle
+può vedere quali file ha usando il comando:</p>
 <div class="codewrapper sourceCode" id="cb48">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1332,7 +1331,7 @@ che la shell faccia la maggior parte del lavoro attraverso il cosiddetto
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb49-1"><a href="#cb49-1" tabindex="-1"></a><span class="ex">$</span> ls nor</span></code></pre>
 </div>
 <p>e poi preme <kbd>Tab</kbd> (il tasto tab della tastiera), la shell
-completa automaticamente il nome della directory:</p>
+completa automaticamente il nome della cartella:</p>
 <div class="codewrapper sourceCode" id="cb50">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1369,32 +1368,32 @@ vedremo in molti altri strumenti man mano che andremo avanti.</p>
 <ul><li>Il file system è responsabile della gestione delle informazioni sul
 disco.</li>
 <li>Le informazioni sono memorizzate in file, che sono memorizzati in
-directory (cartelle).</li>
-<li>le directory possono anche memorizzare altre directory, che formano
-un albero di directory.</li>
+cartelle.</li>
+<li>le cartelle possono anche memorizzare altre cartelle, che formano un
+albero di cartelle.</li>
 <li>
-<code>pwd</code> stampa la directory di lavoro corrente
+<code>pwd</code> stampa la cartella di lavoro corrente
 dell’utente.</li>
 <li>
 <code>ls [path]</code> stampa un elenco di uno specifico file o
-directory; <code>ls</code> da solo elenca la directory di lavoro
+cartella; <code>ls</code> da solo elenca la cartella di lavoro
 corrente.</li>
 <li>
-<code>cd [path]</code> cambia la directory di lavoro corrente.</li>
+<code>cd [path]</code> cambia la cartella di lavoro corrente.</li>
 <li>La maggior parte dei comandi accetta opzioni che iniziano con un
 singolo <code>-</code>.</li>
-<li>i nomi delle directory in un percorso sono separati con
+<li>i nomi delle cartelle in un percorso sono separati con
 <code>/</code> su Unix, ma <code>\</code> su Windows.</li>
 <li>
-<code>/</code> da sola è la directory principale dell’intero file
+<code>/</code> da sola è la cartella principale dell’intero file
 system.</li>
 <li>Un percorso assoluto specifica una posizione dalla radice del file
 system.</li>
 <li>Un percorso relativo specifica una posizione a partire da quella
 corrente.</li>
 <li>
-<code>.</code> da solo significa “la directory corrente”;
-<code>..</code> significa “la directory sopra quella corrente”.</li>
+<code>.</code> da solo significa “la cartella corrente”;
+<code>..</code> significa “la cartella sopra quella corrente”.</li>
 </ul></div>
 </div>
 </div>
@@ -1457,7 +1456,7 @@ corrente.</li>
   "url": "https://swcarpentry.github.io/shell-novice/instructor/02-filedir.html",
   "identifier": "https://swcarpentry.github.io/shell-novice/instructor/02-filedir.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-04-03",
+  "dateModified": "2025-11-07",
   "datePublished": "2025-11-07"
 }
 
