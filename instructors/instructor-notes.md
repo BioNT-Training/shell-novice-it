@@ -37,7 +37,7 @@ Tutto questo materiale può essere trattato in tre ore, a patto che gli studenti
 
 ## Preparazione all'insegnamento
 
-- Usare la directory `data` per gli esercizi in laboratorio e gli esempi di codifica dal vivo. È possibile clonare la directory shell-novice o utilizzare il pulsante *Download ZIP* sulla destra per ottenere l'intero [repository Git](https://github.com/swcarpentry/shell-novice). Ora forniamo anche un file zip della directory `data` nella [pagina di installazione](../learners/setup.md).
+- Usare la cartella `data` per gli esercizi in laboratorio e gli esempi di codifica dal vivo. È possibile clonare la cartella shell-novice o utilizzare il pulsante *Download ZIP* sulla destra per ottenere l'intero [repository Git](https://github.com/swcarpentry/shell-novice). Ora forniamo anche un file zip della cartella `data` nella [pagina di installazione](../learners/setup.md).
 
 - Sito web: sono state utilizzate diverse pratiche.
 
@@ -88,7 +88,7 @@ Tutto questo materiale può essere trattato in tre ore, a patto che gli studenti
   $ cd Desktop
   ```
 
-  metterà sempre qualcuno sul suo desktop (a meno che il suo computer non sia sottoposto a backup tramite OneDrive aziendale, vedi punto successivo). Chiedete loro di creare la directory di esempio per gli esercizi di shell, in modo che possano trovarla facilmente e osservarne l'evoluzione.
+  metterà sempre qualcuno sul suo desktop (a meno che il suo computer non sia sottoposto a backup tramite OneDrive aziendale, vedi punto successivo). Chiedete loro di creare la cartella di esempio per gli esercizi di shell, in modo che possano trovarla facilmente e osservarne l'evoluzione.
 
 - Se il backup di un computer Windows viene eseguito con OneDrive aziendale, il desktop dell'interfaccia grafica potrebbe essere rappresentato da una cartella all'interno di OneDrive, che non corrisponde al contenuto di `~/Desktop`. Il desktop di OneDrive dovrebbe essere accessibile utilizzando uno dei seguenti comandi (se il nome dell'azienda non è chiaro, cercate nell'output di `ls` per trovare la cartella giusta):
 
