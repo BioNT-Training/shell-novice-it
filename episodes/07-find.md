@@ -8,7 +8,7 @@ exercises: 20
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Usare `grep` per selezionare righe da file di testo che corrispondono a modelli semplici.
-- Usare `find` per trovare file e directory i cui nomi corrispondono a schemi semplici.
+- Usare `find` per trovare file e cartelle i cui nomi corrispondono a schemi semplici.
 - Utilizzare l'output di un comando come argomento della riga di comando di un altro comando.
 - Spiegare cosa si intende per file "di testo" e "binari" e perché molti strumenti comuni non gestiscono bene questi ultimi.
 
@@ -23,7 +23,7 @@ exercises: 20
 
 Allo stesso modo in cui molti di noi usano 'Google' come verbo che significa 'trovare', i programmatori Unix usano spesso la parola 'grep'. 'grep' è una contrazione di 'global/regular expression/print', una sequenza comune di operazioni nei primi editor di testo Unix. È anche il nome di un programma a riga di comando molto utile.
 
-`grep` trova e stampa le righe dei file che corrispondono a uno schema. Per i nostri esempi, useremo un file che contiene tre haiku tratti da un [concorso 1998](https://web.archive.org/web/19991201042211/http://salon.com/21st/chal/1998/01/26chal.html) della rivista *Salon* (merito degli autori Bill Torcaso, Howard Korder e Margaret Segall, rispettivamente. Si vedano i messaggi di errore Haiku archiviati [Pagina 1](https://web.archive.org/web/20000310061355/http://www.salon.com/21st/chal/1998/02/10chal2.html) e [Pagina 2](https://web.archive.org/web/20000229135138/http://www.salon.com/21st/chal/1998/02/10chal3.html)). Per questa serie di esempi, lavoreremo nella sottodirectory della scrittura:
+`grep` trova e stampa le righe dei file che corrispondono a uno schema. Per i nostri esempi, useremo un file che contiene tre haiku tratti da un [concorso 1998](https://web.archive.org/web/19991201042211/http://salon.com/21st/chal/1998/01/26chal.html) della rivista *Salon* (merito degli autori Bill Torcaso, Howard Korder e Margaret Segall, rispettivamente. Si vedano i messaggi di errore Haiku archiviati [Pagina 1](https://web.archive.org/web/20000310061355/http://www.salon.com/21st/chal/1998/02/10chal2.html) e [Pagina 2](https://web.archive.org/web/20000229135138/http://www.salon.com/21st/chal/1998/02/10chal3.html)). Per questa serie di esempi, lavoreremo nella sottocartella della scrittura:
 
 ```bash
 $ cd
@@ -283,7 +283,7 @@ $1.txt
 cut -d , -f 1,3
 ```
 
-Suggerimento: usare `man grep` per cercare come grepare il testo in modo ricorsivo in una directory e `man cut` per selezionare più di un campo in una riga.
+Suggerimento: usare `man grep` per cercare come grepare il testo in modo ricorsivo in una cartella e `man cut` per selezionare più di un campo in una riga.
 
 Un esempio di tale file è fornito in `shell-lesson-data/exercise-data/animal-counts/animals.csv`
 
@@ -347,7 +347,7 @@ Gli osservatori più attenti avranno notato che i nomi dei personaggi a volte ap
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Mentre `grep` trova le righe nei file, il comando `find` trova i file stessi. Anche in questo caso, ha molte opzioni; per mostrare come funzionano le più semplici, useremo l'albero di directory `shell-lesson-data/exercise-data` mostrato di seguito.
+Mentre `grep` trova le righe nei file, il comando `find` trova i file stessi. Anche in questo caso, ha molte opzioni; per mostrare come funzionano le più semplici, useremo l'albero `shell-lesson-data/exercise-data` mostrato di seguito.
 
 ```output
 .
@@ -370,7 +370,7 @@ Mentre `grep` trova le righe nei file, il comando `find` trova i file stessi. An
     └── LittleWomen.txt
 ```
 
-La directory `exercise-data` contiene un file, `numbers.txt` e quattro directory: `animal-counts`, `creatures`, `alkanes` e `writing` contenenti vari file.
+La cartella `exercise-data` contiene un file, `numbers.txt` e quattro cartelle: `animal-counts`, `creatures`, `alkanes` e `writing` contenenti vari file.
 
 Per il nostro primo comando, eseguiamo `find .` (ricordate di eseguire questo comando dalla cartella `shell-lesson-data/exercise-data`).
 
@@ -399,9 +399,9 @@ $ find .
 ./alkanes/cubane.pdb
 ```
 
-Come sempre, `.` da solo significa la directory di lavoro corrente, che è il punto da cui vogliamo iniziare la nostra ricerca. l'output di `find` è il nome di ogni file **e** directory sotto la directory di lavoro corrente. All'inizio può sembrare inutile, ma `find` ha molte opzioni per filtrare l'output e in questa lezione ne scopriremo alcune.
+Come sempre, `.` da solo significa la cartella di lavoro corrente, che è il punto da cui vogliamo iniziare la nostra ricerca. l'output di `find` è il nome di ogni file **e** cartella sotto la cartella di lavoro corrente. All'inizio può sembrare inutile, ma `find` ha molte opzioni per filtrare l'output e in questa lezione ne scopriremo alcune.
 
-La prima opzione del nostro elenco è `-type d` che significa "cose che sono directory". Certamente, l'output di `find` è il nome delle cinque directory (inclusa `.`):
+La prima opzione del nostro elenco è `-type d` che significa "cose che sono directory". Certamente, l'output di `find` è il nome delle cinque cartelle (inclusa `.`):
 
 ```bash
 $ find . -type d
@@ -447,7 +447,7 @@ $ find . -name *.txt
 ./numbers.txt
 ```
 
-Ci si aspettava che trovasse tutti i file di testo, ma stampa solo `./numbers.txt`. Il problema è che la shell espande i caratteri jolly come `*` *prima* dell'esecuzione dei comandi. Poiché `*.txt` nella directory corrente si espande a `./numbers.txt`, il comando effettivamente eseguito è stato:
+Ci si aspettava che trovasse tutti i file di testo, ma stampa solo `./numbers.txt`. Il problema è che la shell espande i caratteri jolly come `*` *prima* dell'esecuzione dei comandi. Poiché `*.txt` nella cartella corrente si espande a `./numbers.txt`, il comando effettivamente eseguito è stato:
 
 ```bash
 $ find . -name numbers.txt
@@ -476,7 +476,7 @@ $ find . -name "*.txt"
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Come abbiamo detto prima, la potenza della riga di comando sta nel combinare gli strumenti. Abbiamo visto come farlo con le pipe; vediamo un'altra tecnica. Come abbiamo appena visto, `find . -name "*.txt"` ci fornisce un elenco di tutti i file di testo presenti nella directory corrente o al di sotto di essa. Come possiamo combinarlo con `wc -l` per contare le righe in tutti questi file?
+Come abbiamo detto prima, la potenza della riga di comando sta nel combinare gli strumenti. Abbiamo visto come farlo con le pipe; vediamo un'altra tecnica. Come abbiamo appena visto, `find . -name "*.txt"` ci fornisce un elenco di tutti i file di testo presenti nella cartella corrente o al di sotto di essa. Come possiamo combinarlo con `wc -l` per contare le righe in tutti questi file?
 
 Il modo più semplice è quello di inserire il comando `find` all'interno di `$()`:
 
@@ -527,7 +527,7 @@ L'opzione `-v` di `grep` inverte la corrispondenza dei pattern, in modo che veng
 
 L'opzione 1 è corretta. Mettere l'espressione di corrispondenza tra virgolette impedisce alla shell di espanderla, quindi viene passata al comando `find`.
 
-L'opzione 2 funziona anche in questo caso, perché la shell tenta di espandere `*.dat` ma non ci sono file `*.dat` nella directory corrente, quindi l'espressione jolly viene passata a `find`. L'abbiamo incontrato per la prima volta in [episodio 3] (03-create.md).
+L'opzione 2 funziona anche in questo caso, perché la shell tenta di espandere `*.dat` ma non ci sono file `*.dat` nella cartella corrente, quindi l'espressione jolly viene passata a `find`. L'abbiamo incontrato per la prima volta in [episodio 3] (03-create.md).
 
 L'opzione 3 non è corretta perché cerca nel contenuto dei file le righe che non corrispondono a "unicorno", anziché cercare nei nomi dei file.
 
@@ -566,7 +566,7 @@ wc -l $(find . -name "*.dat") | sort -n
 
 ## Soluzione
 
-1. Trova tutti i file con estensione `.dat` ricorsivamente dalla directory corrente
+1. Trova tutti i file con estensione `.dat` ricorsivamente dalla cartella corrente
 2. Conta il numero di righe contenute in ciascuno di questi file
 3. Ordina numericamente l'output del passo 2
 
