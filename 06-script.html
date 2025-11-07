@@ -325,7 +325,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Script di shell</h1>
-        <p>Ultimo aggiornamento il 2025-04-03 |
+        <p>Ultimo aggiornamento il 2025-11-07 |
 
         <a href="https://github.com/swcarpentry/shell-novice/edit/main/episodes/06-script.md" class="external-link">Modifica questa pagina <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -399,7 +399,7 @@ non lo stiamo ancora eseguendo come comando; stiamo solo incorporando i
 comandi in un file.</p>
 <p>Poi si salva il file (<code>Ctrl-O</code> in nano) e si esce
 dall’editor di testo (<code>Ctrl-X</code> in nano). Verificare che la
-directory <code>alkanes</code> contenga ora un file chiamato
+cartella <code>alkanes</code> contenga ora un file chiamato
 <code>middle.sh</code>.</p>
 <p>Una volta salvato il file, possiamo chiedere alla shell di eseguire i
 comandi in esso contenuti. La nostra shell si chiama <code>bash</code>,
@@ -661,19 +661,19 @@ separatamente.</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="co"># Script to find unique species in csv files where species is the second data field</span></span>
-<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="co"># This script accepts any number of file names as command line arguments</span></span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="co"># Script per trovare le specie uniche nei file CSV, dove la specie è il secondo campo di dati.</span></span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="co"># Questo script accetta un numero qualsiasi di nomi di file come argomenti da riga di comando.</span></span>
 <span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a></span>
 <span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a><span class="co"># Loop over all files</span></span>
 <span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a><span class="cf">for</span> file <span class="kw">in</span> <span class="va">$@</span></span>
 <span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a><span class="cf">do</span></span>
 <span id="cb25-7"><a href="#cb25-7" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Unique species in </span><span class="va">$file</span><span class="st">:"</span></span>
-<span id="cb25-8"><a href="#cb25-8" tabindex="-1"></a>    <span class="co"># Extract species names</span></span>
+<span id="cb25-8"><a href="#cb25-8" tabindex="-1"></a>    <span class="co"># Estrae i nomi delle specie</span></span>
 <span id="cb25-9"><a href="#cb25-9" tabindex="-1"></a>    <span class="fu">cut</span> <span class="at">-d</span> , <span class="at">-f</span> 2 <span class="va">$file</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span></span>
 <span id="cb25-10"><a href="#cb25-10" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
@@ -731,7 +731,7 @@ comandi al log prima di eseguirli. Perché pensate che lo faccia?</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Se un comando provoca un arresto anomalo o un blocco, potrebbe essere
 utile sapere qual è il comando in questione, per poter indagare sul
@@ -742,11 +742,11 @@ crash.</p>
 </div>
 </div>
 </div>
-<p>In pratica, la maggior parte delle persone sviluppa script di shell
-eseguendo i comandi al prompt della shell un paio di volte per
-assicurarsi che stiano facendo la cosa giusta, poi li salva in un file
-per riutilizzarli. Questo stile di lavoro consente di riciclare ciò che
-si scopre sui propri dati e sul proprio flusso di lavoro con una sola
+<p>In pratica, la maggior parte delle persone sviluppa script eseguendo
+i comandi al prompt della shell un paio di volte per assicurarsi che
+stiano facendo la cosa giusta, poi li salva in un file per
+riutilizzarli. Questo stile di lavoro consente di riciclare ciò che si
+scopre sui propri dati e sul proprio flusso di lavoro con una sola
 chiamata a <code>history</code> e un po’ di modifiche per ripulire
 l’output e salvarlo come script di shell.</p>
 <section><h2 class="section-heading" id="pipeline-di-nelle-creazione-di-uno-script">Pipeline di Nelle: Creazione di uno script<a class="anchor" aria-label="anchor" href="#pipeline-di-nelle-creazione-di-uno-script"></a></h2>
@@ -769,7 +769,7 @@ tutti i passaggi è uno script.</p>
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="co"># Calculate stats for data files.</span></span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="co"># Calcola le statistiche per i file di dati.</span></span>
 <span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a><span class="cf">for</span> datafile <span class="kw">in</span> <span class="st">"</span><span class="va">$@</span><span class="st">"</span></span>
 <span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a><span class="cf">do</span></span>
 <span id="cb31-4"><a href="#cb31-4" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">$datafile</span></span>
@@ -822,7 +822,7 @@ complessità.</p>
 <div id="variabili-negli-script-di-shell" class="callout-inner">
 <h3 class="callout-title">Variabili negli script di shell</h3>
 <div class="callout-content">
-<p>Nella directory <code>alkanes</code>, immaginate di avere uno script
+<p>Nella cartella <code>alkanes</code>, immaginate di avere uno script
 di shell chiamato <code>script.sh</code> contenente i seguenti
 comandi:</p>
 <div class="codewrapper sourceCode" id="cb35">
@@ -831,7 +831,7 @@ comandi:</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="fu">head</span> <span class="at">-n</span> <span class="va">$2</span> <span class="va">$1</span></span>
 <span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a><span class="fu">tail</span> <span class="at">-n</span> <span class="va">$3</span> <span class="va">$1</span></span></code></pre>
 </div>
-<p>Mentre ci si trova nella directory <code>alkanes</code>, si digita il
+<p>Mentre ci si trova nella cartella <code>alkanes</code>, si digita il
 seguente comando:</p>
 <div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -840,12 +840,12 @@ seguente comando:</p>
 </div>
 <p>Quale dei seguenti risultati vi aspettereste di vedere?</p>
 <ol style="list-style-type: decimal"><li>Tutte le righe tra la prima e l’ultima di ogni file che termina con
-<code>.pdb</code> nella directory <code>alkanes</code>
+<code>.pdb</code> nella cartella <code>alkanes</code>
 </li>
 <li>La prima e l’ultima riga di ogni file che termina con
-<code>.pdb</code> nella directory <code>alkanes</code>
+<code>.pdb</code> nella cartella <code>alkanes</code>
 </li>
-<li>La prima e l’ultima riga di ogni file nella directory
+<li>La prima e l’ultima riga di ogni file nella cartella
 <code>alkanes</code>
 </li>
 <li>Errore a causa delle virgolette intorno a <code>*.pdb</code>
@@ -860,7 +860,7 @@ seguente comando:</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>la risposta corretta è 2.</p>
 <p>Le variabili speciali <code>$1</code>, <code>$2</code> e
@@ -890,9 +890,9 @@ virgolette. Pertanto, il primo argomento dello script è
 estensione</h3>
 <div class="callout-content">
 <p>Scrivere uno script di shell chiamato <code>longest.sh</code> che
-prenda come argomenti il nome di una directory e l’estensione di un nome
+prenda come argomenti il nome di una cartella e l’estensione di un nome
 di file e stampi il nome del file con il maggior numero di righe in
-quella directory con quell’estensione. Ad esempio:</p>
+quella cartella con quell’estensione. Ad esempio:</p>
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -918,7 +918,7 @@ ad es.</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -952,7 +952,7 @@ essere sicuri di capire l’output.</p>
 <div id="comprensione-della-lettura-degli-script" class="callout-inner">
 <h3 class="callout-title">Comprensione della lettura degli script</h3>
 <div class="callout-content">
-<p>Per questa domanda, consideriamo ancora una volta la directory
+<p>Per questa domanda, consideriamo ancora una volta la cartella
 <code>shell-lesson-data/exercise-data/alkanes</code>. Questa contiene
 una serie di file <code>.pdb</code> oltre ad altri file eventualmente
 creati. Spiegare che cosa farebbe ciascuno dei tre script seguenti se
@@ -990,7 +990,7 @@ eseguito rispettivamente come <code>bash script1.sh *.pdb</code>,
   Soluzioni
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>In ogni caso, la shell espande il carattere jolly in
 <code>*.pdb</code> prima di passare l’elenco risultante di nomi di file
@@ -1024,8 +1024,8 @@ shell.</p>
 <h3 class="callout-title">Script di Debug</h3>
 <div class="callout-content">
 <p>Si supponga di aver salvato il seguente script in un file chiamato
-<code>do-errors.sh</code> nella directory
-<code>north-pacific-gyre</code> di Nelle:</p>
+<code>do-errors.sh</code> nella cartella <code>north-pacific-gyre</code>
+di Nelle:</p>
 <div class="codewrapper sourceCode" id="cb45">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1036,7 +1036,7 @@ shell.</p>
 <span id="cb45-5"><a href="#cb45-5" tabindex="-1"></a>    <span class="fu">bash</span> goostats.sh <span class="va">$datafile</span> stats-<span class="va">$datafile</span></span>
 <span id="cb45-6"><a href="#cb45-6" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
-<p>Quando lo si esegue dalla directory
+<p>Quando lo si esegue dalla cartella
 <code>north-pacific-gyre</code>:</p>
 <div class="codewrapper sourceCode" id="cb46">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1061,7 +1061,7 @@ utilizzando l’opzione <code>-x</code>:</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>L’opzione <code>-x</code> fa sì che <code>bash</code> venga eseguito
 in modalità di debug. In questo modo viene stampato ogni comando man
@@ -1158,7 +1158,7 @@ flessibile e più coerente con i comandi Unix integrati.</li>
   "url": "https://swcarpentry.github.io/shell-novice/06-script.html",
   "identifier": "https://swcarpentry.github.io/shell-novice/06-script.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2025-04-03",
+  "dateModified": "2025-11-07",
   "datePublished": "2025-11-07"
 }
 
