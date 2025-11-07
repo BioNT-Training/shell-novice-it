@@ -20,13 +20,13 @@ exercises: 0
 
 ### Sfondo
 
-L'uomo e il computer interagiscono comunemente in molti modi diversi, ad esempio tramite tastiera e mouse, interfacce touch screen o sistemi di riconoscimento vocale. Il modo più diffuso di interagire con i personal computer è chiamato **interfaccia utente grafica** (GUI). Con una GUI, le istruzioni vengono impartite facendo clic con il mouse e utilizzando interazioni guidate da menu.
+L'uomo e il computer interagiscono comunemente in molti modi diversi, ad esempio tramite tastiera e mouse, interfacce touch screen o sistemi di riconoscimento vocale. Il modo più diffuso di interagire con i computer è chiamato **interfaccia grafica** (graphical user interface GUI). Con una GUI, le istruzioni vengono impartite facendo clicK con il mouse e utilizzando interazioni guidate da menu.
 
-Sebbene l'aiuto visivo di un'interfaccia grafica ne renda intuitivo l'apprendimento, questo modo di fornire istruzioni a un computer è molto poco scalabile. Immaginate il seguente compito: per una ricerca bibliografica, dovete copiare la terza riga di mille file di testo in mille directory diverse e incollarla in un unico file. Utilizzando un'interfaccia grafica, non solo dovreste cliccare alla vostra scrivania per diverse ore, ma potreste anche commettere un errore nel completare questo compito ripetitivo. È qui che ci avvantaggiamo della shell Unix. La shell Unix è sia un'interfaccia a riga di comando (CLI) che un linguaggio di scripting, che consente di svolgere tali compiti ripetitivi in modo automatico e veloce. Con i comandi appropriati, la shell può ripetere le operazioni con o senza modifiche tutte le volte che si vuole. Utilizzando la shell, l'operazione descritta nell'esempio di letteratura può essere eseguita in pochi secondi.
+Sebbene l'aiuto visivo di un'interfaccia grafica ne renda intuitivo l'apprendimento, questo modo di fornire istruzioni a un computer è poco scalabile. Immaginate il seguente compito: per una ricerca bibliografica, dovete copiare la terza riga di mille file di testo in mille directory diverse e incollarla in un unico file. Utilizzando un'interfaccia grafica, non solo dovreste cliccare alla vostra scrivania per diverse ore, ma potreste anche commettere un errore nel completare questo compito ripetitivo. È qui che possiamo tratte vantaggio della shell Unix. La shell Unix è sia un'interfaccia a riga di comando (CLI) che un linguaggio di scripting, che consente di svolgere tali compiti ripetitivi in modo automatico e veloce. Con i comandi appropriati, la shell può ripetere le operazioni con o senza modifiche tutte le volte che si vuole. Utilizzando la shell, l'operazione descritta nell'esempio di letteratura può essere eseguita in pochi secondi.
 
 ### La shell
 
-La shell è un programma in cui gli utenti possono digitare comandi. Con la shell è possibile richiamare programmi complicati come il software di modellazione climatica o semplici comandi che creano una directory vuota con una sola riga di codice. La shell Unix più diffusa è Bash (Bourne Again SHell --- così chiamata perché deriva da una shell scritta da Stephen Bourne). Bash è la shell predefinita nella maggior parte delle moderne implementazioni di Unix e nella maggior parte dei pacchetti che forniscono strumenti simili a Unix per Windows. Si noti che "Git Bash" è un software che consente agli utenti di Windows di utilizzare un'interfaccia simile a Bash quando interagiscono con Git.
+La shell è un programma in cui gli utenti possono digitare comandi. Con la shell è possibile richiamare programmi complicati come il software di modellazione climatica o semplici comandi che creano una directory vuota con una sola riga di codice. La shell Unix più diffusa è Bash (Bourne Again SHell --- così chiamata perché deriva da una shell scritta da Stephen Bourne). Bash è la shell predefinita nella maggior parte delle moderne implementazioni Unix e nella maggior parte dei pacchetti che forniscono strumenti simili a Unix per Windows. Si noti che "Git Bash" è un software che consente agli utenti di Windows di utilizzare un'interfaccia simile a Bash quando interagiscono con Git.
 
 L'uso della shell richiede un certo sforzo e un po' di tempo per essere appreso. Mentre l'interfaccia grafica presenta delle scelte da selezionare, le scelte della CLI non vengono presentate automaticamente, quindi è necessario imparare alcuni comandi come un nuovo vocabolario in una lingua che si sta studiando. Tuttavia, a differenza di una lingua parlata, un piccolo numero di "parole" (cioè di comandi) permette di fare molta strada e oggi ci occuperemo di questi pochi elementi essenziali.
 
@@ -42,7 +42,7 @@ Quando la shell viene aperta per la prima volta, viene visualizzato un **prompt*
 $
 ```
 
-La shell usa tipicamente `$ ` come prompt, ma può usare un simbolo diverso. Negli esempi di questa lezione, mostreremo il prompt come `$ `. La cosa più importante è *non digitare il prompt* quando si digitano i comandi. Digitate solo il comando che segue il prompt. Questa regola si applica sia in queste lezioni che in quelle di altre fonti. Si noti inoltre che dopo aver digitato un comando, è necessario premere il tasto <kbd>Invio</kbd> per eseguirlo.
+La shell usa tipicamente `$ ` il segno del dollaro come prompt, ma può usare un simbolo diverso. Negli esempi di questa lezione, mostreremo il prompt come `$ `. La cosa più importante è *non digitare il prompt* quando si digitano i comandi. Digitate solo il comando che segue il prompt. Questa regola si applica sia in queste lezioni che in quelle di altre fonti. Si noti inoltre che dopo aver digitato un comando, è necessario premere il tasto <kbd>Invio</kbd> per eseguirlo.
 
 Il prompt è seguito da un **cursore di testo**, un carattere che indica la posizione in cui verrà visualizzata la digitazione. Il cursore è solitamente un blocco lampeggiante o fisso, ma può anche essere un trattino basso o una pipe. Lo si può vedere in un programma di editor di testo, ad esempio.
 
@@ -86,9 +86,9 @@ Questo può accadere se il comando è stato digitato in modo errato o se il prog
 
 ## La pipeline di Nelle: Un problema tipico
 
-Nelle Nemo, una biologa marina, è appena tornata da un'indagine di sei mesi nel [North Pacific Gyre](https://en.wikipedia.org/wiki/North_Pacific_Gyre), dove ha campionato la vita marina gelatinosa nel [Great Pacific Garbage Patch](https://en.wikipedia.org/wiki/Great_Pacific_Garbage_Patch). Ha 1520 campioni che ha fatto passare attraverso una macchina di analisi per misurare l'abbondanza relativa di 300 proteine. Deve far passare questi 1520 file attraverso un programma immaginario chiamato `goostats.sh`. Oltre a questo enorme compito, deve scrivere i risultati entro la fine del mese, in modo che il suo articolo possa apparire in un numero speciale di *Aquatic Goo Letters*.
+Nelle Nemo, una biologa marina, è appena tornata da un'indagine di sei mesi nel [North Pacific Gyre](https://en.wikipedia.org/wiki/North_Pacific_Gyre), dove ha campionato la vita marina gelatinosa nel [Great Pacific Garbage Patch](https://en.wikipedia.org/wiki/Great_Pacific_Garbage_Patch). Ha 1520 campioni che ha analizzato per misurare l'abbondanza relativa di 300 proteine. Deve far passare questi 1520 file attraverso un programma immaginario chiamato `goostats.sh`. Oltre a questo enorme compito, deve scrivere i risultati entro la fine del mese, in modo che il suo articolo possa apparire in un numero speciale di *Aquatic Goo Letters*.
 
-Se Nelle sceglie di eseguire `goostats.sh` a mano utilizzando un'interfaccia grafica, dovrà selezionare e aprire un file 1520 volte. Se `goostats.sh` impiega 30 secondi per eseguire ogni file, l'intero processo richiederà più di 12 ore dell'attenzione di Nelle. Con la shell, Nelle può invece assegnare al computer questo compito banale mentre si concentra sulla stesura del suo articolo.
+Se Nelle dovesse scegliere di eseguire `goostats.sh` a mano utilizzando un'interfaccia grafica, dovrà selezionare e aprire un file 1520 volte. Se `goostats.sh` impiega 30 secondi per eseguire ogni file, l'intero processo richiederà più di 12 ore dell'attenzione di Nelle. Con la shell, Nelle può invece assegnare al computer questo compito banale mentre si concentra sulla stesura del suo articolo.
 
 Le prossime lezioni esploreranno i modi in cui Nelle può raggiungere questo obiettivo. In particolare, le lezioni spiegano come Nelle possa utilizzare una shell di comando per eseguire il programma `goostats.sh`, utilizzando dei loop per automatizzare i passaggi ripetitivi di inserimento dei nomi dei file, in modo che il suo computer possa lavorare mentre lei scrive il suo articolo.
 
@@ -96,8 +96,8 @@ Una volta messa insieme una pipeline di elaborazione, sarà in grado di riutiliz
 
 Per svolgere il suo compito, Nelle deve sapere come fare:
 
-- navigare in un file/directory
-- creare un file/directory
+- navigare in un file o in una cartella
+- creare un file o una cartella
 - verifica la lunghezza di un file
 - concatenare i comandi tra loro
 - recuperare un insieme di file
