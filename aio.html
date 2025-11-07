@@ -3920,7 +3920,7 @@ semplici programmi monouso (filtri).</li>
 </div>
 </section></section><section id="aio-05-loop"><p>Content from <a href="05-loop.html">Cicli</a></p>
 <hr>
-<p>Ultimo aggiornamento il 2025-04-03 |
+<p>Ultimo aggiornamento il 2025-11-07 |
 
         <a href="https://github.com/swcarpentry/shell-novice/edit/main/episodes/05-loop.md" class="external-link">Modifica questa pagina <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -3946,8 +3946,8 @@ semplici programmi monouso (filtri).</li>
 <ul>
 <li>Scrivere un ciclo che applichi uno o più comandi separatamente a
 ciascun file di un insieme di file.</li>
-<li>Traccia dei valori assunti da una variabile del ciclo durante la sua
-esecuzione.</li>
+<li>Tracciare dei valori assunti da una variabile del ciclo durante la
+sua esecuzione.</li>
 <li>Spiegare la differenza tra il nome di una variabile e il suo
 valore.</li>
 <li>Spiegare perché gli spazi e alcuni caratteri di punteggiatura non
@@ -3992,13 +3992,13 @@ forma generale di un ciclo, utilizzando lo pseudo-codice seguente:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># The word "for" indicates the start of a "For-loop" command</span></span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># "for" indica l'inizio di un "For-loop" </span></span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="cf">for</span> thing <span class="kw">in</span> list_of_things </span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co">#The word "do" indicates the start of job execution list</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co"># "do" indica l'inizio dell'esecuzione</span></span>
 <span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="cf">do</span> </span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>    <span class="co"># Indentation within the loop is not required, but aids legibility</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>    <span class="co"># L'intentazione  non è richiesta ma rende il codice più leggibile</span></span>
 <span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>    <span class="ex">operation_using/command</span> <span class="va">$thing</span> </span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co"># The word "done" indicates the end of a loop</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co"># "done" indica la fine del for loop</span></span>
 <span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="cf">done</span>  </span></code></pre>
 </div>
 <p>e possiamo applicarla al nostro esempio in questo modo:</p>
@@ -4149,7 +4149,7 @@ nomi di file, come un elenco di numeri o un sottoinsieme di dati.</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4185,8 +4185,8 @@ nomi di file, come un elenco di numeri o un sottoinsieme di dati.</p>
 <div id="variabili-nei-loop" class="callout-inner">
 <h3 class="callout-title">Variabili nei loop</h3>
 <div class="callout-content">
-<p>Questo esercizio si riferisce alla directory
-<code>shell-lesson-data/exercise-data/alkanes</code>. la directory
+<p>Questo esercizio si riferisce alla cartella
+<code>shell-lesson-data/exercise-data/alkanes</code>. la cartella
 <code>ls *.pdb</code> fornisce il seguente output:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4222,7 +4222,7 @@ nomi di file, come un elenco di numeri o un sottoinsieme di dati.</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Il primo blocco di codice dà lo stesso risultato a ogni iterazione
 del ciclo. Bash espande il carattere jolly <code>*.pdb</code>
@@ -4301,7 +4301,7 @@ e <code>pentane.pdb</code>.</li>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>4 è la risposta corretta. <code>*</code> corrisponde a zero o più
 caratteri, quindi qualsiasi nome di file che inizia con la lettera c,
@@ -4348,7 +4348,7 @@ elencati.</li>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>4 è la risposta corretta. <code>*</code> corrisponde a zero o più
 caratteri, quindi un nome di file con zero o più caratteri prima di una
@@ -4366,7 +4366,7 @@ lettera c e zero o più caratteri dopo la lettera c sarà corrisposto.</p>
 <h3 class="callout-title">Salvataggio su un file in un ciclo - Prima
 parte</h3>
 <div class="callout-content">
-<p>Nella directory <code>shell-lesson-data/exercise-data/alkanes</code>,
+<p>Nella cartella <code>shell-lesson-data/exercise-data/alkanes</code>,
 qual è l’effetto di questo ciclo?</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4402,7 +4402,7 @@ salvato in un file chiamato <code>alkanes.pdb</code>.</li>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>il testo di ogni file viene scritto a turno nel file
@@ -4424,7 +4424,7 @@ iterazione del ciclo, quindi il contenuto finale di
 <h3 class="callout-title">Salvataggio su un file in un ciclo - Parte
 seconda</h3>
 <div class="callout-content">
-<p>Sempre nella directory
+<p>Sempre nella cartella
 <code>shell-lesson-data/exercise-data/alkanes</code>, quale sarebbe
 l’output del seguente ciclo?</p>
 <div class="codewrapper sourceCode" id="cb18">
@@ -4461,7 +4461,7 @@ sullo schermo e salvato in un file chiamato <code>all.pdb</code>.</li>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>3 è la risposta corretta. <code>&gt;&gt;</code> aggiunge a un file,
 invece di sovrascriverlo con l’output rediretto da un comando. Dato che
@@ -4471,7 +4471,7 @@ stampato nulla sullo schermo.</p>
 </div>
 </div>
 </div>
-<p>Continuiamo con il nostro esempio nella directory
+<p>Continuiamo con il nostro esempio nella cartella
 <code>shell-lesson-data/exercise-data/creatures</code>. Ecco un ciclo
 leggermente più complicato:</p>
 <div class="codewrapper sourceCode" id="cb19">
@@ -4598,9 +4598,9 @@ ottiene un errore:</p>
 </div>
 <p>Questo problema si presenta quando <code>cp</code> riceve più di due
 input. Quando ciò accade, si aspetta che l’ultimo ingresso sia una
-directory in cui copiare tutti i file che gli sono stati passati. Poiché
-non esiste una directory denominata <code>original-*.dat</code> nella
-directory <code>creatures</code>, si ottiene un errore.</p>
+cartella in cui copiare tutti i file che gli sono stati passati. Poiché
+non esiste una cartella denominata <code>original-*.dat</code> nella
+cartella <code>creatures</code>, si ottiene un errore.</p>
 <p>Invece, possiamo usare un ciclo:</p>
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4640,7 +4640,7 @@ non modificato.</p>
 <p>Il diagramma seguente mostra cosa succede quando viene eseguito il
 ciclo modificato e dimostra come l’uso giudizioso di <code>echo</code>
 sia una buona tecnica di debug.</p>
-<figure><img src="fig/shell_script_for_loop_flow_chart.svg" alt='Il ciclo for "for filename in .dat; do echo cp $filename original-$filename;done" assegnerà successivamente i nomi di tutti i file ".dat" nella directory corrente alla variabile "$filename" e quindi eseguirà il comando. Con i file "basilisk.dat", "minotaur.dat" e "unicorn.dat" nella directory corrente, il ciclo richiamerà successivamente il comando echo tre volte e stamperà tre righe: "cp basislisk.dat original-basilisk.dat", poi "cp minotaur.datoriginal-minotaur.dat" e infine "cp unicorn.datoriginal-unicorn.dat"' class="figure mx-auto d-block"></figure><section><h2 class="section-heading" id="pipeline-di-nelle-elaborazione-dei-file">Pipeline di Nelle: Elaborazione dei file<a class="anchor" aria-label="anchor" href="#pipeline-di-nelle-elaborazione-dei-file"></a>
+<figure><img src="fig/shell_script_for_loop_flow_chart.svg" alt='Il ciclo for "for filename in .dat; do echo cp $filename original-$filename;done" assegnerà successivamente i nomi di tutti i file ".dat" nella cartella corrente alla variabile "$filename" e quindi eseguirà il comando. Con i file "basilisk.dat", "minotaur.dat" e "unicorn.dat" nella cartella corrente, il ciclo richiamerà successivamente il comando echo tre volte e stamperà tre righe: "cp basislisk.dat original-basilisk.dat", poi "cp minotaur.datoriginal-minotaur.dat" e infine "cp unicorn.datoriginal-unicorn.dat"' class="figure mx-auto d-block"></figure><section><h2 class="section-heading" id="pipeline-di-nelle-elaborazione-dei-file">Pipeline di Nelle: Elaborazione dei file<a class="anchor" aria-label="anchor" href="#pipeline-di-nelle-elaborazione-dei-file"></a>
 </h2>
 <hr class="half-width">
 <p>Nelle è ora pronta a elaborare i suoi file di dati usando
@@ -4655,7 +4655,7 @@ proteine e prende due argomenti:</p>
 comandi necessari per gradi. Il primo passo consiste nell’assicurarsi di
 poter selezionare i giusti file di input — ricordate, questi sono quelli
 i cui nomi terminano in ‘A’ o ‘B’, piuttosto che in ‘Z’. Spostandosi
-nella directory <code>north-pacific-gyre</code>, Nelle digita:</p>
+nella cartella <code>north-pacific-gyre</code>, Nelle digita:</p>
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -4881,9 +4881,9 @@ eseguire?</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
-<p>la seconda versione è quella che vogliamo eseguire. Questa stampa
+<p>La seconda versione è quella che vogliamo eseguire. Questa stampa
 sullo schermo tutto ciò che è racchiuso tra le virgolette, espandendo il
 nome della variabile del ciclo perché lo abbiamo preceduto da un segno
 di dollaro. Inoltre, non modifica e non crea il file
@@ -4934,13 +4934,13 @@ sarebbe il risultato del seguente codice:</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <p>Abbiamo un ciclo annidato, cioè contenuto all’interno di un altro
 ciclo, quindi per ogni specie nel ciclo esterno, il ciclo interno (il
 ciclo annidato) itera sull’elenco delle temperature e crea una nuova
-directory per ogni combinazione.</p>
-<p>provate voi stessi a eseguire il codice per vedere quali directory
+cartella per ogni combinazione.</p>
+<p>provate voi stessi a eseguire il codice per vedere quali cartelle
 vengono create!</p>
 </div>
 </div>
@@ -5310,7 +5310,7 @@ separatamente.</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5380,7 +5380,7 @@ comandi al log prima di eseguirli. Perché pensate che lo faccia?</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Se un comando provoca un arresto anomalo o un blocco, potrebbe essere
 utile sapere qual è il comando in questione, per poter indagare sul
@@ -5513,7 +5513,7 @@ seguente comando:</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>la risposta corretta è 2.</p>
 <p>Le variabili speciali <code>$1</code>, <code>$2</code> e
@@ -5571,7 +5571,7 @@ ad es.</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5643,7 +5643,7 @@ eseguito rispettivamente come <code>bash script1.sh *.pdb</code>,
   Soluzioni
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>In ogni caso, la shell espande il carattere jolly in
 <code>*.pdb</code> prima di passare l’elenco risultante di nomi di file
@@ -5714,7 +5714,7 @@ utilizzando l’opzione <code>-x</code>:</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <p>L’opzione <code>-x</code> fa sì che <code>bash</code> venga eseguito
 in modalità di debug. In questo modo viene stampato ogni comando man
