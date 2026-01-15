@@ -47,6 +47,16 @@
           </ul></li>
       </div>
 
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+          <b>Italiano</b>  <i data-feather="chevron-down"></i>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2"><li><button class="dropdown-item" type="button"><a href="https://biont-training.github.io/shell-novice-de" class="external-link">Deutsch</a></button></li>
+          <li><button class="dropdown-item" type="button"><a href="https://biont-training.github.io/shell-novice-en" class="external-link">English</a></button></li>
+          <li><button class="dropdown-item" type="button"><a href="https://biont-training.github.io/shell-novice-es" class="external-link">Español</a></button></li>
+        </ul></div>
+
       <div class="dropdown" id="instructor-dropdown">
         <button class="btn btn-secondary dropdown-toggle bordered-button" type="button" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
           <i aria-hidden="true" class="icon" data-feather="eye"></i> Vista Istruttore <i data-feather="chevron-down"></i>
@@ -663,7 +673,7 @@ separatamente.</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -733,7 +743,7 @@ comandi al log prima di eseguirli. Perché pensate che lo faccia?</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Se un comando provoca un arresto anomalo o un blocco, potrebbe essere
 utile sapere qual è il comando in questione, per poter indagare sul
@@ -862,7 +872,7 @@ seguente comando:</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>la risposta corretta è 2.</p>
 <p>Le variabili speciali <code>$1</code>, <code>$2</code> e
@@ -920,7 +930,7 @@ ad es.</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -992,7 +1002,7 @@ eseguito rispettivamente come <code>bash script1.sh *.pdb</code>,
   Soluzioni
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>In ogni caso, la shell espande il carattere jolly in
 <code>*.pdb</code> prima di passare l’elenco risultante di nomi di file
@@ -1063,7 +1073,7 @@ utilizzando l’opzione <code>-x</code>:</p>
   Soluzione
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>L’opzione <code>-x</code> fa sì che <code>bash</code> venga eseguito
 in modalità di debug. In questo modo viene stampato ogni comando man
@@ -1131,15 +1141,17 @@ flessibile e più coerente con i comandi Unix integrati.</li>
 	
         | <a href="https://github.com/swcarpentry/shell-novice/blob/main/CONTRIBUTING.md" class="external-link">Contributi</a>
         | <a href="https://github.com/swcarpentry/shell-novice/" class="external-link">Fonte</a></p>
-				<p><a href="https://github.com/swcarpentry/shell-novice/blob/main/CITATION" class="external-link">Cita</a> | <a href="mailto:team@carpentries.org">Contatti</a> | <a href="https://carpentries.org/about/" class="external-link">Informazioni</a></p>
-			</div>
-			<div class="col-md-6">
+        <p>
+        <a href="https://github.com/swcarpentry/shell-novice/blob/main/" class="external-link">Cita</a>
+        | <a href="mailto:team@carpentries.org">Contatti</a> | <a href="https://carpentries.org/about/" class="external-link">Informazioni</a></p>
+		</div>
+		<div class="col-md-6">
 
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template concesso in licenza sotto <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> da <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Realizzato con <a href="https://github.com/carpentries/sandpaper/tree/0.17.1" class="external-link">sandpaper (0.17.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a> e <a href="https://github.com/carpentries/varnish/tree/1.0.7" class="external-link">varnish (1.0.7)</a></p>
-			</div>
+        <p>Realizzato con <a href="https://github.com/carpentries/sandpaper/tree/0.17.3" class="external-link">sandpaper (0.17.3)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a> e <a href="https://github.com/carpentries/varnish/tree/1.0.9" class="external-link">varnish (1.0.9)</a></p>
+		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
 		<a href="#top">
@@ -1161,7 +1173,7 @@ flessibile e più coerente con i comandi Unix integrati.</li>
   "identifier": "https://swcarpentry.github.io/shell-novice/instructor/06-script.html",
   "dateCreated": "2014-10-22",
   "dateModified": "2025-11-07",
-  "datePublished": "2025-11-07"
+  "datePublished": "2026-01-15"
 }
 
   </script><script>
